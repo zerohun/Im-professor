@@ -7,3 +7,6 @@
   require_once "beneath.php";
 
 ?>
+#include <stdio.h>
+
+int main )
