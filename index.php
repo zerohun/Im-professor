@@ -1,12 +1,8 @@
 <?php
   require_once "upper.php";
 ?>
-  <h1>hi</h1>
+  index 페이지입니다.
 
 <?php
   require_once "beneath.php";
-
 ?>
-#include <stdio.h>
-
-int main )
