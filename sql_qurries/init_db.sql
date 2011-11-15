@@ -34,7 +34,10 @@ CREATE TABLE users(
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
   major_id INT UNSIGNED,
+  id VARCHAR(30) NOT NULL,	-- id 최대 길이 30으로 추가 --
+  password VARCHAR(30) NOT NULL, -- password 최대 길이 30으로 추가 --
   name VARCHAR(30) NOT NULL,
+  age INT(4) NOT NULL,			-- age INT형 최대 길이 4로 추가 --
   email VARCHAR(30) NOT NULL
 );
 
