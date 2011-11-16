@@ -1,8 +1,8 @@
 <?php
   $db_hostname = 'localhost';
-  $db_database = 'zerohun';
-  $db_username = 'zerohun';
-  $db_password = 'TLqksvkfw';
+  $db_database = 'TEST';
+  $db_username = 'root';
+  $db_password = '13245';
   
   $db_con = mysql_connect($db_hostname, $db_username, $db_password);
   if (!$db_con) die("Unable to connect to MySQL: " . mysql_error());
@@ -13,4 +13,5 @@
   function secape_str($str){
     return mysql_real_escape_string($str);
   }
+
 ?>

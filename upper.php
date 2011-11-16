@@ -1,3 +1,6 @@
+<?php
+  require_once('config.php'); 
+?>
 <!DOCTYPE html 
 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -8,10 +11,36 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   </head>
   <body>
   <div id="container">
+		<div id="header">
+			<div id="header_center">
+				<img src="image/logo.png" alt="나는교수다">
+			</div>
+			<div id="header_right">
+				<a href="">로그인</a>
+				<a href="">회원가입</a>
+			</div>
+		</div>
     <div id="search_bar">
       <ul>
         <li>학교선택:
+
           <select name="choose_school">
+
+<?php
+  $query = "SELECT id,name FROM universities;";
+  $result = mysql_query($query);
+
+  if($result){
+    while($row = mysql_fetch_array($result)){
+      $univ_id = $row['id'];
+      $univ_name = $row['name'];
+      echo "<option value='{$univ_id}'>{$univ_name}</option>";
+    }
+  }
+  else{
+    die();
+  }
+?>
           </select>
         </li>
 
@@ -34,4 +63,14 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       <input id="search_button" type="submit" value="검색"/>
     </div>
     <div id="content">
-    
+		<div class="section" id="about">
+			<img src="image/content1.png" alt="사이트소개">
+				
+		
+		</div>
+		<div class="section" id="rank">
+		
+		
+		</div>
+	</div>
+</div>

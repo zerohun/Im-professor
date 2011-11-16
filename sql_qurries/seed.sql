@@ -1,4 +1,4 @@
-INSERT INTO universities() values();
+INSERT INTO universities(name) values("명지대학교");
 INSERT INTO majors(unversity_id) values(1);
 INSERT INTO professors(major_id) values(1);
 INSERT INTO professor_infos(professor_id, name, photo, content) values(1, "권동섭", "photo.jpg", "정말 정말 좋은 교수님");
