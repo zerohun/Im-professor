@@ -1,0 +1,42 @@
+/* Reset CSS: from YUI2: Reset CSS */
+html{color:#000;
+	background:#fff; 
+	padding:20px 0;
+	font: 12px/18px "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", Verdana, Arial, Tahoma;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{font-size:100%;}
+
+/* Basic */
+
+h1 {
+	font: bold 28px/46px Georgia,serif;
+	width:300px;
+	margin:5px auto;
+}
+#form_wrapper {
+	background-color:#eee;
+	border:1px solid #aaa;
+	margin:5px auto;
+	width:300px;
+}
+
+.message {
+	width:290px;
+	margin: 10px auto;
+	background-color:#FFFFAA;
+	padding:10px;
+}
