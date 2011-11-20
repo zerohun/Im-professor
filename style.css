@@ -42,11 +42,6 @@ input,button,textarea,select{font-size:100%;}
 #search_bar ul {margin:0; padding:15;}
 #search_bar ul li {float:left;}
 
-#search_text {
-		background:#fff; border:1px solid #000;
-		width:90px; font-size:12px; line-height:24px; height:24px;
-		vertical-align:middle;
-		}
 #search_button {height:28px; font-size:12px; line-height:24px; 
 				padding:1px;vertical-align: middle;
 				}
