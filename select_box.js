@@ -16,6 +16,7 @@ $(document).ready(function(){
       $("select.major").html("");
       $(data).each(function(i,major){
         $("select.major").prepend("<option value=" + major["id"] +">" + major["name"] + "</option>");
+        $("select.major").change();
       });
     });
   }); 
