@@ -61,11 +61,10 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     </div>
 	
 	<!--content-->
-	    <div id="content">
+	  <div id="content">
 		 	<div class="section" id="rank">
 				<h1><img src="images/best5.png"></h1>
 				<div class="list">
 				
 				</div>
 			</div>
-		</div>
