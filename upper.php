@@ -54,11 +54,6 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       </ul>
     </div>
 	
-    <!--search_bar-->
-    <div id="search_bar">
-       <form id="search_form" method="GET">
-       <input id="search_button" type="submit" value="검색"/>
-    </div>
 	
 	<!--content-->
 	  <div id="content">
