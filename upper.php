@@ -58,6 +58,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       <input id="search_text" type="text"/>
       <input id="search_button" type="submit" value="검색"/>
     </div>
+<<<<<<< HEAD
 	
 	<!--content-->
 	
@@ -71,4 +72,11 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 				<div class="list">
 				
 				</div>
+=======
+    <div id="content">
+		  <div class="section" id="about">
+			  <img src="image/content1.png" alt="사이트소개">
+  		</div>
+		  <div class="section" id="rank">
+>>>>>>> 71e56923ccfca9f7eb96cd8e64c0fcf4d7612638
 		  </div>
