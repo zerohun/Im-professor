@@ -1,0 +1,68 @@
+/* ÃÊ±âÈ­ */	
+html{color:#000;
+	background:#ddd; 
+	padding:20px 0;
+	font: 12px/18px "¸¼Àº °íµñ", "Malgun Gothic", "±¼¸²", "Gulim", Verdana, Arial, Tahoma;
+	}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{font-size:100%;}
+
+/* layout */
+#container {width:860px; margin:0 auto; background-color:#eee}
+
+#header {width:100%; height:135px; background-color:#000; 
+		border-bottom: 1px solid #000;
+		/* ¿Ü°û¼±À» µÕ±Û°Ô*/
+		-moz-border-radius-topleft: 15px;
+		-moz-border-radius-topright: 15px;
+		border-radius: 15px 15px 0 0; height:100px;
+		}
+#header_center {
+			width:300px; float:center; display:inline;
+			color:#fff; padding:10px;
+			}
+#header_right a {color:#eee; text-decoration:none; padding:5px;}
+#header_right a:hover {color:#fee0f0;}
+
+/*search_bar*/
+#search_bar {width:860px; height:30px; background-color:#f60a7e;}
+#search_bar ul {margin:0; padding:15;}
+#search_bar ul li {float:left;}
+
+#search_button {height:28px; font-size:12px; line-height:24px; 
+				padding:1px;vertical-align: middle;
+				}
+				
+/*main*/
+#content div.section {
+		width:850px;
+		background: ccc;
+		margin:20px 10px;
+		border: 1px solid #fbd2e0;
+		overflow:auto;
+		}
+		
+#content #about { 
+		background: ccc url("/images/content1.png") no-repeat center; 
+		}
+
+
+#content #rank h1 { 
+		background: ccc url("/images/best5.png") no-repeat center; 
+		}
+		
+/* -- footer -- */
+#footer {background-color:#000; color:#888; text-align:center; padding: 20px;}

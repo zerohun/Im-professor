@@ -7,24 +7,27 @@ DROP TABLE votes;
 
 CREATE TABLE universities(
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(30) NOT NULL,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE majors(
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(30) NOT NULL,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  unversity_id INT UNSIGNED #foreign key
+  university_id INT UNSIGNED #foreign key
 );
 
 CREATE TABLE professors(
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  major_id INT UNSIGNED
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE professor_infos(
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   professor_id INT UNSIGNED,
+  user_id INT UNSIGNED,
+  major_id int UNSIGNED,
   name VARCHAR(30) NOT NULL,
   photo VARCHAR(100),
   content TEXT
@@ -34,7 +37,9 @@ CREATE TABLE users(
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
   major_id INT UNSIGNED,
+  password VARCHAR(30) NOT NULL, -- password 최대 길이 30으로 추가 --
   name VARCHAR(30) NOT NULL,
+  age INT(4) NOT NULL,			-- age INT형 최대 길이 4로 추가 --
   email VARCHAR(30) NOT NULL
 );
 

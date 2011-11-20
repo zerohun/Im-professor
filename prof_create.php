@@ -22,7 +22,7 @@
 			//INSERT문 실행
 			$query ="INSERT INTO professors()". "values()";
 			$query = "INSERT INTO professor_infos(professor_id, user_id, major_id,name, photo, content)" .
-					"VALUES('$professor_id','0','1','$name','$content')";
+					"VALUES('mysql_insert_id()','0','1','$name','$content')";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {
@@ -40,10 +40,6 @@
 ?>
 	<form action="prof_create.php" method="post">
 		<table id = "prof_form" width="100%">
-			<tr>
-				<th>ID</th>
-				<td><input type="text" name="professor_id" size="20"></td>
-			</tr>
 			<tr>
 				<th>학과</th>
 				<td><input type="text" name="major_id" size="20"></td>
