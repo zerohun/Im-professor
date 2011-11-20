@@ -8,7 +8,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <html>
   <head>
 
-    <link href="style.css" media="screen" rel="stylesheet" type="text/css" /> 
+    <link href="style.css" rel="stylesheet" type="text/css" /> 
     <script src="http://code.jquery.com/jquery-1.7.min.js" type="text/javascript"> </script>
     <script src="select_box.js" type="text/javascript"></script>
   </head>
