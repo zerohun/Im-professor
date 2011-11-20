@@ -26,6 +26,7 @@ CREATE TABLE professor_infos(
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   professor_id INT UNSIGNED,
+  user_id INT UNSIGNED,
   major_id int UNSIGNED,
   name VARCHAR(30) NOT NULL,
   photo VARCHAR(100),
