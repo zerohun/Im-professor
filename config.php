@@ -1,5 +1,5 @@
 <?php
-$db_hostname = 'dokdo.mju.ac.kr';
+$db_hostname = 'localhost';
 $db_database = 'wpc32';
 $db_username = 'wpc32';
 $db_password = 'jy4726';
