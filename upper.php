@@ -7,7 +7,8 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <html>
   <head>
-    <link href="style.css" media="screen" rel="stylesheet" type="text/css" /> 
+
+    <link href="style.css" rel="stylesheet" type="text/css" /> 
     <script src="http://code.jquery.com/jquery-1.7.min.js" type="text/javascript"> </script>
     <script src="select_box.js" type="text/javascript"></script>
   </head>
@@ -52,31 +53,19 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         </li>
       </ul>
     </div>
-    
+	
+    <!--search_bar-->
     <div id="search_bar">
-      <form id="search_form" method="GET">
-      <input id="search_text" type="text"/>
-      <input id="search_button" type="submit" value="검색"/>
+       <form id="search_form" method="GET">
+       <input id="search_button" type="submit" value="검색"/>
     </div>
-<<<<<<< HEAD
 	
 	<!--content-->
-	
 	    <div id="content">
-		  <div class="section" id="about">
-			  <img src="image/content1.png" alt="사이트소개">
-  		</div>
-		
-		  <div class="section" id="rank">
-		  <h1><img src="images/best5.png"></h1>
+		 	<div class="section" id="rank">
+				<h1><img src="images/best5.png"></h1>
 				<div class="list">
 				
 				</div>
-=======
-    <div id="content">
-		  <div class="section" id="about">
-			  <img src="image/content1.png" alt="사이트소개">
-  		</div>
-		  <div class="section" id="rank">
->>>>>>> 71e56923ccfca9f7eb96cd8e64c0fcf4d7612638
-		  </div>
+			</div>
+		</div>

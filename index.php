@@ -1,7 +1,9 @@
 <?php
   require_once "upper.php";
 ?>
-  index 페이지입니다.
+		<div class="section" id="about">
+			<img src="image/content1.png" alt="사이트소개">
+  		</div>
 
 <?php
   require_once "beneath.php";
