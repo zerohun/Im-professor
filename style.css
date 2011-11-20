@@ -50,3 +50,24 @@ input,button,textarea,select{font-size:100%;}
 #search_button {height:28px; font-size:12px; line-height:24px; 
 				padding:1px;vertical-align: middle;
 				}
+				
+/*main*/
+#content div.section {
+		width:850px;
+		background: ccc;
+		margin:20px 10px;
+		border: 1px solid #fbd2e0;
+		overflow:auto;
+		}
+		
+#content #about { 
+		background: ccc url("/images/content1.png") no-repeat center; 
+		}
+
+
+#content #rank h1 { 
+		background: ccc url("/images/best5.png") no-repeat center; 
+		}
+		
+/* -- footer -- */
+#footer {background-color:#000; color:#888; text-align:center; padding: 20px;}
