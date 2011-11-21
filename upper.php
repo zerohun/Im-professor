@@ -20,8 +20,18 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 				<img src="image/logo.png" alt="나는교수다">
 			</div>
 			<div id="header_right">
-				<a href="">로그인</a>
-				<a href="">회원가입</a>
+			<?php
+				if ($loggedin) {
+			?>
+					<a href = "logout.php">로그아웃</a>
+			<?php
+				} else {
+			?>
+					<a href="login.php">로그인</a>
+					<a href="join.php">회원가입</a>
+			<?php
+				}
+			?>	
 			</div>
 		</div>
     <div id="search_bar">
@@ -59,7 +69,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	<!--content-->
 	  <div id="content">
 		 	<div class="section" id="rank">
-				<h1><img src="images/best5.png"></h1>
+				<h1><img src="image/best5.png"></h1>
 				<div class="list">
 				
 				</div>
