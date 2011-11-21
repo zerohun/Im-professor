@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-				</div>
-			</div>
-		<div id="footer">
-			<p>2011 컴퓨터공학과 웹프로그래밍 C반 8조 최영훈, 오세도, 서수경, 이자연</p>
-			<p>Copyright © 나는교수다. All rights reserved.</p>
-		</div>
-	</body>
-	<script type="text/javascript" src="common.js"></script>
-=======
   </div>
 </div>
 <div id="footer">
@@ -16,5 +6,4 @@
 </div>
 </body>
 <script type="text/javascript" src="common.js"></script>
->>>>>>> 25566362a317ba3405d43e9a906de1ba8f98026f
 </html>

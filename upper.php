@@ -1,9 +1,6 @@
 <?php
   require_once('config.php'); 
-<<<<<<< HEAD
-=======
   require_once('model.php');
->>>>>>> 25566362a317ba3405d43e9a906de1ba8f98026f
 ?>
 <!DOCTYPE html 
 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -58,27 +55,11 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       </ul>
     </div>
 	
-<<<<<<< HEAD
-    <!--search_bar-->
-    <div id="search_bar">
-       <form id="search_form" method="GET">
-       <input id="search_button" type="submit" value="검색"/>
-    </div>
-	
-	<!--content-->
-	    <div id="content">
-=======
-	
-	<!--content-->
+
 	  <div id="content">
->>>>>>> 25566362a317ba3405d43e9a906de1ba8f98026f
 		 	<div class="section" id="rank">
 				<h1><img src="images/best5.png"></h1>
 				<div class="list">
 				
 				</div>
 			</div>
-<<<<<<< HEAD
-		</div>
-=======
->>>>>>> 25566362a317ba3405d43e9a906de1ba8f98026f

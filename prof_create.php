@@ -20,14 +20,14 @@
 		}
 		if($msg == ""){
 			//INSERT문 실행
-			$query ="INSERT INTO professors()". "values()";
+			$query ="INSERT INTO professors() values();";
 			$query = "INSERT INTO professor_infos(professor_id, user_id, major_id,name, photo, content)" .
-					"VALUES('mysql_insert_id()','0','1','$name','$content')";
+					"VALUES('mysql_insert_id()','0','1','$name','$content');";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {
 				// INSERT 성공
-				$query="INSERT INTO professors(id)". "values('$professor_id')";
+				$query="INSERT INTO professors(id)". "values('$professor_id');";
 				$msg = "교수정보가 등록되었습니다.";
 			}
 		}
