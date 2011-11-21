@@ -1,12 +1,11 @@
 ﻿<?php
   require_once "upper.php";
 ?>
-<div id = "form_wrapper">
+<div id="form_wrpper">
 	<p>교수 정보를 입력하세요!</p>
 	<?php
 	if (isset($_POST)){
 		$name = $content = $msg = ""; // 초기화
-		echo "Hello!";
 		//FORM 값 읽기
 		if (isset($_POST['professor_id'])) $professor_id = escape_str($_POST['professor_id']);
 		if (isset($_POST['name'])) $name = escape_str($_POST['name']);
@@ -20,16 +19,17 @@
 		}
 		if($msg == ""){
 			//INSERT문 실행
-			$query ="INSERT INTO professors() values();";
-			$query = "INSERT INTO professor_infos(professor_id, user_id, major_id,name, photo, content)" .
-					"VALUES('mysql_insert_id()','0','1','$name','$content');";
+			$query = "professor_infos SET professor_id=$professor_id name=$name"
+			$query = "UPDATE professor_infos(professor_id, name, content)" .
+					"VALUES('$professor_id','$name','$content')";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {
 				// INSERT 성공
-				$query="INSERT INTO professors(id)". "values('$professor_id');";
 				$msg = "교수정보가 등록되었습니다.";
 			}
+			$query = "INSERT INTO professors(id)" .
+					"VALUES('$id')";
 		}
 	}
 	?>
@@ -38,11 +38,11 @@
 	if ($msg != "") 
 		echo("<div class='message'>{$msg}</div>");
 ?>
-	<form action="prof_create.php" method="post">
+	<form action="prof_update.php" method="post">
 		<table id = "prof_form" width="100%">
 			<tr>
-				<th>학과</th>
-				<td><input type="text" name="major_id" size="20"></td>
+				<th>ID</th>
+				<td><input type="text" name="professor_id" size="20"></td>
 			</tr>
 			<tr>
 				<th>이름</th>

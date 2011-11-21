@@ -31,8 +31,6 @@ beneath.php : 모든 페이지의 하단에 위치할 html을 담고 있는 파�
 require_once 'upper.php'
 <p> 새로운 페이지의 내용물 </p>
 require_once 'beneath.php'
-
-
 이렇게 하면 메인메뉴부분과 다른 html 태그들을 다시 써줄 필요가 없게 됨
 
 
@@ -63,6 +61,8 @@ source seed.sql;
 
 
 
+
+
 model.php : db를 사용할때마다 따로 qurry문을 만들어서 실행하고 while을 돌려야 하는 번거로움을 방지하기 위해 만든 클래스
 
 ex)
@@ -78,3 +78,16 @@ fetch 메소드 : 첫번재 파라메터는 table명, 두번재 파라메터는 
 to_array : fetch된 데이터베이스 데이터들을 배열로 반환
 to_json: fetch된 데이터베이스 데이터들을 json으로 인코딩해서 반환 
   
+
+
+
+
+
+
+
+학교, 학과 선택 쉽게 select 추가
+
+
+require_once 'major_select_box.php'
+
+

@@ -65,8 +65,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       </ul>
     </div>
 	
-	
-	<!--content-->
+
 	  <div id="content">
 		 	<div class="section" id="rank">
 				<h1><img src="image/best5.png"></h1>
