@@ -9,6 +9,10 @@ require_once ('config.php');
 	echo 'alert ( get_email.value );';
 	echo '</script>';
 */	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> b3cac434e8b8f359cf1e87487adaa8af77c43abf
 	$query_email = "SELECT email FROM users WHERE email='$email_check'";
 	$result_email = mysql_query($query_email);
 	if (!mysql_fetch_array($result_email)) {
