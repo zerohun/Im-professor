@@ -53,7 +53,7 @@ require_once ('config.php');
 				?>
 					<script type = "text/javascript"> alert ( "회원가입 완료~" ); </script>
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = http://localhost/index.php">';
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = login.php?email='.$email.'&password='.$password.'">';
 			}
 		}
 	}
