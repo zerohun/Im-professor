@@ -38,7 +38,7 @@ require_once ('config.php');
 			} else {
 				// INSERT 성공
 				?>
-					<script type = "text/javascript"> alert ( "회원가입 됐거든??" ); </script>
+					<script type = "text/javascript"> alert ( "회원가입 완료~" ); </script>
 				<?php
 				echo '<meta http-equiv = "Refresh" content = "0 ; url = http://localhost/index.php">';
 			}
@@ -55,7 +55,7 @@ require_once ('config.php');
 
 <script type = "text/javascript">
 	function form_id_check () {
-		var form = document . join_form;
+	/*	var form = document . join_form;
 		if ( form . email . value == "" ) {
 			alert ( "이메일을 입력하여 주세요." );
 			form . email . focus();
@@ -65,15 +65,15 @@ require_once ('config.php');
 			form . target = "hidden_frame";
 			form . submit();
 		}
-		
-	/*	var get_email = document.getElementById("email");		// getElementById로 받을땐 id로 받는다.
+		*/
+		var get_email = document.getElementById("email");		// getElementById로 받을땐 id로 받는다.
 		
 		if ( get_email.value == "" ) {
-			alert ( '이메일을 입력하여 주세요.' );
+			alert ( "이메일을 입력하여 주세요." );
 		} else {
-			window.open ( 'id_check.php?$email_check+=get_email.value', 'EmailCheckWindow', 'width = 400 height = 400' );
-		}
-	*/
+			window.open ( 'id_check.php?email='+get_email.value, 'EmailCheckWindow', 'width = 400 height = 400' );
+		}	
+
 	}
 </script>
 
@@ -99,7 +99,7 @@ require_once ('config.php');
 				</tr>
 				<tr>
 					<td colspan="6" align="right">
-					<input type="submit" value="회원가입" style="padding:5px 10px ; text-align:center ;">
+					<input type="hidden" id="submitbutton" value="회원가입" style="padding:5px 10px ; text-align:center ;" >
 					</td>
 				</tr>
 			</table>

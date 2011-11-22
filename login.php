@@ -45,7 +45,7 @@ require_once ('config.php');
 				?>
 					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
 				<?php
-				$_SESSION['user'] = $email;
+				$_SESSION['user'] = $_POST['email'];
 				echo '<meta http-equiv = "Refresh" content = "0 ; url = http://localhost/index.php">';
 			}
 		}

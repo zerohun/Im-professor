@@ -1,6 +1,7 @@
 <?php
-  require_once('config.php'); 
-  require_once('model.php');
+session_start();
+ require_once('config.php'); 
+ require_once('model.php');
 ?>
 <!DOCTYPE html 
 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
