@@ -20,6 +20,7 @@ require_once ('config.php');
 		if (isset($_POST['name'])) $name = escape_str($_POST['name']);
 		if (isset($_POST['age'])) $age = escape_str($_POST['age']);
 		if (isset($_POST['option_university_value'])) $option_univ = escape_str($_POST['option_university_value']);
+		if (isset($_POST['option_major_value'])) $option_major = escape_str($_POST['option_major_value']);
 		
 		if ($email == "")
 			$msg = "이메일을 입력하여 주세요.";
@@ -41,11 +42,14 @@ require_once ('config.php');
 			
 		if ( $option_univ == "" )
 			$msg = "대학교를 선택하여 주세요.";
+			
+		if ( $option_major == "" )
+			$msg = "학과를 선택하여 주세요.";
 				
 		if ($msg == "") {
 			// INSERT문 실행
-			$query = "INSERT INTO users(email, password, name, age, major_id) " .
-					"VALUES('$email', '$password', '$name', '$age', '$option_univ')";
+			$query = "INSERT INTO users(email, password, name, age, univ_id, major_id) " .
+					"VALUES('$email', '$password', '$name', '$age', '$option_univ', '$option_major')";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {
@@ -53,7 +57,7 @@ require_once ('config.php');
 				?>
 					<script type = "text/javascript"> alert ( "회원가입 완료~" ); </script>
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = http://localhost/index.php">';
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = login.php?email='.$email.'&password='.$password.'">';
 			}
 		}
 	}
