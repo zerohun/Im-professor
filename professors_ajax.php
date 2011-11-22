@@ -1,5 +1,7 @@
 <?php
   require_once("config.php");
+  require_once("model.php");
+  
   if(isset($_GET)){
     $major_id = $_GET["id"];
     $prof_model = new Model;

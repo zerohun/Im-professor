@@ -1,5 +1,6 @@
 <?php
   require_once("config.php");
+  require_once("model.php");
   if(isset($_GET)){
     $univ_id = $_GET["id"];
     $option = "WHERE university_id={$univ_id}";
