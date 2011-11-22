@@ -45,7 +45,7 @@ require_once ('config.php');
 				?>
 					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
 				<?php
-				$_SESSION['user'] = $email;
+				$_SESSION['user'] = $_POST['email'];
 				echo '<meta http-equiv = "Refresh" content = "0 ; url = http://localhost/index.php">';
 			}
 		}
@@ -54,21 +54,22 @@ require_once ('config.php');
 ?>
 
 	<form action="login.php" method="post">
-		<div class="login"> 
+		<table id="login" width="25%" border = "solid">
+			<div class="login"> 
 				<?php //print_message(); ?>
-			<label>
-				<span>Email(ID)</span>
-				<input type="text" size="20" name="email">
-			</label>
-			<label>
-				<span>Password</span>
-				<input type="password" size="20" name="password">
-			</label>
-			<label>
-				<span>&nbsp;</span>
-				<input type="submit" value="Login" style="padding:5px 10px ; text-align:center ; ">
-			</label>
-		</div>
+				<tr>
+					<td> <span>Email(ID)</span> </td>
+					<td> <input type="text" size="20" name="email"> </td>
+				</tr>
+				<tr>
+					<td> <span>Password</span> </td>
+					<td> <input type="password" size="20" name="password"> </td>
+				</tr>
+				<tr>
+					<td colspan = "2" align = "center"> <input type="submit" value="Login" style="padding:5px 10px ; text-align:center ; "> </td>
+				</tr>
+			</div>
+		</table>
 	</form>
 	<?php
 		require_once ('beneath.php');

@@ -19,26 +19,39 @@ require_once ('config.php');
 		if (isset($_POST['password'])) $password = escape_str($_POST['password']);
 		if (isset($_POST['name'])) $name = escape_str($_POST['name']);
 		if (isset($_POST['age'])) $age = escape_str($_POST['age']);
+		if (isset($_POST['option_university_value'])) $option_univ = escape_str($_POST['option_university_value']);
 		
 		if ($email == "")
 			$msg = "이메일을 입력하여 주세요.";
+		else if ( strlen ( $email ) > 30 )
+			$msg = "이메일 길이가 너무 기네요~";
 			
 		if ($password == "")
 			$msg = "비밀번호를 입력하여 주세요.";
+		else if ( strlen ( $password ) > 10 )
+			$msg = "비밀번호 길이가 너무 기네요~";
 
 		if ($name == "")
 			$msg = "이름을 입력하여 주세요.";
+		else if ( strlen ( $name ) > 20 )
+			$msg = "넌 무슨 외국인이냐?";
 			
+		if ( strlen ( $age ) > 4 )
+			$msg = "거북이 납셨네...";
+			
+		if ( $option_univ == "" )
+			$msg = "대학교를 선택하여 주세요.";
+				
 		if ($msg == "") {
 			// INSERT문 실행
-			$query = "INSERT INTO users(email, password, name, age) " .
-					"VALUES('$email', '$password', '$name', '$age')";
+			$query = "INSERT INTO users(email, password, name, age, major_id) " .
+					"VALUES('$email', '$password', '$name', '$age', '$option_univ')";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {
 				// INSERT 성공
 				?>
-					<script type = "text/javascript"> alert ( "회원가입 됐거든??" ); </script>
+					<script type = "text/javascript"> alert ( "회원가입 완료~" ); </script>
 				<?php
 				echo '<meta http-equiv = "Refresh" content = "0 ; url = http://localhost/index.php">';
 			}
@@ -55,7 +68,7 @@ require_once ('config.php');
 
 <script type = "text/javascript">
 	function form_id_check () {
-		var form = document . join_form;
+	/*	var form = document . join_form;
 		if ( form . email . value == "" ) {
 			alert ( "이메일을 입력하여 주세요." );
 			form . email . focus();
@@ -65,25 +78,35 @@ require_once ('config.php');
 			form . target = "hidden_frame";
 			form . submit();
 		}
-		
-	/*	var get_email = document.getElementById("email");		// getElementById로 받을땐 id로 받는다.
+		*/
+		var get_email = document.getElementById("email");		// getElementById로 받을땐 id로 받는다.
 		
 		if ( get_email.value == "" ) {
-			alert ( '이메일을 입력하여 주세요.' );
+			alert ( "이메일을 입력하여 주세요." );
 		} else {
-			window.open ( 'id_check.php?$email_check+=get_email.value', 'EmailCheckWindow', 'width = 400 height = 400' );
+			window.open ( 'id_check.php?email='+get_email.value, 'EmailCheckWindow', 'width = 0 height = 0' );
+		}	
+
+	}
+	
+	function email_form_check(){
+		var mail = document.getElementById("email");
+		var filter=/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+		if ( filter.test ( mail.value ) ) {
+			form_id_check ();
+		} else {
+			alert ( "올바르지 않은 메일 형식 이에요~" );
 		}
-	*/
 	}
 </script>
 
 	<div id="form_wrapper">
 		<form action="join.php" method="post" name = "join_form">
-			<table id="join" width="100%" border = "solid">
+			<table id="join" width="50%" border = "solid">
 				<tr>
 					<td>E-mail(ID)</td>
-					<td><input type="text" id = "email" name="email" size="20"/>
-					<input type = "button" name = "email_check" value = "중복체크" onclick="form_id_check ()"/></td>
+					<td><input type="text" id = "email" name="email" size="20"/></td>
+					<td><input type = "button" name = "email_check" value = "중복체크" onclick="email_form_check ()"/></td>
 				</tr>
 				<tr>
 					<td>Password</td>
@@ -98,8 +121,12 @@ require_once ('config.php');
 					<td><input type="text" name="age" size="20"></td>						
 				</tr>
 				<tr>
+					<td>University & Major</td>
+					<td><?php require_once ('major_select_box.php'); ?></td>						
+				</tr>
+				<tr>
 					<td colspan="6" align="right">
-					<input type="submit" value="회원가입" style="padding:5px 10px ; text-align:center ;">
+					<input type="hidden" id="submitbutton" value="회원가입" style="padding:5px 10px ; text-align:center ;" >
 					</td>
 				</tr>
 			</table>

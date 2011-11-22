@@ -45,7 +45,16 @@ input,button,textarea,select{font-size:100%;}
 #search_button {height:28px; font-size:12px; line-height:24px; 
 				padding:1px;vertical-align: middle;
 				}
-				
+		
+/*login & join*/
+#login {
+	margin : 0px 0px 0px 37%;
+	text-align : center;
+}
+#join {
+	margin : 0px 0px 0px 23%;
+	text-align : center;
+}		
 /*main*/
 #content div.section {
 		width:850px;
