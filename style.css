@@ -47,7 +47,8 @@ input,button,textarea,select{font-size:100%;}
 				}
 		
 		
-/*login & join*/
+		
+/*login & join & vote */
 #login {
 	margin : 0px 0px 0px 37%;
 	text-align : center;
@@ -55,7 +56,28 @@ input,button,textarea,select{font-size:100%;}
 #join {
 	margin : 0px 0px 0px 23%;
 	text-align : center;
-}		
+}			
+.vote_title {
+	float : left;
+	display : block;
+}				
+li {
+	height : 40px;
+}	
+.vote_content {
+	margin-left : 15px;
+	float : left;
+	display : block;
+}	
+#form_wrapper #vote {
+	font-size : 15px;
+	margin : 0px 0px 500px 30%;
+	display : block;
+}
+.not_comment {
+	overflow : auto;
+}
+
 
 
 /*main*/

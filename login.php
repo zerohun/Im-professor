@@ -9,7 +9,31 @@ require_once ('config.php');
 		die();
 	}
 
-	// POST 메소드인 경우 Form을 통하여 Submit된 Data처리
+	// GET 메소드인 경우 Form을 통하여 Submit된 Data처리
+	if ($_SERVER['REQUEST_METHOD'] == 'GET')
+	{
+		$email = $password = ""; // 초기화
+
+		//FORM 값을 읽는다.
+		if (isset($_GET['email'])) $email = escape_str($_GET['email']);
+		if (isset($_GET['password'])) $password = escape_str($_GET['password']);
+		
+		if ($email.value != "" && $password.value != "") {
+			// SELECT문 실행
+			$query = "SELECT email FROM users WHERE email='$email' and password='$password'";
+			$result = mysql_query($query);
+			if (!mysql_fetch_array($result)) {
+			} else {
+				// SELECT 성공
+				?>
+					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
+				<?php
+				$_SESSION['user'] = $_GET['email'];
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
+			}
+		}
+	}
+	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		$email = $password = $msg = ""; // 초기화
@@ -17,7 +41,10 @@ require_once ('config.php');
 		//FORM 값을 읽는다.
 		if (isset($_POST['email'])) $email = escape_str($_POST['email']);
 		if (isset($_POST['password'])) $password = escape_str($_POST['password']);
-
+		
+		if (isset($_GET['email'])) $email = escape_str($_GET['email']);
+		if (isset($_GET['password'])) $password = escape_str($_GET['password']);
+		
 		if ($email == "") {
 			?>
 				<script type = "text/javascript"> alert ( "Email을 입력하세요." ); </script>
@@ -46,7 +73,7 @@ require_once ('config.php');
 					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
 				<?php
 				$_SESSION['user'] = $_POST['email'];
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = http://localhost/index.php">';
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
 			}
 		}
 	}
