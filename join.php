@@ -84,7 +84,6 @@ require_once ('config.php');
 		if ( get_email.value == "" ) {
 			alert ( "이메일을 입력하여 주세요." );
 		} else {
-<<<<<<< HEAD
 			window.open ( 'id_check.php?email='+get_email.value, 'EmailCheckWindow', 'width = 0 height = 0' );
 		}	
 
@@ -98,12 +97,8 @@ require_once ('config.php');
 		} else {
 			alert ( "올바르지 않은 메일 형식 이에요~" );
 		}
-=======
 			window.open ( 'id_check.php?email='+get_email.value, 'EmailCheckWindow', 'width = 400 height = 400' );
-		}	
-
->>>>>>> b3cac434e8b8f359cf1e87487adaa8af77c43abf
-	}
+	}	
 </script>
 
 	<div id="form_wrapper">

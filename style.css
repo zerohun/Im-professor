@@ -46,6 +46,7 @@ input,button,textarea,select{font-size:100%;}
 				padding:1px;vertical-align: middle;
 				}
 		
+		
 /*login & join*/
 #login {
 	margin : 0px 0px 0px 37%;
@@ -55,6 +56,8 @@ input,button,textarea,select{font-size:100%;}
 	margin : 0px 0px 0px 23%;
 	text-align : center;
 }		
+
+
 /*main*/
 #content div.section {
 		width:850px;
