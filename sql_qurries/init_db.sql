@@ -27,7 +27,7 @@ CREATE TABLE professor_infos(
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   professor_id INT UNSIGNED,
   user_id INT UNSIGNED,
-  major_id int UNSIGNED,
+  major_id INT UNSIGNED,
   name VARCHAR(30) NOT NULL,
   photo VARCHAR(100),
   content TEXT
