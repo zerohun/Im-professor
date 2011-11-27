@@ -40,8 +40,7 @@ require_once ('upper.php');
 	<form action="prof_create.php" method="post">
 		<table id = "prof_form" width="100%">
 			<tr>
-				<th>학과</th>
-				<td><input type="text" name="major_id" size="20"></td>
+        <?php require_once ('major_select_box.php');?>
 			</tr>
 			<tr>
 				<th>이름</th>

@@ -36,7 +36,6 @@ CREATE TABLE professor_infos(
 CREATE TABLE users(
   id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
-  univ_id INT UNSIGNED,			-- 대학교 --
   major_id INT UNSIGNED,			-- 전공 --
   password VARCHAR(30) NOT NULL, -- password 최대 길이 30으로 추가 --
   name VARCHAR(30) NOT NULL,

@@ -29,7 +29,7 @@ require_once ('config.php');
 					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
 				<?php
 				$_SESSION['user'] = $_GET['email'];
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
 			}
 		}
 	}
@@ -72,8 +72,8 @@ require_once ('config.php');
 				?>
 					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
 				<?php
-				$_SESSION['user'] = $_POST['email'];
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
+				$_SESSION['user'] = $email;
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
 			}
 		}
 	}

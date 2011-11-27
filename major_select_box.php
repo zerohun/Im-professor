@@ -1,6 +1,7 @@
 <script src="embedded_select_box.js" type="text/javascript"></script>
 <ul>
 <li>
+학교:
 <select name="school"/>
 <option id="first_option" value="-1" selected="selected">학교 선택</option>
 
@@ -17,6 +18,7 @@
 </li>
 
 <li>
+  학과:
   <select name="major" class="major">
     <option value="0">학교를 먼저 선택해 주세요.</option>
   </select>

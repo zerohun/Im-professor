@@ -1,5 +1,5 @@
 <?php
-session_start();
+ session_start();
  require_once('config.php'); 
  require_once('model.php');
 ?>

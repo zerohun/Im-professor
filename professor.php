@@ -5,7 +5,7 @@ if(isset($_GET) && $_GET["id"]){
   $professor_id = $_GET["id"];
 
   $infomodel = new Model;
-  $infomodel->fetch("professor_infos", array("name", "major_id"), "WHERE professor_id = {$professor_id} ");
+  $infomodel->fetch("professor_infos", array("name", "major_id", "content"), "WHERE professor_id = {$professor_id} ");
   $infos = $infomodel->to_array();
 
   $major_model = new Model;
@@ -24,7 +24,7 @@ if(isset($_GET) && $_GET["id"]){
 <div id="form_wrapper">
 	<table>
 		<tr>
-			<th>교수 이름</th>
+			<th>이름</th>
 			<td><?php echo $infos[0]["name"];?></td>
 		</tr>
 		<tr>
@@ -35,6 +35,9 @@ if(isset($_GET) && $_GET["id"]){
 			<th>학과</th>
 			<td><?php echo $majors[0]["name"];?></td>
 		</tr>
+    <tr>
+    <th colspan="2"><?php echo $infos[0]["content"] ?></th>
+    </tr>
 	</table>
 	<input type="button" name="vote" value="투표하기">
 </div>
