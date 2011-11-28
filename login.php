@@ -6,7 +6,7 @@ require_once ('config.php');
 
 	if ($loggedin) 
 	{
-		header("Location: index.php?message=".
+		  LLheader("Location: index.php?message=".
 			urlencode("Error: 이미 로그인되어 있는 상태입니다."));	
 		die();
 	}
@@ -18,10 +18,13 @@ require_once ('config.php');
 
 		if (isset($_GET['email'])) $email = escape_str($_GET['email']);
 		if (isset($_GET['password'])) $password = escape_str($_GET['password']);
+
+    echo $email;
+    echo $password;
 		
-		if ($email.value != "" && $password.value != "") {
+		if ($email != "" && $password != "") {
 			// SELECT문 실행
-			$query = "SELECT email FROM users WHERE email='$email' and password='$password'";
+			$query = "SELECT id FROM users WHERE email='$email' and password='$password'";
 			$result = mysql_query($query);
       while ($row = mysql_fetch_array($result)) {
         $_SESSION['user_id'] = $row['id'];
@@ -48,8 +51,6 @@ require_once ('config.php');
 		if (isset($_POST['email'])) $email = escape_str($_POST['email']);
 		if (isset($_POST['password'])) $password = escape_str($_POST['password']);
 		
-		if (isset($_GET['email'])) $email = escape_str($_GET['email']);
-		if (isset($_GET['password'])) $password = escape_str($_GET['password']);
 		
 		if ($email == "") {
 			?>

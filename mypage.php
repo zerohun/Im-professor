@@ -2,19 +2,27 @@
 require_once "config.php";
 require_once "upper.php";
 require_once "model.php";
+require_once "professors.php";
 
 if ($current_user){
-  echo $current_user;
   $users = new Model;
-  $schools = new Model;
+  $universities = new Model;
   $majors = new Model;
+  $prof_infos = new Model;
+  $professors = new Professors;
+
 
   $users->fetch("users", array("name", "major_id"), "WHERE id='{$current_user}'");
   $users = $users->to_array();
-  $majors->fetch("majors", array("name", "university_id"), "WHERE id='{$users[0]["major_id"]}'");
+  $majors->fetch("majors", array("id", "name", "university_id"), "WHERE id='{$users[0]["major_id"]}'");
   $majors = $majors->to_array();
-  $schools->fetch("schools", array("name"), "WHERE id='{$majors[0]["university_id"]}'");
-  $schools = $schools->to_array();
+  $universities->fetch("universities", array("name"), "WHERE id='{$majors[0]["university_id"]}'");
+  $universities = $universities->to_array();
+  $professors->find_professor_by_major_id($majors[0]["id"]);
+  $professors = $professors->to_array();
+
+
+
 
   
 }
@@ -26,10 +34,20 @@ else{
 ?>
 <ul>
 <li>학과 : <?php echo $majors[0]["name"] ?></li>
-<li>학교 : <?php echo $schools[0]["name"] ?></li>
+<li>학교 : <?php echo $universities[0]["name"] ?></li>
 </ul>
 
+<ul>
+<?php
+  foreach($professors as $professor){
+    echo $professor["name"];
+  }
+?>
+</ul>
 
+<?php
+
+?>
 
 <?php
 require_once "beneath.php";

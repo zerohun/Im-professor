@@ -4,7 +4,18 @@ class Model{
 
   function fetch($table, $columns, $options = ""){
     $data = array();
-    $column_string = implode(",",$columns);
+
+
+    if(count($columns) == 0){
+      throw new Exception('$columns array has to be bigger then 0');
+    }
+    if(count($columns) == 1){
+      $column_string = $columns[0];
+    }
+    if(count($columns) > 1){
+      $column_string = implode(",",$columns);
+    }
+
     $query = "SELECT {$column_string} FROM {$table} {$options};";
     $result = mysql_query($query);
     if($result){
