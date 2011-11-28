@@ -1,0 +1,27 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+<rss version = "2.0">
+	<channel>
+		<title> RSS Example </title>
+		<link> http://tahiti.mju.ac.kr </link>
+		<description> 수업을 위한 rss 테스트 </description>
+		<language> ko </language>
+		<pubDate> Fri, 05 Nov 2010 10:38:16 + 0900 </pubDate>
+		<generator> 손으로 </generator>
+		<managingEditor> 권동섭 </managingEditor>
+		<item>
+			<title> <![CDATA[Academic Earth]]> </title>
+			<link> <![CDATA[http://www.academicearth.org]]> </link>
+			<description> <![CDATA[Academic Earth is an organization founded with the goadl of giving 
+			everyone............Academic Earth is headquartered in San Francisco, CA.]]> </description>
+			<pubDate> Tue, 03 Jun 2003 09:39:21 GMT </pubDate>
+			<guid> <![CDATA[http:tahiti.mju.ac.kr/item0001]]> </guid>
+		</item>
+		<item>
+			<title> <![CDATA[ITryCollege]]> </title>
+			<link> <![CDATA[http://www.itrycollege.com]]> </link>
+			<description> <![CDATA[I Try College......]]> </description>
+			<pubDate> Tue, 03 Jun 2003 09:39:21 GMT </pubDate>
+			<guid> <![CDATA[http://tahiti.mjuac.kr/item0002]]> </guid>
+		</item>
+	</channel>
+</rss>

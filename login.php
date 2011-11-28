@@ -9,12 +9,11 @@ require_once ('config.php');
 		die();
 	}
 
-	// GET 메소드인 경우 Form을 통하여 Submit된 Data처리
+	// GET 메소드인 경우 Submit된 Data처리	
 	if ($_SERVER['REQUEST_METHOD'] == 'GET')
 	{
 		$email = $password = ""; // 초기화
 
-		//FORM 값을 읽는다.
 		if (isset($_GET['email'])) $email = escape_str($_GET['email']);
 		if (isset($_GET['password'])) $password = escape_str($_GET['password']);
 		
@@ -34,6 +33,7 @@ require_once ('config.php');
 		}
 	}
 	
+	// POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		$email = $password = $msg = ""; // 초기화
