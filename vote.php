@@ -1,11 +1,21 @@
 ﻿<?php
 require_once ('upper.php');
 require_once ('config.php');
-
+	
+//	echo $current_user . "<br>";
+		
 // POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		$name = $email = $password = $msg = ""; // 초기화
+		$query_user_id = "SELECT id from users where email='$current_user'";
+	//	echo "query_user_id = " . $query_user_id . "<br>";
+		$fetch_user_id = mysql_query($query_user_id);
+	//	echo "fetch_array_id = " . $fetch_user_id . "<br>";
+		$user_id = mysql_fetch_array($fetch_user_id);
+	//	echo "mysql_fetch_array_id = " . mysql_fetch_array($fetch_user_id) . "<br>";
+	//	echo "user_id = " . $user_id[0] . "<br>";
+		
+		$professor_id = $interest = $favorite = $understand = $prepare = $benefit = $grade = $comment = $msg = ""; // 초기화
 
 		//FORM 값을 읽는다.
 		if (isset($_POST['interest'])) $interest = escape_str($_POST['interest']);
@@ -15,14 +25,15 @@ require_once ('config.php');
 		if (isset($_POST['benefit'])) $benefit = escape_str($_POST['benefit']);
 		if (isset($_POST['grade'])) $grade = escape_str($_POST['grade']);
 		if (isset($_POST['comment'])) $comment = escape_str($_POST['comment']);
-		
-		if ($interest == "")
+		if (isset($_POST['professor_id'])) $professor_id = escape_str($_POST['professor_id']);
+	
+		if ( $interest == "" )
 			$msg = "흥미도를 선택해 주세요~";
 			
-		if ($favorite == "")
+		if ( $favorite == "" )
 			$msg = "호감도를 선택해 주세요~";
 
-		if ($understand == "")
+		if ( $understand == "" )
 			$msg = "이해도를 선택해 주세요~";
 			
 		if ( $prepare == "" )
@@ -36,14 +47,14 @@ require_once ('config.php');
 				
 		if ($msg == "") {
 			// INSERT문 실행
-			$query = "INSERT INTO votes(prepare, understanding, interest, benefit, hot, comment_text) " .
-					"VALUES('$email', '$password', '$name', '$age', '$option_univ', '$option_major')";
+			$query = "INSERT INTO votes(professor_id, user_id, prepare, understanding, interest, benefit, hot, comment_text) " .
+					"VALUES('$professor_id', '$user_id[0]', '$prepare', '$understand', '$interest', '$benefit', '$favorite', '$comment')";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {
 				// INSERT 성공
 				?>
-					<script type = "text/javascript"> alert ( "회원가입 완료~" ); </script>
+					<script type = "text/javascript"> alert ( "소중한 투표 감사합니다~" ); </script>
 				<?php
 				echo '<meta http-equiv = "Refresh" content = "0 ; url = login.php?email='.$email.'&password='.$password.'">';
 			}
@@ -51,8 +62,16 @@ require_once ('config.php');
 	}
 ?>
 
+<?php
+	// 메시지가 있을 경우 메시지 출력
+	if ($msg != "") {
+		echo("<div class='message'>{$msg}</div>");
+	}
+?>
+
 <div id="form_wrapper">
 		<form action="vote.php" method="post" name = "vote_form" id = "vote" width = "50%">
+			<input type = "hidden" id = "professor_id" name = "professor_id" value = "<?php echo escape_str($_GET['professor_id']); ?>" >
 			( 1 : 정말 별로 , 2 : 별로 , 3 : 보통 , 4 : 좋다 , 5 : 정말 좋다 ) <br><br><br>
 			<div class = "not_comment">
 				<ul class = "vote_title">
