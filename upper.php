@@ -4,12 +4,11 @@
  require_once('common.php');
  require_once('model.php');
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <html>
   <head>
-
     <link href="style.css" rel="stylesheet" type="text/css" /> 
     <script src="http://code.jquery.com/jquery-1.7.min.js" type="text/javascript"> </script>
     <script src="select_box.js" type="text/javascript"></script>

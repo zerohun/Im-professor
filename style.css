@@ -49,14 +49,51 @@ input,button,textarea,select{font-size:100%;}
 		
 		
 /*login & join & vote */
-#login {
-	margin : 0px 0px 0px 37%;
-	text-align : center;
+#login-box {
+	width:333px;
+	height: 352px;
+	padding: 58px 76px 0 76px;
+	color: #fff;
+	font: 12px Arial, Helvetica, sans-serif;
+	background: url(images/login_box.png) no-repeat left top;
+	}
+#login-box img {border:none;}
+#login-box-name {
+	float: left;
+	display:inline;
+	width:80px;
+	text-align: right;
+	padding: 14px 10px 0 0;
+	margin:0 0 7px 0;
+	}
+#login-box-field {
+	float: left;
+	display:inline;
+	width:230px;
+	margin:0;
+	margin:0 0 7px 0;
+	}
+.form-login  {
+	width: 205px;
+	padding: 10px 4px 6px 3px;
+	border: 1px solid #0d2c52;
+	background-color:#eee;
+	font-size: 16px;
+	color: #000;
 }
+
+	
+	
+	
+	
+
+
+
 #join {
 	margin : 0px 0px 0px 23%;
 	text-align : center;
 }			
+
 .vote_title {
 	float : left;
 	display : block;
