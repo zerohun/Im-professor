@@ -55,7 +55,7 @@ input,button,textarea,select{font-size:100%;}
 	padding: 58px 76px 0 76px;
 	color: #fff;
 	font: 12px Arial, Helvetica, sans-serif;
-	background: url(images/login_box.png) no-repeat left top;
+	background: url(image/login_box.png) no-repeat left top;
 	}
 #login-box img {border:none;}
 #login-box-name {

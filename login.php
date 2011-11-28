@@ -103,7 +103,7 @@ require_once ('config.php');
 		<div id="login-box-name">Password:</div><div id="login-box-field"><input name="q" type="password" class="form-login" title="Password" value="" size="30" maxlength="2048" /></div>
 		<br />
 		<br />
-		<a href="#"><img src="images/enter.png" width="103" height="42" style="margin-left:90px;" /></a>
+		<a href="#"><img src="image/enter.png" width="103" height="42" style="margin-left:90px;" /></a>
 		</div>
 	</div>
 </form>
