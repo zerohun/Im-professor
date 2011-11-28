@@ -1,5 +1,6 @@
 ﻿<?php
 require_once ('config.php');
+require_once ('common.php');
 
 	$email_check = "";
 	if ( isset ($_GET['email'])) $email_check = escape_str($_GET['email']);
@@ -21,7 +22,7 @@ require_once ('config.php');
 		echo '</script>';
 	} else {
 		echo '<script type = "text/javascript">';
-		echo 'alert ( "사용하면 안되요~" );';
+		echo 'alert ( "이미 가입된 이메일 주소입니다." );';
 		echo 'opener.document.getElementById("email").value="";';	
 		echo 'opener.document.getElementById("submitbutton").type = "hidden";';
 		echo 'window.close ();';

@@ -48,8 +48,8 @@ require_once ('config.php');
 				
 		if ($msg == "") {
 			// INSERT문 실행
-			$query = "INSERT INTO users(email, password, name, age, univ_id, major_id) " .
-					"VALUES('$email', '$password', '$name', '$age', '$option_univ', '$option_major')";
+			$query = "INSERT INTO users(email, password, name, age, major_id) " .
+					"VALUES('$email', '$password', '$name', '$age', '$option_major')";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {

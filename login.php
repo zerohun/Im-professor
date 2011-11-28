@@ -3,6 +3,7 @@ ob_start();
 require_once ('upper.php');
 require_once ('config.php');
 
+
 	if ($loggedin) 
 	{
 		header("Location: index.php?message=".
@@ -22,16 +23,19 @@ require_once ('config.php');
 			// SELECT문 실행
 			$query = "SELECT email FROM users WHERE email='$email' and password='$password'";
 			$result = mysql_query($query);
-			if (!mysql_fetch_array($result)) {
-			} else {
+      while ($row = mysql_fetch_array($result)) {
+        $_SESSION['user_id'] = $row['id'];
+			} 
 				// SELECT 성공
-				?>
-					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
-				<?php
-				$_SESSION['user'] = $_GET['email'];
-        header('Location: mypage.php');
-//				echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
-			}
+      if(isset($_SESSION['user_id'])){
+        echo "	<script type = 'text/javascript'> alert ( '로그인 되었습니다.' ); </script>";
+        echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
+      }
+      else{
+        echo "	<script type = 'text/javascript'> alert ( 'ID 혹은 비밀번호가 올바르지 않습니다.' ); </script>";
+      }
+
+
 		}
 	}
 	
