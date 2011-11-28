@@ -1,4 +1,5 @@
 <?php
+ob_start();
 require_once ('upper.php');
 require_once ('config.php');
 
@@ -29,7 +30,8 @@ require_once ('config.php');
 					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
 				<?php
 				$_SESSION['user'] = $_GET['email'];
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
+        header('Location: mypage.php');
+//				echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
 			}
 		}
 	}
@@ -61,20 +63,23 @@ require_once ('config.php');
 
 		if ($msg == "") {
 			// SELECT문 실행
-			$query = "SELECT email FROM users WHERE email='$email' and password='$password'";
-			$result = mysql_query($query);
-			if (!mysql_fetch_array($result)) {
-				?>
-					<script type = "text/javascript"> alert ( "Error: ID나 Password가 잘못되었습니다." ); </script>
-				<?php
-			} else {
+			$query = "SELECT id FROM users WHERE email='$email' and password='$password'";
+      $result = mysql_query($query);
+      while ($row = mysql_fetch_array($result)) {
+        $_SESSION['user_id'] = $row['id'];
+			} 
 				// SELECT 성공
-				?>
-					<script type = "text/javascript"> alert ( "로그인 되었습니다." ); </script>
-				<?php
-				$_SESSION['user'] = $email;
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
-			}
+      if(isset($_SESSION['user_id'])){
+        echo "	<script type = 'text/javascript'> alert ( '로그인 되었습니다.' ); </script>";
+        echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
+      }
+      else{
+        echo "	<script type = 'text/javascript'> alert ( 'ID 혹은 비밀번호가 올바르지 않습니다.' ); </script>";
+      }
+
+      
+
+
 		}
 	}
 	// post된 것이 없으면 Form을 출력함.

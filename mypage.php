@@ -3,8 +3,8 @@ require_once "config.php";
 require_once "upper.php";
 require_once "model.php";
 
-if (isset($_SESSION["name"])){
-  echo $_SESSION["name"];
+if ($current_user){
+  echo $current_user;
 }
 
 else{
