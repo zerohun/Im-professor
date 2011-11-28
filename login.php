@@ -91,23 +91,23 @@ require_once ('config.php');
 ?>
 
 	<form action="login.php" method="post">
-		<table id="login" width="25%" border = "solid">
-			<div class="login"> 
-				<?php //print_message(); ?>
-				<tr>
-					<td> <span>Email(ID)</span> </td>
-					<td> <input type="text" size="20" name="email"> </td>
-				</tr>
-				<tr>
-					<td> <span>Password</span> </td>
-					<td> <input type="password" size="20" name="password"> </td>
-				</tr>
-				<tr>
-					<td colspan = "2" align = "center"> <input type="submit" value="Login" style="padding:5px 10px ; text-align:center ; "> </td>
-				</tr>
-			</div>
-		</table>
-	</form>
+	<div style="padding: 100px 0 0 250px;">
+		<div id="login-box">
+		<?php //print_message(); ?>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<div id="login-box-name" style="margin-top:20px;">Email:</div><div id="login-box-field" style="margin-top:20px;"><input name="q" class="form-login" title="Username" value="" size="30" maxlength="2048" /></div>
+		<div id="login-box-name">Password:</div><div id="login-box-field"><input name="q" type="password" class="form-login" title="Password" value="" size="30" maxlength="2048" /></div>
+		<br />
+		<br />
+		<a href="#"><img src="image/enter.png" width="103" height="42" style="margin-left:90px;" /></a>
+		</div>
+	</div>
+</form>
 	<?php
 		require_once ('beneath.php');
 	?>
