@@ -1,5 +1,7 @@
 ﻿<?php
+require_once "config.php";
 require_once "upper.php";
+require_once "model.php";
 
 if(isset($_GET) && $_GET["id"]){
   $professor_id = $_GET["id"];
@@ -15,7 +17,6 @@ if(isset($_GET) && $_GET["id"]){
   $school_model = new Model;
   $school_model->fetch("universities", array("name"), "WHERE id = {$majors[0]["university_id"]}");
   $schools = $school_model->to_array();
-
 
 }
 ?>
