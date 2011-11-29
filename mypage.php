@@ -16,16 +16,15 @@ if ($current_user){
   $users = $users->to_array();
   $majors->fetch("majors", array("id", "name", "university_id"), "WHERE id='{$users[0]["major_id"]}'");
   $majors = $majors->to_array();
-  $universities->fetch("universities", array("name"), "WHERE id='{$majors[0]["university_id"]}'");
+  $universities->fetch("universities", array("id","name"), "WHERE id='{$majors[0]["university_id"]}'");
   $universities = $universities->to_array();
   $professors->find_professor_by_major_id($majors[0]["id"]);
-  $professors = $professors->to_array();
-  
+  $professors->fetch_vote_list();
+  $major_professors = $professors->to_array();
 
-
-
-
-  
+  $professors->find_professor_by_university_id($universities[0]["id"]);
+  $professors->fetch_vote_list();
+  $university_professors = $professors->to_array();
 }
 
 else{
@@ -38,17 +37,38 @@ else{
 <li>학교 : <?php echo $universities[0]["name"] ?></li>
 </ul>
 
+<div class="major_professors">
+<div class="list_title">
+  <?php echo $majors[0]["name"]?> 교수 목록 
+</div>
 <ul>
 <?php
-  foreach($professors as $professor){
-    echo "<a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a>";
+  foreach($major_professors as $professor){
+    $vote_number = count($professor["vote"]);
+    echo <<<EOT
+      <li><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a></li>
+EOT;
   }
 ?>
 </ul>
-
+</div>
+<div class="university_professors">
+<div class="list_title">
+  <?php echo $universities[0]["name"]?> 교수 목록 
+</div>
+<ul>
 <?php
-
+  foreach($university_professors as $professor){
+    $vote_number = count($professor["vote"]);
+    echo <<<EOT
+      <li>
+        <a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a>
+      </li>
+EOT;
+  }
 ?>
+</ul>
+</div>
 
 <?php
 require_once "beneath.php";

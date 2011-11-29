@@ -1,10 +1,9 @@
 <?php
-
- ob_start();
  session_start();
  require_once('config.php'); 
  require_once('common.php');
  require_once('model.php');
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
