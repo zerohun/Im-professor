@@ -32,6 +32,8 @@
 			?>
 					<a href = "login.php">로그인</a>
 					<a href = "join.php">회원가입</a>
+					<a href = "admin.php">Admin</a>
+					
 			<?php
 				}
 			?>
