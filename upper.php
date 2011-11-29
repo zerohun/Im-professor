@@ -1,4 +1,6 @@
 <?php
+
+ ob_start();
  session_start();
  require_once('config.php'); 
  require_once('common.php');
@@ -32,7 +34,7 @@
 					<a href = "join.php">회원가입</a>
 			<?php
 				}
-			?>						
+			?>
 			</div>
 		</div>
     <div id="search_bar">

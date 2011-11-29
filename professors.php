@@ -8,18 +8,18 @@ class Professors{
   function find_professor_by_major_id($id){
     $professors_model = new Model;
     $professors_model->fetch("professors", array("id"), "WHERE major_id='{$id}'");
-    $professors = $professors_model->to_array();
+    $this->professors = $professors_model->to_array();
     $infos_model = new Model;
 
 
 
-    foreach($professors as $professor){
-      echo "professor id is   {$professor["id"]}";
-      $infos_model->fetch("professor_infos", array("name", "photo", "content"), "WHERE professor_id='{$professor["id"]}' ORDER BY created_at DESC LIMIT 1");
+    for($i=0; $i<count($this->professors); $i++){
+
+      $infos_model->fetch("professor_infos", array("id", "name", "photo", "content"), "WHERE professor_id='{$this->professors[$i]["id"]}' ORDER BY created_at DESC LIMIT 1");
       $infos = $infos_model->to_array();
-      $professor["name"] = $infos[0]["name"]; 
-      $professor["photo"] = $infos[0]["photo"]; 
-      $professor["content"] = $infos[0]["content"]; 
+      $this->professors[$i]["name"] = $infos[0]["name"]; 
+      $this->professors[$i]["photo"] = $infos[0]["photo"]; 
+      $this->professors[$i]["content"] = $infos[0]["content"]; 
 
     }
   }

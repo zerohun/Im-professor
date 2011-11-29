@@ -20,6 +20,7 @@ if ($current_user){
   $universities = $universities->to_array();
   $professors->find_professor_by_major_id($majors[0]["id"]);
   $professors = $professors->to_array();
+  
 
 
 
@@ -40,7 +41,7 @@ else{
 <ul>
 <?php
   foreach($professors as $professor){
-    echo $professor["name"];
+    echo "<a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a>";
   }
 ?>
 </ul>

@@ -18,8 +18,6 @@ if(isset($_GET) && $_GET["id"]){
 
 
 }
-
-
 ?>
 <div id="form_wrapper">
 	<table>

@@ -1,5 +1,4 @@
 <?php
-ob_start();
 require_once ('upper.php');
 require_once ('config.php');
 
@@ -100,11 +99,17 @@ require_once ('config.php');
 		<br />
 		<br />
 		<br />
-		<div id="login-box-name" style="margin-top:20px;">Email:</div><div id="login-box-field" style="margin-top:20px;"><input name="q" class="form-login" title="Username" value="" size="30" maxlength="2048" /></div>
-		<div id="login-box-name">Password:</div><div id="login-box-field"><input name="q" type="password" class="form-login" title="Password" value="" size="30" maxlength="2048" /></div>
+    <div id="login-box-name" style="margin-top:20px;">Email:</div>
+      <div id="login-box-field" style="margin-top:20px;">
+        <input name="email" class="form-login" title="Username" value="" size="30" maxlength="2048" />
+      </div>
+		  <div id="login-box-name">Password:</div>
+        <div id="login-box-field">
+          <input name="password" type="password" class="form-login" title="Password" value="" size="30" maxlength="2048" />
+      </div>
 		<br />
 		<br />
-		<a href="#"><img src="image/enter.png" width="103" height="42" style="margin-left:90px;" /></a>
+		<input type="image" src="image/enter.png" width="103" height="42" style="margin-left:90px;" alt="submit button"/></input>
 		</div>
 	</div>
 </form>
