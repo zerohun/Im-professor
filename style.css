@@ -105,24 +105,35 @@ input,button,textarea,select{font-size:100%;}
 .vote_title {
 	float : left;
 	display : block;
-}				
-li {
-	height : 40px;
-}	
+	}				
+li { height : 40px; }	
 .vote_content {
 	margin-left : 15px;
 	float : left;
 	display : block;
-}	
+	}	
 #form_wrapper #vote {
 	font-size : 15px;
 	margin : 0px 0px 500px 30%;
 	display : block;
-}
-.not_comment {
-	overflow : auto;
-}
+	}
+.not_comment {overflow : auto;}
+.major_professors a {color:#333; text-decoration:none;}
 
+
+/* mypage */
+#my_info th,td{ padding : 6px; }
+#my_info  th{
+		background-color:#000;
+		color:#fff;
+		text-align:center;
+		}
+#my_info  td{
+		background-color:#fff;
+		color:#000;
+		text-align:center;
+		}
+.list_title {font-size:20px; font-weight:bold; }
 
 
 /*main*/
