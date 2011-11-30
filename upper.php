@@ -71,9 +71,4 @@
 	
 
 	  <div id="content">
-		 	<div class="section" id="rank">
-				<h1><img src="image/best5.png"></h1>
-				<div class="list">
-				
-				</div>
-			</div>
+		 	
