@@ -18,7 +18,7 @@ if(isset($_POST)){
 	if($msg == ""){
 		$query_univ = "SELECT name FROM universities WHERE name='$univ'";
 		$result_univ = mysql_query($query_univ);
-		if (!mysql_fetch_array($result_univ){
+		if (!mysql_fetch_array($result_univ)){
 			//INSERT문 실행
 			$query="INSERT INTO universities(name)" . 
 				"VALUES('$univ');";
@@ -28,7 +28,7 @@ if(isset($_POST)){
 			?>
 				<script type = "text/javascript"> alert ("학교 등록 완료"); </script>
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = login.php">';
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = major.php">';
 			}
 		}else{
 			echo  "<div class='error'>이미 등록된 학교입니다</div>";
