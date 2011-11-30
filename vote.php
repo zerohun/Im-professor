@@ -7,7 +7,7 @@ require_once ('config.php');
 // POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		$query_user_id = "SELECT id from users where email='$current_user'";
+		$query_user_id = $current_user;
 	//	echo "query_user_id = " . $query_user_id . "<br>";
 		$fetch_user_id = mysql_query($query_user_id);
 	//	echo "fetch_array_id = " . $fetch_user_id . "<br>";
