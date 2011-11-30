@@ -41,7 +41,7 @@
       <ul>
         <li>학교선택:
 
-          <select name="choose_school"/>
+          <select name="choose_school">
           <option id="first_option" value="-1" selected="selected">학교선택</option>
 
 <?php
