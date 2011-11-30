@@ -46,7 +46,7 @@ else{
   foreach($major_professors as $professor){
     $vote_number = count($professor["vote"]);
     echo <<<EOT
-      <li><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote"]["total_average"]}</li>
+      <li><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote_average"]["total_average"]}</li>
       
 EOT;
   }
@@ -63,7 +63,7 @@ EOT;
     $vote_number = count($professor["vote"]);
     echo <<<EOT
       <li>
-        <a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote"]["total_average"]}
+        <a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote_average"]["total_average"]}
       </li>
 EOT;
   }
