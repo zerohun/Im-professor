@@ -4,8 +4,8 @@ require_once "upper.php";
 require_once "model.php";
 require_once "professors.php";
 
-$number_for_page = 1;
-$max_page_for_each_page = 2;
+$number_for_page = 5;
+$max_page_for_each_page = 10;
 function paginate_array($array_data, $page_number, $number_for_page){
   $array_length = count($array_data);
   $current_index = $page_number * $number_for_page;
