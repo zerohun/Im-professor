@@ -74,35 +74,35 @@ else{
 			<th>학과</th>
 			<td><?php echo $majors[0]["name"];?></td>
 		</tr>
-    <tr>
-      <th>흥미도</th>
-      <td><?php echo $professors[0]["vote_average"]["interest_average"];?></td>
-    </tr>
+		<tr>
+			<th>흥미도</th>
+			<td><?php echo $professors[0]["vote_average"]["interest_average"];?></td>
+		</tr>
 
-    <tr>
-      <th>호감도</th>
-      <td><?php echo $professors[0]["vote_average"]["hot_average"];?></td>
-    </tr>
+		<tr>
+			<th>호감도</th>
+			<td><?php echo $professors[0]["vote_average"]["hot_average"];?></td>
+		</tr>
 
-    <tr>
-      <th>이해도</th>
-      <td><?php echo $professors[0]["vote_average"]["understanding_average"];?></td>
-    </tr>
+		<tr>
+			<th>이해도</th>
+			<td><?php echo $professors[0]["vote_average"]["understanding_average"];?></td>
+		</tr>
 
-    <tr>
-      <th>얼마나 유익했는가?</th>
-      <td><?php echo $professors[0]["vote_average"]["benefit_average"];?></td>
-    </tr>
+		<tr>
+			<th>얼마나 유익했는가?</th>
+			<td><?php echo $professors[0]["vote_average"]["benefit_average"];?></td>
+		</tr>
 
-    <tr>
-      <th>수업준비</th>
-      <td><?php echo $professors[0]["vote_average"]["prepare_average"];?></td>
-    </tr>
+		<tr>
+			<th>수업준비</th>
+			<td><?php echo $professors[0]["vote_average"]["prepare_average"];?></td>
+		</tr>
     
-    <tr>
-      <th>평점</th>
-      <td><?php echo $professors[0]["vote_average"]["total_average"];?></td>
-    </tr>
+		<tr>
+			<th>평점</th>
+			<td><?php echo $professors[0]["vote_average"]["total_average"];?></td>
+		</tr>
 
     <th colspan="2"><?php echo $professors[0]["content"] ?></th>
     </tr>
