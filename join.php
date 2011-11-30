@@ -107,30 +107,38 @@ require_once ('config.php');
 
 	<div id="form_wrapper">
 		<form action="join.php" method="post" name = "join_form">
-			<table id="join" width="50%" border = "solid">
+			<table id="join" width="50%" border = "none" >
+			<tr>
+				<td colspan=3>
+				<h1> 회원가입 </h1>
+				<h3> "나는 교수다"의 원활한 이용을 위해서는 회원등록이 필요합니다.<br>
+					이하의 항목에 빠짐없이 입력해주세요.<br><br>
+				<hr color="ff0033">
+				</td>
 				<tr>
-					<td>E-mail(ID)</td>
+					<th>E-mail(ID)</th>
 					<td><input type="text" id = "email" name="email" size="20"/></td>
 					<td><input type = "button" name = "email_check" value = "중복체크" onclick="email_form_check ()"/></td>
 				</tr>
 				<tr>
-					<td>Password</td>
+					<th>Password</th>
 					<td><input type="password" name="password" size="20"></td>	
 				</tr>
 				<tr>		
-					<td>Name</td>
+					<th>Name</th>
 					<td><input type="text" name="name" size="20"></td>	
 				</tr>
 				<tr>	
-					<td>Age</td>
+					<th>Age</th>
 					<td><input type="text" name="age" size="20"></td>						
 				</tr>
 				<tr>
-					<td>University & Major</td>
+					<th>University & Major</th>
 					<td><?php require_once ('major_select_box.php'); ?></td>						
 				</tr>
 				<tr>
-					<td colspan="6" align="right">
+					<td colspan="3" align="right">
+					<hr color="ff0033"><br>
 					<input type="button" id="submitbutton" value="회원가입" style="text-align:center;" onclick = "alert ( '야 중복체크해' )" >
 					</td>
 				</tr>
