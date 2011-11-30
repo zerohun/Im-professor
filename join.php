@@ -131,7 +131,7 @@ require_once ('config.php');
 				</tr>
 				<tr>
 					<td colspan="6" align="right">
-					<input type="hidden" id="submitbutton" value="회원가입" style="padding:5px 10px ; text-align:center ;" >
+					<input type="button" id="submitbutton" value="회원가입" style="text-align:center;" onclick = "alert ( '야 중복체크해' )" >
 					</td>
 				</tr>
 			</table>
