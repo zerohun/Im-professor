@@ -75,7 +75,6 @@ class Professors{
     return $this->professors;
   }
 
-
   function fetch_vote_list(){
     $votes_model = new Model;
     foreach($this->professors as $key => $professsor){
@@ -107,13 +106,14 @@ class Professors{
 
       }
       $num_to_devide = count($votes) * 5;
+      $this->professors[$key]["vote_average"] = array();
 
-      $this->professors[$key]["vote"]["total_average"] = $total/$num_to_devide;
-      $this->professors[$key]["vote"]["prepare_average"] = $prepare_total/ count($votes);
-      $this->professors[$key]["vote"]["understanding_average"] = $understanding_total/ count($votes);
-      $this->professors[$key]["vote"]["interest_average"] = $interest_total/ count($votes);
-      $this->professors[$key]["vote"]["benefit_average"] = $benefit_total/ count($votes);
-      $this->professors[$key]["vote"]["hot_average"] = $hot_total/ count($votes);
+      $this->professors[$key]["vote_average"]["total_average"] = $total/$num_to_devide;
+      $this->professors[$key]["vote_average"]["prepare_average"] = $prepare_total/ count($votes);
+      $this->professors[$key]["vote_average"]["understanding_average"] = $understanding_total/ count($votes);
+      $this->professors[$key]["vote_average"]["interest_average"] = $interest_total/ count($votes);
+      $this->professors[$key]["vote_average"]["benefit_average"] = $benefit_total/ count($votes);
+      $this->professors[$key]["vote_average"]["hot_average"] = $hot_total/ count($votes);
     }
     usort($this->professors, "compare_by_average");
   }

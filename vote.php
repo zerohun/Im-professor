@@ -7,13 +7,6 @@ require_once ('config.php');
 // POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		$query_user_id = "SELECT id from users where email='$current_user'";
-	//	echo "query_user_id = " . $query_user_id . "<br>";
-		$fetch_user_id = mysql_query($query_user_id);
-	//	echo "fetch_array_id = " . $fetch_user_id . "<br>";
-		$user_id = mysql_fetch_array($fetch_user_id);
-	//	echo "mysql_fetch_array_id = " . mysql_fetch_array($fetch_user_id) . "<br>";
-	//	echo "user_id = " . $user_id[0] . "<br>";
 		
 		$professor_id = $interest = $favorite = $understand = $prepare = $benefit = $grade = $comment = $msg = ""; // 초기화
 
@@ -48,7 +41,7 @@ require_once ('config.php');
 		if ($msg == "") {
 			// INSERT문 실행
 			$query = "INSERT INTO votes(professor_id, user_id, prepare, understanding, interest, benefit, hot, comment_text) " .
-					"VALUES('$professor_id', '$user_id[0]', '$prepare', '$understand', '$interest', '$benefit', '$favorite', '$comment')";
+					"VALUES('$professor_id', '$current_user', '$prepare', '$understand', '$interest', '$benefit', '$favorite', '$comment')";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {
@@ -56,7 +49,7 @@ require_once ('config.php');
 				?>
 					<script type = "text/javascript"> alert ( "소중한 투표 감사합니다~" ); </script>
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = login.php?email='.$email.'&password='.$password.'">';
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
 			}
 		}
 	}
