@@ -35,39 +35,40 @@ else{
 <ul>
 <li>학과 : <?php echo $majors[0]["name"] ?></li>
 <li>학교 : <?php echo $universities[0]["name"] ?></li>
-</ul>
+</ol>
 
 <div class="major_professors">
 <div class="list_title">
-  <?php echo $majors[0]["name"]?> 교수 목록 
+  <?php echo $majors[0]["name"]?> 교수 순위 
 </div>
 <ul>
 <?php
   foreach($major_professors as $professor){
     $vote_number = count($professor["vote"]);
     echo <<<EOT
-      <li><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a></li>
+      <li><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote"]["total_average"]}</li>
+      
 EOT;
   }
 ?>
-</ul>
+</ol>
 </div>
 <div class="university_professors">
 <div class="list_title">
-  <?php echo $universities[0]["name"]?> 교수 목록 
+  <?php echo $universities[0]["name"]?> 교수 순위
 </div>
-<ul>
+<ol>
 <?php
   foreach($university_professors as $professor){
     $vote_number = count($professor["vote"]);
     echo <<<EOT
       <li>
-        <a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a>
+        <a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote"]["total_average"]}
       </li>
 EOT;
   }
 ?>
-</ul>
+</ol>
 </div>
 
 <?php
