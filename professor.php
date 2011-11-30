@@ -1,40 +1,13 @@
 ﻿<?php
 require_once "config.php";
+require_once "common.php";
 require_once "upper.php";
 require_once "model.php";
 require_once "professors.php";
 
 $number_for_page = 5;
 $max_page_for_each_page = 10;
-function paginate_array($array_data, $page_number, $number_for_page){
-  $array_length = count($array_data);
-  $current_index = $page_number * $number_for_page;
-  $new_array_data = array();
-  $last_index = $current_index + $number_for_page;
-  if($last_index > $array_length){
-    $last_index = $array_length;
-  }
-  for($i=$current_index; $i < $last_index; $i++){
-    $new_array_data[] = $array_data[$i];
-  }
-  $total_page = $array_length / $number_for_page;
-  return array("data" => $new_array_data, "total_page" => $total_page);
-}
-function page_selection_range($page_number, $total_page, $number_for_each_page){
-  $start_index = $page_number - ($page_number % $number_for_each_page);
-  $last_index = $start_index + $number_for_each_page;
-  if($last_index > $total_page){
-    $last_index = $total_page;
-  }
-  $page_select_array = array();
-  for($i = $start_index; $i < $last_index; $i++){
-    $page_select_array[] = $i;
-  }
-  return array("start_index" => $start_index, "last_index" => $last_index);
 
-
-
-}
 
 if(isset($_GET) && $_GET["id"]){
   $professor_id = $_GET["id"];
@@ -159,25 +132,11 @@ EOT;
   $page_range = page_selection_range($page, $total_page, $max_page_for_each_page);
   $start_index = $page_range["start_index"];
   $last_index = $page_range["last_index"];
-  if($page == 0){
-    echo <<<EOT
-      <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page=0" > << </a></li>
-EOT;
-  }
-  else{
-    if($start_index > 0){
-      $prev = ($page - ($page % $max_page_for_each_page)) - 1;
+  $prev_number = $page_range["prev_number"];
+  $next_number = $page_range["next_number"];
       echo <<<EOT
-        <li class="prev"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$prev}" > << </a></li>
+        <li class="prev"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$prev_number}" > << </a></li>
 EOT;
-    }
-    else{
-      echo <<<EOT
-       <li class="prev"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$page}" > << </a></li>
-EOT;
-    }
-    
-  }
 
 
     
@@ -190,20 +149,9 @@ EOT;
       <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$i}" >[{$i}]</a></li>
 EOT;
   }
-  if($last_index == $total_page){
     echo <<<EOT
-       <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$page}" > >> </a></li>
+       <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$next_number}" > >> </a></li>
 EOT;
-  }
-  else{
-    $next = $page + $max_page_for_each_page;
-    if($next >= $total_page){
-      $next = $total_page - 1;
-    }
-    echo <<<EOT
-       <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$next}" > >> </a></li>
-EOT;
-  }
 ?>
 </ul>
 </div>
