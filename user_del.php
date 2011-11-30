@@ -3,34 +3,51 @@
 ?>
 <div id="form_wraaper">
 <?php
-	$query="SELECT * FROM users";
-	$result = mysql_query($query);		
-	$row = mysql_fetch_array($result);	
-
 	//FORM 값 읽기
-	if(isset($_POST['check'])){
-		$check = escape_str($_POST['check']);
+	if(isset($_POST['search'])){
+		$search = escape_str($_POST['search']);
 	}
 	
-//	$query="DELETE FROM users where "
+	if($search == ""){
+		$msg = "삭제하려는 유저의 이메일을 입력하세요";
+	}
+	if($msg == ""){
+		$query_user = "SELECT email FROM users WHERE email='$search'";
+		$result_user = mysql_query($query_user);
+		if (!mysql_fetch_array($result_user)){
+			$query="DELETE FROM users where email='$search'";
+			if(mysql_query($query)){
+				echo  "<div class='error'>DELETE failed: ".mysql_error()."</div>";
+			}else{
+			?>
+				<script type = "text/javascript"> alert ("삭제 성공!"); </script>
+				<?php
+				echo '<meta http-equiv = "Refresh" content = "0 ; url = admin.php">';
+			}
+		}else{
+			echo  "<div class='error'>이미 등록된 학교입니다</div>";
+		}
+		
+	}
 ?>
 	<p>회원 삭제하기</p>
 	<form action="user_del.php" method="post">
-		<table id="delete">
+		<table id="userList">
 			<?php
-  $model = new Model;
-  $model->fetch("users", array("id", "name", "email"));
-  $whole_data = $model->to_array();
-  foreach($whole_data as $each_data){
-    echo "<tr value='{$each_data["id"]}'> .
-		<td>{$each_data["name"]}</td> .
-		<td>{$each_data["email"]}</td>
-		<td><input type='checkbox' name='check' value=''/></td>
-		</tr>";
-  }
+	$model = new Model;
+	$model->fetch("users", array("id", "name", "email"));
+	$whole_data = $model->to_array();
+	foreach($whole_data as $each_data){
+		echo "<tr value='{$each_data["id"]}'> .
+			<td>{$each_data["name"]}</td> .
+			<td>{$each_data["email"]}</td>
+			</tr>";
+		}
 ?>
 		</table>
-		<input type="submit" value="DELETE"/>
+		<p>삭제하려는 유저의 이메일을 입력하세요</p>
+		<p><input type="text" name="search"/>
+		<input type="submit" value="DELETE"/></p>
 	</form>
 </div>
 <?php
