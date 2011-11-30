@@ -26,8 +26,7 @@
 			}
 		}else{
 			echo  "<div class='error'>이미 등록된 학교입니다</div>";
-		}
-		
+		}		
 	}
 ?>
 	<p>회원 삭제하기</p>
