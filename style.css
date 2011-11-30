@@ -33,7 +33,7 @@ input,button,textarea,select{font-size:100%;}
 			width:300px; float:center; display:inline;
 			color:#fff; padding:10px;
 			}
-#header_right a {color:#eee; text-decoration:none; padding:5px;}
+#header_right a {color:#eee; text-decoration:none; text-align:right; padding:5px;}
 #header_right a:hover {color:#fee0f0;}
 
 /*search_bar*/

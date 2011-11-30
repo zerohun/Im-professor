@@ -4,7 +4,11 @@
 		<div class="section" id="about">
 			<img src="image/content1.png" alt="사이트소개">
   		</div>
-
+		<div class="section" id="rank">
+				<h1><img src="image/best5.png"></h1>
+				<div class="list">
+				</div>
+			</div>
 <?php
   require_once "beneath.php";
 ?>
