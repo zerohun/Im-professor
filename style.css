@@ -1,27 +1,24 @@
 /* √ ±‚»≠ */	
 html{color:#000;
-	background:#ddd; 
+	background:#fff; 
 	padding:20px 0;
 	font: 12px/18px "∏º¿∫ ∞ÌµÒ", "Malgun Gothic", "±º∏≤", "Gulim", Verdana, Arial, Tahoma;
 	}
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:2;padding:0;}
 table{border-collapse:collapse;border-spacing:0;}
 fieldset,img{border:0;}
 address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
 del,ins{text-decoration:none;}
 li{list-style:none;}
 caption,th{text-align:left;}
-h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
 q:before,q:after{content:'';}
 abbr,acronym{border:0;font-variant:normal;}
-sup{vertical-align:baseline;}
-sub{vertical-align:baseline;}
 legend{color:#000;}
 input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
 input,button,textarea,select{font-size:100%;}
 
 /* layout */
-#container {width:860px; margin:0 auto; background-color:#eee}
+#container {width:860px; margin:0 auto; background-color:#ddd}
 
 #header {width:100%; height:135px; background-color:#000; 
 		border-bottom: 1px solid #000;
@@ -33,13 +30,9 @@ input,button,textarea,select{font-size:100%;}
 			width:300px; 
 			padding: 5px;
 			}
-<<<<<<< HEAD
-#header_right a {color:#eee; text-decoration:none; text-align:right; padding:15 15 15 800;}
-=======
 			
 #header_right { text-align: right; }			
 #header_right a {color:#eee; text-decoration:none; padding:5px;}
->>>>>>> 495f5b5f67e770157f5eb64b343a843d0418613f
 #header_right a:hover {color:#fee0f0;}
 
 /*search_bar*/
@@ -50,16 +43,25 @@ input,button,textarea,select{font-size:100%;}
 #search_button {height:28px; font-size:12px; line-height:24px; 
 				padding:1px;vertical-align: middle;
 				}
-		
+#content{
+	width:860px;
+	height:800px;
+	padding:10px;
+}		
 				
 /* login */
+#login{
+	width:835px;
+	height:865px;
+
+}
 #login-box {
 	width:333px;
 	height: 352px;
-	padding: 30px 76px 0 76px;
+	padding: 58px 80px 0 80px;
 	color: #fff;
 	font: 12px Arial, Helvetica, sans-serif;
-	background: url(image/login_box.png) no-repeat left top;
+	background: url(image/login_box.png) no-repeat center top;
 	}
 #login-box img {border:none;}
 #login-box-name {
@@ -128,23 +130,38 @@ li { height : 40px; }
 
 
 /* mypage */
-#my_info th,td{ padding : 6px; }
+.list_title {font-size:13px; font-weight:bold; }
+#my_info th,td{ padding : 10px;}
 #my_info  th{
 		background-color:#000;
 		color:#fff;
 		text-align:center;
+		font-size: 12px;
 		}
 #my_info  td{
 		background-color:#fff;
 		color:#000;
 		text-align:center;
+		font-size: 12px;
 		}
-.list_title {font-size:20px; font-weight:bold; }
+#professor_rank th,td{ padding : 10px; }
+#professor_rank th{
+		background-color:#fff;
+		color:#000;
+		text-align:center;
+		font-size: 12px;
+		}
+#professor_rank td {
+		background-color:#000;
+		color:#fff;
+		text-align:center;
+		font-size: 12px;
+		}
 
 
 /*main*/
 #content div.section {
-		width:850px;
+		width:830px;
 		background: ccc;
 		margin:10px 5px;
 		border: 1px solid #fbd2e0;
@@ -161,4 +178,4 @@ li { height : 40px; }
 		}
 		
 /* -- footer -- */
-#footer {background-color:#000; color:#888; text-align:center; padding: 20px;}
+#footer {width:860; background-color:#000; color:#888; text-align:center; padding: 20px;}
