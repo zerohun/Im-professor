@@ -5,7 +5,7 @@ require_once ('config.php');
 
 	if ($loggedin) 
 	{
-		  LLheader("Location: index.php?message=".
+		  header("Location: index.php?message=".
 			urlencode("Error: 이미 로그인되어 있는 상태입니다."));	
 		die();
 	}
