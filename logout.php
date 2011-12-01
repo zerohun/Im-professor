@@ -25,5 +25,5 @@ if ($loggedin) {
 	// 다시 세션을 만듬.
 	session_start();
 }
-echo '<meta http-equiv = "Refresh" content = "0 ; url = http://localhost/index.php">';
+	echo "<script type = 'text/javascript'> location.replace('index.php'); </script>";
 ?>

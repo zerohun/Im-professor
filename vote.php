@@ -2,6 +2,10 @@
 require_once ('upper.php');
 require_once ('config.php');
 	
+	if(!isset($_SESSION['user_id'])){
+        echo "<script type = 'text/javascript'> alert ( '로그인하고왘ㅋㅋㅋㅋ' ); ";
+        echo "location.replace('login.php');</script>";
+    }
 //	echo $current_user . "<br>";
 		
 // POST 메소드인 경우 Form을 통하여 Submit된 Data처리
@@ -49,7 +53,7 @@ require_once ('config.php');
 				?>
 					<script type = "text/javascript"> alert ( "소중한 투표 감사합니다~" ); </script>
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
+				    echo "<script type = 'text/javascript'> location.replace('index.php');</script>";
 			}
 		}
 	}

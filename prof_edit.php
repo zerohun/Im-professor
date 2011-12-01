@@ -58,40 +58,38 @@ require_once ('professors.php');
 				<th>학교</th>
 				<td><select name="school"/>
 					<?php
-						$adsf = $professors[0]["university_id"];
-						echo $adsf;
-					?>
-						<option id="first_option" value="<?php echo $professors[0]["university_id"]; ?>" selected="selected"><?php echo $whole_data[$adsf - 1]["name"]; ?></option>
-					<?php
+						$pro_unv_id = $professors[0]['university_id'];
 						$model = new Model;
 						$model->fetch("universities", array("id", "name"));
 						$whole_data = $model->to_array();
 						foreach($whole_data as $each_data){
 							echo "<option value='{$each_data["id"]}'>{$each_data["name"]}</option>";
 						}
-						$pro_university_id = $professors[0]["university_id"];
+						$query = "SELECT name FROM universities WHERE id = $pro_unv_id";
+						$query_result = mysql_query($query);
+						$pro_univ_id_result = mysql_fetch_array($query_result);
 					?>
+						<option id="first_option" value="<?php echo $professors[0]["university_id"]; ?>" selected="selected"><?php echo $pro_univ_id_result[0]; ?></option>
 					</select>
-					<?php
-					echo "university = " . $adsf;
-					?>
 				</td>
 			</tr>
 			<tr>
 				<th>학과</th>
 				<td><select name="major" class="major">
 					<?php
-						$query = "SELECT * FROM majors WHERE university_id = $pro_university_id";
+						$pro_maj_id = $professors[0]['major_id'];
+						$option = "WHERE university_id=$pro_unv_id";
+						$model = new Model;
+						$model->fetch("majors", array("id", "name"), $option);
+						$whole_data = $model->to_array();
+						foreach($whole_data as $each_data){
+							echo "<option value='{$each_data["id"]}'>{$each_data["name"]}</option>";
+						}
+						$query = "SELECT name FROM majors WHERE id = $pro_maj_id and university_id=$pro_unv_id";
 						$query_result = mysql_query($query);
 						$pro_major_id_result = mysql_fetch_array($query_result);
-						$pro_name_query = "SELECT name FROM majors WHERE id = $pro_major_id_result[0]";
-						$pro_name_result = mysql_query($pro_name_query);
-						$pro_name = mysql_fetch_array($pro_name_result);
-						$pro_majorid_query = "SELECT id FROM majors WHERE university_id = $pro_university_id and name = '$pro_name[0]'";
-						$pro_majorid_result = mysql_query($pro_majorid_query);
-						$pro_majorid = mysql_fetch_array($pro_majorid_result);
 					?>
-						<option value="<?php echo $pro_majorid[0]; ?>"></option>
+						<option id="second_option" value="<?php echo $professors[0]["major_id"]; ?>" selected="selected"><?php echo $pro_major_id_result[0]; ?></option>
 					</select>
 						<?php echo $pro_majorid[0]; ?>
 				</td>
