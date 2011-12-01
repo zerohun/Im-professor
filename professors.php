@@ -35,12 +35,12 @@ class Professors{
 
   }
 
-  function find_by_id_with_every_infos($id){
+  function find_by_id_with_infos_join_users($id){
     $professors_model = new Model;
     $professors_model->fetch("professors", array("id"), "WHERE major_id='{$id}'");
     $this->professors = $professors_model->to_array();
     $infos_model = new Model;
-    $infos_model->fetch("professor_infos", array("id", "major_id","name", "photo", "content"), "WHERE professor_id='{$this->professors[0]["id"]}' ORDER BY created_at DESC");
+    $infos_model->fetch("professor_infos, users", array("professor_infos.id", "professor_infos.major_id","professor_infos.name", "professor_infos.photo", "professor_infos.content", "professor_infos.created_at",  "users.name"), "WHERE professor_infos.professor_id='{$this->professors[0]["id"]}' ORDER BY created_at DESC");
     $this->professors["infos"] = $infos_model->to_array();
   }
 
