@@ -18,13 +18,14 @@ require_once ('common.php');
 		echo 'alert ( "사용해도 좋아요~" );';
 		echo 'opener.document.getElementById("email").readOnly = "true";';
 		echo 'opener.document.getElementById("submitbutton").type = "submit";';
+		echo 'opener.document.getElementById("submitbutton").onclick = "";';
 		echo 'window.close ();';
 		echo '</script>';
 	} else {
 		echo '<script type = "text/javascript">';
 		echo 'alert ( "이미 가입된 이메일 주소입니다." );';
 		echo 'opener.document.getElementById("email").value="";';	
-		echo 'opener.document.getElementById("submitbutton").type = "hidden";';
+		echo 'opener.document.getElementById("submitbutton").type = "button";';
 		echo 'window.close ();';
 		echo '</script>';
 	}
