@@ -31,6 +31,8 @@
 			?>
 					<a href = "login.php">로그인</a>
 					<a href = "join.php">회원가입</a>
+					<a href = "admin.php">Admin</a>
+					
 			<?php
 				}
 			?>
@@ -69,9 +71,4 @@
 	
 
 	  <div id="content">
-		 	<div class="section" id="rank">
-				<h1><img src="image/best5.png"></h1>
-				<div class="list">
-				
-				</div>
-			</div>
+		 	

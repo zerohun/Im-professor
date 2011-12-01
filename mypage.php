@@ -32,10 +32,15 @@ else{
 }
 
 ?>
-<ul>
-<li>학과 : <?php echo $majors[0]["name"] ?></li>
-<li>학교 : <?php echo $universities[0]["name"] ?></li>
-</ol>
+<h2>개인정보</h2>
+<table id="my_info" width="60%" border = "none">
+<tr>
+<th>이름 : </th></td><!--회원이름불러오기--></td>
+<tr>
+<th>학과 : </th><td><?php echo $majors[0]["name"] ?></td>
+</tr><tr>
+<th>학교 : </th></td><?php echo $universities[0]["name"] ?></td>
+</tr>
 
 <div class="major_professors">
 <div class="list_title">
@@ -46,7 +51,7 @@ else{
   foreach($major_professors as $professor){
     $vote_number = count($professor["vote"]);
     echo <<<EOT
-      <li><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote"]["total_average"]}</li>
+      <li><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote_average"]["total_average"]}</li>
       
 EOT;
   }
@@ -63,7 +68,7 @@ EOT;
     $vote_number = count($professor["vote"]);
     echo <<<EOT
       <li>
-        <a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote"]["total_average"]}
+        <a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote_average"]["total_average"]}
       </li>
 EOT;
   }

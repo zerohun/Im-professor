@@ -10,15 +10,19 @@ if(isset($_POST)){
 	if(isset($_POST['major'])){
 		$major = escape_str($_POST['major']);
 	}
+	if(isset($_POST['choose_school'])){
+		$univ = escape_str($_POST['choose_school']);
+	}
+		
 	if($major == ""){
 		$msg = "학과를 입력해 주세요.";
 	}
 	if($msg == ""){
 		$query_major = "SELECT name FROM majors WHERE name='$major'";
 		$result_major = mysql_query($query_major);
-		if (!mysql_fetch_array($result_major){
+		if (!mysql_fetch_array($result_major)){
 			//학교를 선택했는지 확인
-			$query = "SELECT id FROM universities WHERE name='$univ'";
+			$query = "SELECT id FROM universities WHERE id='$univ'";
 			$result = mysql_query($query);
 			$row = mysql_fetch_array($result);
 			

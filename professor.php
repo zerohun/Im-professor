@@ -4,7 +4,8 @@ require_once "upper.php";
 require_once "model.php";
 require_once "professors.php";
 
-$number_for_page = 2;
+$number_for_page = 5;
+$max_page_for_each_page = 10;
 function paginate_array($array_data, $page_number, $number_for_page){
   $array_length = count($array_data);
   $current_index = $page_number * $number_for_page;
@@ -73,35 +74,35 @@ else{
 			<th>학과</th>
 			<td><?php echo $majors[0]["name"];?></td>
 		</tr>
-    <tr>
-      <th>흥미도</th>
-      <td><?php echo $professors[0]["vote_average"]["interest_average"];?></td>
-    </tr>
+		<tr>
+			<th>흥미도</th>
+			<td><?php echo $professors[0]["vote_average"]["interest_average"];?></td>
+		</tr>
 
-    <tr>
-      <th>호감도</th>
-      <td><?php echo $professors[0]["vote_average"]["hot_average"];?></td>
-    </tr>
+		<tr>
+			<th>호감도</th>
+			<td><?php echo $professors[0]["vote_average"]["hot_average"];?></td>
+		</tr>
 
-    <tr>
-      <th>이해도</th>
-      <td><?php echo $professors[0]["vote_average"]["understanding_average"];?></td>
-    </tr>
+		<tr>
+			<th>이해도</th>
+			<td><?php echo $professors[0]["vote_average"]["understanding_average"];?></td>
+		</tr>
 
-    <tr>
-      <th>얼마나 유익했는가?</th>
-      <td><?php echo $professors[0]["vote_average"]["benefit_average"];?></td>
-    </tr>
+		<tr>
+			<th>얼마나 유익했는가?</th>
+			<td><?php echo $professors[0]["vote_average"]["benefit_average"];?></td>
+		</tr>
 
-    <tr>
-      <th>수업준비</th>
-      <td><?php echo $professors[0]["vote_average"]["prepare_average"];?></td>
-    </tr>
+		<tr>
+			<th>수업준비</th>
+			<td><?php echo $professors[0]["vote_average"]["prepare_average"];?></td>
+		</tr>
     
-    <tr>
-      <th>평점</th>
-      <td><?php echo $professors[0]["vote_average"]["total_average"];?></td>
-    </tr>
+		<tr>
+			<th>평점</th>
+			<td><?php echo $professors[0]["vote_average"]["total_average"];?></td>
+		</tr>
 
     <th colspan="2"><?php echo $professors[0]["content"] ?></th>
     </tr>
@@ -155,7 +156,7 @@ EOT;
 <div class="pagiation">
 <ul class="page_list">
 <?php
-  $page_range = page_selection_range($page, $total_page, 10);
+  $page_range = page_selection_range($page, $total_page, $max_page_for_each_page);
   $start_index = $page_range["start_index"];
   $last_index = $page_range["last_index"];
   if($page == 0){
@@ -164,11 +165,20 @@ EOT;
 EOT;
   }
   else{
-    $prev = $page - 1;
-    echo <<<EOT
-      <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$prev}" > << </a></li>
+    if($start_index > 0){
+      $prev = ($page - ($page % $max_page_for_each_page)) - 1;
+      echo <<<EOT
+        <li class="prev"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$prev}" > << </a></li>
 EOT;
+    }
+    else{
+      echo <<<EOT
+       <li class="prev"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$page}" > << </a></li>
+EOT;
+    }
+    
   }
+
 
     
     for($i=$start_index; $i < $last_index; $i++){
@@ -178,6 +188,20 @@ EOT;
     }
     echo <<<EOT
       <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$i}" >[{$i}]</a></li>
+EOT;
+  }
+  if($last_index == $total_page){
+    echo <<<EOT
+       <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$page}" > >> </a></li>
+EOT;
+  }
+  else{
+    $next = $page + $max_page_for_each_page;
+    if($next >= $total_page){
+      $next = $total_page - 1;
+    }
+    echo <<<EOT
+       <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$next}" > >> </a></li>
 EOT;
   }
 ?>
