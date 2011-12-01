@@ -17,7 +17,7 @@
   <body>
   <div id="container">
 		<div id="header">
-			<div id="header_center">
+			<div id="header_logo">
 				<img src="image/logo.png" alt="나는교수다">
 			</div>
 			<div id="header_right">
