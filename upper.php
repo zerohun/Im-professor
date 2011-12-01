@@ -1,8 +1,8 @@
 <?php
- session_start();
- require_once('config.php'); 
- require_once('common.php');
- require_once('model.php');
+session_start();
+require_once('config.php'); 
+require_once('common.php');
+require_once('model.php');
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
@@ -18,21 +18,20 @@
   <div id="container">
 		<div id="header">
 			<div id="header_logo">
-				<img src="image/logo.png" alt="나는교수다">
+				<a href = "index.php"><img src="image/logo.png" alt="나는교수다"></a>
 			</div>
 			<div id="header_right">
 			<?php
 				if ($loggedin) {
 			?>
 					<a href = "logout.php">로그아웃</a>
-					<a href = "vote.php">투표하기</a>
+					<a href = "mypage.php">My Page</a>
 			<?php
 				} else {
 			?>
 					<a href = "login.php">로그인</a>
 					<a href = "join.php">회원가입</a>
-					<a href = "admin.php">Admin</a>
-					
+					<a href = "admin.php">Admin</a>	
 			<?php
 				}
 			?>

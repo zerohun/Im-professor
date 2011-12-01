@@ -2,12 +2,10 @@
 require_once ('upper.php');
 require_once ('config.php');
 	
-	if ($loggedin) 
-	{
-		header("Location: index.php?message=".
-			urlencode("Error: 이미 로그인되어 있는 상태입니다."));		
-		die();
-	}
+	if(isset($_SESSION['user_id'])){
+        echo "	<script type = 'text/javascript'> alert ( '이미 로긴 했어...' ); </script>";
+        echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
+    }
 	
 	// POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -21,10 +19,6 @@ require_once ('config.php');
 		if (isset($_POST['age'])) $age = escape_str($_POST['age']);
 		if (isset($_POST['school'])) $option_univ = escape_str($_POST['school']);
 		if (isset($_POST['major'])) $option_major = escape_str($_POST['major']);
-		
-		?>
-			<script type = "text/javascript"> alert ( "<?php echo $option_major; ?>" ); </script>
-		<?php
 		
 		if ($email == "")
 			$msg = "이메일을 입력하여 주세요.";
@@ -60,8 +54,8 @@ require_once ('config.php');
 				// INSERT 성공
 				?>
 					<script type = "text/javascript"> alert ( "회원가입 완료~" ); </script>
+					<script type = "text/javascript"> window.location = "login.php?email=<?php echo $email;?>&password=<?php echo $password;?>"; </script>
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = login.php?email='.$email.'&password='.$password.'">';
 			}
 		}
 	}

@@ -2,13 +2,15 @@
 require_once ('upper.php');
 require_once ('config.php');
 	
+	if(!isset($_SESSION['user_id'])){
+        echo "<script type = 'text/javascript'> alert ( '로그인하고왘ㅋㅋㅋㅋ' ); ";
+        echo "location.replace('login.php');</script>";
+    }
 //	echo $current_user . "<br>";
-
 $msg = "";
 // POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		
 		$professor_id = $interest = $hot = $understanding = $prepare = $benefit = $grade = $comment_text = $msg = ""; // 초기화
 
 		//FORM 값을 읽는다.
@@ -50,8 +52,12 @@ $msg = "";
 				?>
 					<script type = "text/javascript"> alert ( "소중한 투표 감사합니다~" ); </script>
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
+				    echo "<script type = 'text/javascript'> location.replace('index.php');</script>";
 			}
+		} else {
+			?>
+				<script type = "text/javascript"> window.location = "vote.php?professor_id=<?php echo $professor_id;?>"; </script>
+			<?php
 		}
 	}
 ?>
