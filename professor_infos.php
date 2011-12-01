@@ -21,6 +21,7 @@ if(isset($_GET["professor_id"])){
   $total_page = $infos_pagination["total_page"];
   $p_range = page_selection_range($page_number, $total_page, $number_for_each_page);
 
+  
   foreach($infos as $info){
     echo <<<EOT
       <div class="history">

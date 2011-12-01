@@ -51,7 +51,8 @@ else{
       <th colspan="2"><?php echo $professors[0]["content"] ?></th>
     </tr>
     <tr>
-      <td colspan="2"><a href="prof_edit.php?id=<?php echo $professor_id ?>">교수정보 수정</a></td>
+      <td><a href="prof_edit.php?id=<?php echo $professor_id ?>">교수정보 수정</a></td>
+      <td><a href="professor_infos.php?professor_id=<?php echo $professor_id ?>">Show history</a></td> 
     </tr>
 
 		<tr>

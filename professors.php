@@ -52,22 +52,26 @@ class Professors{
     if($result){
       while($row = mysql_fetch_array($result)){
         $this->professors[0]["infos"][$count] = array();
-        $this->professors[0]["infos"][$count]["user_id"] = $row["user_id"];
+        $this->professors[0]["infos"][$count]["user_id"] = $row[3];
         $this->professors[0]["infos"][$count]["professor_name"] = $row[5];
-        $this->professors[0]["infos"][$count]["user_name"] = $row["name"];
-        $this->professors[0]["infos"][$count]["professor_photo"] = $row["photo"];
-        $this->professors[0]["infos"][$count]["content"] = $row["content"];
-        $this->professors[0]["infos"][$count]["id"] = $row["id"];
-        $this->professors[0]["infos"][$count]["created_at"] = $row["created_at"];
+        $this->professors[0]["infos"][$count]["user_name"] = $row[13];
+//        $this->professors[0]["infos"][$count]["professor_photo"] = $row["photo"];
+        $this->professors[0]["infos"][$count]["content"] = $row[8];
+        $this->professors[0]["infos"][$count]["id"] = $row[0];
+        $this->professors[0]["infos"][$count]["created_at"] = $row[1];
 
-        /*
+        $count++;
+
+       /* 
         foreach($row as $key=>$val){
           echo $key;
           echo "=";
           echo $val;
           echo "   |   ";
         }
-         */
+        */
+         
+         
 
       }
     }
