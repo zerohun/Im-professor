@@ -22,6 +22,9 @@ class Model{
       $count = 0;
       while($row = mysql_fetch_array($result)){
         $data[$count] = array();
+
+
+
         foreach($columns as $column){
           $this->data[$count][$column] = $row[$column];
 

@@ -16,14 +16,15 @@ if(isset($_GET["professor_id"])){
   $professors_model = new Professors;
   $professors_model->find_by_id_with_infos_join_users($professor_id);
   $professors = $professors_model->to_array();
-  $infos_pagination = paginate_array($professors[0]["infos"], $page_numbe, $number_for_page);
+  $infos_pagination = paginate_array($professors[0]["infos"], $page_number, $number_for_page);
   $infos = $infos_pagination["data"];
   $total_page = $infos_pagination["total_page"];
   $p_range = page_selection_range($page_number, $total_page, $number_for_each_page);
+
   foreach($infos as $info){
     echo <<<EOT
       <div class="history">
-        {$info["professor_infos.created_at"]}
+        <a href="professors_info.php?id={$info["id"]}">{$info["created_at"]} by {$info["user_name"]}</a>
       </div>
       
 EOT;
