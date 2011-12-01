@@ -33,7 +33,7 @@ input,button,textarea,select{font-size:100%;}
 			width:300px; float:center; display:inline;
 			color:#fff; padding:10px;
 			}
-#header_right a {color:#eee; text-decoration:none; text-align:right; padding:5px;}
+#header_right a {color:#eee; text-decoration:none; text-align:right; padding:15 15 15 800;}
 #header_right a:hover {color:#fee0f0;}
 
 /*search_bar*/
@@ -50,7 +50,7 @@ input,button,textarea,select{font-size:100%;}
 #login-box {
 	width:333px;
 	height: 352px;
-	padding: 58px 76px 0 76px;
+	padding: 30px 76px 0 76px;
 	color: #fff;
 	font: 12px Arial, Helvetica, sans-serif;
 	background: url(image/login_box.png) no-repeat left top;
