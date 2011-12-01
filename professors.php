@@ -3,8 +3,8 @@
 require_once "model.php";
 
 function compare_by_average($p1, $p2){
-    $p1_score = $p1["vote"]["total_average"];
-    $p2_score = $p2["vote"]["total_average"];
+    $p1_score = $p1["vote_average"]["total_average"];
+    $p2_score = $p2["vote_average"]["total_average"];
     if($p1_score > $p2_score){
       return 1;
     }

@@ -5,7 +5,7 @@ require_once "upper.php";
 require_once "model.php";
 require_once "professors.php";
 $page_number = 0;
-$number_for_page = 9;
+$number_for_page = 10;
 $number_for_each_page = 10;
 
 if(isset($_GET["page"])){
