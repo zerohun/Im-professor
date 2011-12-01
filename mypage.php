@@ -32,15 +32,18 @@ else{
 }
 
 ?>
-<h2>개인정보</h2>
-<table id="my_info" width="60%" border = "none">
-<tr>
-<th>이름 : </th></td><!--회원이름불러오기--></td>
-<tr>
-<th>학과 : </th><td><?php echo $majors[0]["name"] ?></td>
-</tr><tr>
-<th>학교 : </th></td><?php echo $universities[0]["name"] ?></td>
-</tr>
+	<h2>개인정보</h2>
+	<table id="my_info" width="60%" border = "none">
+		<tr>
+			<th>이름 : </th><td><?php echo $users[0]["name"] ?></td>
+		</tr>
+		<tr>
+			<th>학과 : </th><td><?php echo $majors[0]["name"] ?></td>
+		</tr>
+		<tr>
+			<th>학교 : </th><td><?php echo $universities[0]["name"] ?></td>
+		</tr>
+	</table>
 
 <div class="major_professors">
 <div class="list_title">

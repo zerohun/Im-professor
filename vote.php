@@ -8,25 +8,25 @@ require_once ('config.php');
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		
-		$professor_id = $interest = $favorite = $understand = $prepare = $benefit = $grade = $comment = $msg = ""; // 초기화
+		$professor_id = $interest = $hot = $understanding = $prepare = $benefit = $grade = $comment_text = $msg = ""; // 초기화
 
 		//FORM 값을 읽는다.
 		if (isset($_POST['interest'])) $interest = escape_str($_POST['interest']);
-		if (isset($_POST['favorite'])) $favorite = escape_str($_POST['favorite']);
-		if (isset($_POST['understand'])) $understand = escape_str($_POST['understand']);
+		if (isset($_POST['hot'])) $hot = escape_str($_POST['hot']);
+		if (isset($_POST['understanding'])) $understanding = escape_str($_POST['understanding']);
 		if (isset($_POST['prepare'])) $prepare = escape_str($_POST['prepare']);
 		if (isset($_POST['benefit'])) $benefit = escape_str($_POST['benefit']);
 		if (isset($_POST['grade'])) $grade = escape_str($_POST['grade']);
-		if (isset($_POST['comment'])) $comment = escape_str($_POST['comment']);
+		if (isset($_POST['comment_text'])) $comment_text = escape_str($_POST['comment_text']);
 		if (isset($_POST['professor_id'])) $professor_id = escape_str($_POST['professor_id']);
 	
 		if ( $interest == "" )
 			$msg = "흥미도를 선택해 주세요~";
 			
-		if ( $favorite == "" )
+		if ( $hot == "" )
 			$msg = "호감도를 선택해 주세요~";
 
-		if ( $understand == "" )
+		if ( $understanding == "" )
 			$msg = "이해도를 선택해 주세요~";
 			
 		if ( $prepare == "" )
@@ -35,13 +35,13 @@ require_once ('config.php');
 		if ( $benefit == "" )
 			$msg = "유익도를 선택해 주세요~";
 			
-		if ( $comment == "" )
-			$msg = "귀찮아도 comment가 필수에요~";
+		if ( $comment_text == "" )
+			$msg = "귀찮아도 comment_text가 필수에요~";
 				
 		if ($msg == "") {
 			// INSERT문 실행
-			$query = "INSERT INTO votes(professor_id, user_id, prepare, understanding, interest, benefit, hot, comment_text) " .
-					"VALUES('$professor_id', '$current_user', '$prepare', '$understand', '$interest', '$benefit', '$favorite', '$comment')";
+			$query = "INSERT INTO votes(professor_id, user_id, prepare, understanding, interest, benefit, hot, comment_text)" .
+					"VALUES('$professor_id', '$current_user', '$prepare', '$understanding', '$interest', '$benefit', '$hot', '$comment_text')";
 			if (!mysql_query($query)) {
 				echo  "<div class='error'>INSERT failed: ".mysql_error()."</div>";
 			} else {
@@ -75,7 +75,7 @@ require_once ('config.php');
 			?>
 			<br>
 			( 1 : 정말 별로 , 2 : 별로 , 3 : 보통 , 4 : 좋다 , 5 : 정말 좋다 ) <br><br><br>
-			<div class = "not_comment">
+			<div class = "not_comment_text">
 				<ul class = "vote_title">
 					<li> 흥미도 </li>
 					<li> 호감도 </li>
@@ -94,18 +94,18 @@ require_once ('config.php');
 						5<input type = "radio" id = "interest" name = "interest" value = "5"/>
 					</li>
 					<li>
-						1<input type = "radio" id = "favorite" name = "favorite" value = "1"/>
-						2<input type = "radio" id = "favorite" name = "favorite" value = "2"/>
-						3<input type = "radio" id = "favorite" name = "favorite" value = "3"/>
-						4<input type = "radio" id = "favorite" name = "favorite" value = "4"/>
-						5<input type = "radio" id = "favorite" name = "favorite" value = "5"/>
+						1<input type = "radio" id = "hot" name = "hot" value = "1"/>
+						2<input type = "radio" id = "hot" name = "hot" value = "2"/>
+						3<input type = "radio" id = "hot" name = "hot" value = "3"/>
+						4<input type = "radio" id = "hot" name = "hot" value = "4"/>
+						5<input type = "radio" id = "hot" name = "hot" value = "5"/>
 					</li>
 					<li>
-						1<input type = "radio" id = "understand" name = "understand" value = "1"/>
-						2<input type = "radio" id = "understand" name = "understand" value = "2"/>
-						3<input type = "radio" id = "understand" name = "understand" value = "3"/>
-						4<input type = "radio" id = "understand" name = "understand" value = "4"/>
-						5<input type = "radio" id = "understand" name = "understand" value = "5"/>
+						1<input type = "radio" id = "understanding" name = "understanding" value = "1"/>
+						2<input type = "radio" id = "understanding" name = "understanding" value = "2"/>
+						3<input type = "radio" id = "understanding" name = "understanding" value = "3"/>
+						4<input type = "radio" id = "understanding" name = "understanding" value = "4"/>
+						5<input type = "radio" id = "understanding" name = "understanding" value = "5"/>
 					</li>
 					<li>
 						1<input type = "radio" id = "benefit" name = "benefit" value = "1"/>
@@ -126,9 +126,9 @@ require_once ('config.php');
 					</li>
 				</ul>
 			</div>
-			<div class = "comment">
+			<div class = "comment_text">
 				<p> 하고싶은 말 ( 200자 미만 ) </p> <br>
-				<textarea style = "overflow : auto ; resize : none ;" cols = "50" rows = "10" name = "comment" maxlength = "400byte"></textarea>
+				<textarea style = "overflow : auto ; resize : none ;" cols = "50" rows = "10" name = "comment_text" maxlength = "400byte"></textarea>
 			</div>
 			<input type="submit" id="submitbutton" value="투표하기" style="padding:5px 10px ; text-align:center ;" >
 		</form>

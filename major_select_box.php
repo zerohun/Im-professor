@@ -11,7 +11,6 @@
 	$whole_data = $model->to_array();
 	foreach($whole_data as $each_data){
 		echo "<option value='{$each_data["id"]}'>{$each_data["name"]}</option>";
-		echo "<input type = 'hidden' name = 'option_university_value' id = 'option_university_value' value = '{$each_data["id"]}'>"; 	// 학교를 join.php로 보냄
 	}
 ?>
 </select>

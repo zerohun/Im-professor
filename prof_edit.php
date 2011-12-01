@@ -57,32 +57,49 @@ require_once ('professors.php');
 			<tr>
 				<th>학교</th>
 				<td><select name="school"/>
-			<!--		<option id="first_option" value="<?php echo $professors[0]["major_id"]; ?>" selected="selected">학교 선택</option> -->
-					<option id="first_option" value="0" selected="selected">학교 선택</option> 
+					<?php
+						$adsf = $professors[0]["university_id"];
+						echo $adsf;
+					?>
+						<option id="first_option" value="<?php echo $professors[0]["university_id"]; ?>" selected="selected"><?php echo $whole_data[$adsf - 1]["name"]; ?></option>
 					<?php
 						$model = new Model;
 						$model->fetch("universities", array("id", "name"));
 						$whole_data = $model->to_array();
 						foreach($whole_data as $each_data){
 							echo "<option value='{$each_data["id"]}'>{$each_data["name"]}</option>";
-							echo "<input type = 'hidden' name = 'option_university_value' id = 'option_university_value' value = '{$each_data["id"]}'>"; 	// 학교를 join.php로 보냄
 						}
+						$pro_university_id = $professors[0]["university_id"];
 					?>
 					</select>
+					<?php
+					echo "university = " . $adsf;
+					?>
 				</td>
 			</tr>
 			<tr>
 				<th>학과</th>
 				<td><select name="major" class="major">
-			<!--		<option value="<?php echo $professors[0]["major_id"]; ?>">학교를 먼저 선택해 주세요.</option> -->
-					<option value="2" selected = "selected" >학교를 먼저 선택해 주세요.</option>
+					<?php
+						$query = "SELECT * FROM majors WHERE university_id = $pro_university_id";
+						$query_result = mysql_query($query);
+						$pro_major_id_result = mysql_fetch_array($query_result);
+						$pro_name_query = "SELECT name FROM majors WHERE id = $pro_major_id_result[0]";
+						$pro_name_result = mysql_query($pro_name_query);
+						$pro_name = mysql_fetch_array($pro_name_result);
+						$pro_majorid_query = "SELECT id FROM majors WHERE university_id = $pro_university_id and name = '$pro_name[0]'";
+						$pro_majorid_result = mysql_query($pro_majorid_query);
+						$pro_majorid = mysql_fetch_array($pro_majorid_result);
+					?>
+						<option value="<?php echo $pro_majorid[0]; ?>"></option>
 					</select>
+						<?php echo $pro_majorid[0]; ?>
 				</td>
 			</tr>
 <!--			<tr>
 				<th>사진</th>
 				<td><textarea name="content" cols="50" rows="10"></textarea></td>
-			</tr> -->
+				</tr> -->
 			<tr>
 				<th>Comment</th>
 				<td><textarea name="content" cols="50" rows="10"><?php echo $professors[0]["content"]; ?></textarea></td>

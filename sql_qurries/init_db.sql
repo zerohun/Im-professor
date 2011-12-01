@@ -30,6 +30,7 @@ CREATE TABLE professor_infos(
   professor_id INT UNSIGNED,
   user_id INT UNSIGNED,
   major_id INT UNSIGNED,
+  university_id INT UNSIGNED,
   name VARCHAR(30) NOT NULL,
   photo VARCHAR(100),
   content TEXT

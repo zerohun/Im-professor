@@ -29,11 +29,17 @@ input,button,textarea,select{font-size:100%;}
 		-moz-border-radius-topright: 15px;
 		border-radius: 15px 15px 0 0; height:100px;
 		}
-#header_center {
-			width:300px; float:center; display:inline;
-			color:#fff; padding:10px;
+#header_logo {
+			width:300px; 
+			padding: 5px;
 			}
+<<<<<<< HEAD
 #header_right a {color:#eee; text-decoration:none; text-align:right; padding:15 15 15 800;}
+=======
+			
+#header_right { text-align: right; }			
+#header_right a {color:#eee; text-decoration:none; padding:5px;}
+>>>>>>> 495f5b5f67e770157f5eb64b343a843d0418613f
 #header_right a:hover {color:#fee0f0;}
 
 /*search_bar*/
@@ -140,7 +146,7 @@ li { height : 40px; }
 #content div.section {
 		width:850px;
 		background: ccc;
-		margin:20px 10px;
+		margin:10px 5px;
 		border: 1px solid #fbd2e0;
 		overflow:auto;
 		}
