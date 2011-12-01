@@ -5,6 +5,7 @@ require_once ('professors.php');
 
 <div id = "form_wrapper">
 <?php
+  $msg = "";
 	if(isset($_GET) && $_GET["id"]){
 	  $professor_id = $_GET["id"];
 	  $professor_model = new Professors;
@@ -48,7 +49,7 @@ require_once ('professors.php');
 		echo"<div class='message'>{$msg}</div>";
 ?>
 <script src="prof_edit_select_box.js" type="text/javascript"></script>
-	<form action="prof_create.php" method="post">
+	<form action="prof_update.php" method="post">
 		<table id = "prof_form" width="100%">
 			<tr>
 				<th>이름</th>
@@ -56,7 +57,7 @@ require_once ('professors.php');
 			</tr>
 			<tr>
 				<th>학교</th>
-				<td><select name="school"/>
+				<td><select name="university_id"/>
 					<?php
 						$pro_unv_id = $professors[0]['university_id'];
 						$model = new Model;
@@ -75,7 +76,7 @@ require_once ('professors.php');
 			</tr>
 			<tr>
 				<th>학과</th>
-				<td><select name="major" class="major">
+				<td><select name="major_id" class="major">
 					<?php
 						$pro_maj_id = $professors[0]['major_id'];
 						$option = "WHERE university_id=$pro_unv_id";
@@ -91,7 +92,6 @@ require_once ('professors.php');
 					?>
 						<option id="second_option" value="<?php echo $professors[0]["major_id"]; ?>" selected="selected"><?php echo $pro_major_id_result[0]; ?></option>
 					</select>
-						<?php echo $pro_majorid[0]; ?>
 				</td>
 			</tr>
 <!--			<tr>
@@ -102,7 +102,8 @@ require_once ('professors.php');
 				<th>Comment</th>
 				<td><textarea name="content" cols="50" rows="10"><?php echo $professors[0]["content"]; ?></textarea></td>
 			</tr>
-		</table>
+    </table>
+    <input type="hidden" name="professor_id" value="<?php echo $professors[0]["id"] ?>">
 		<input type="submit" value="수정">
 	</form>
 </div>

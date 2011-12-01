@@ -24,7 +24,7 @@ if(isset($_GET["professor_id"])){
   foreach($infos as $info){
     echo <<<EOT
       <div class="history">
-        <a href="professors_info.php?id={$info["id"]}">{$info["created_at"]} by {$info["user_name"]}</a>
+        <a href="professor_info.php?id={$info["id"]}">{$info["created_at"]} by {$info["user_name"]}</a>
       </div>
       
 EOT;

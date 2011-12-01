@@ -24,7 +24,6 @@ if(isset($_GET) && $_GET["id"]){
   $school_model = new Model;
   $school_model->fetch("universities", array("name"), "WHERE id = {$majors[0]["university_id"]}");
   $schools = $school_model->to_array();
-
 }
 $page = 0;
 if(isset($_GET["page"])){
@@ -47,10 +46,19 @@ else{
 			<th>학과</th>
 			<td><?php echo $majors[0]["name"];?></td>
 		</tr>
+    <tr>
+      <th>소개</th>
+      <th colspan="2"><?php echo $professors[0]["content"] ?></th>
+    </tr>
+    <tr>
+      <td colspan="2"><a href="prof_edit.php?id=<?php echo $professor_id ?>">교수정보 수정</a></td>
+    </tr>
+
 		<tr>
 			<th>흥미도</th>
 			<td><?php echo $professors[0]["vote_average"]["interest_average"];?></td>
 		</tr>
+
 
 		<tr>
 			<th>호감도</th>
@@ -76,9 +84,8 @@ else{
 			<th>평점</th>
 			<td><?php echo $professors[0]["vote_average"]["total_average"];?></td>
 		</tr>
+  
 
-    <th colspan="2"><?php echo $professors[0]["content"] ?></th>
-    </tr>
 	</table>
   <a href="vote.php?professor_id=<?php echo  $professors[0]["id"] ?>">투표하기</a>
 </div>
@@ -138,8 +145,6 @@ EOT;
         <li class="prev"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$prev_number}" > << </a></li>
 EOT;
 
-
-    
     for($i=$start_index; $i < $last_index; $i++){
     $selected="not_selected";
     if($i == $page){

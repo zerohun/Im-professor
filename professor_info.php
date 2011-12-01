@@ -21,11 +21,18 @@
 
     $universities = $university_model->to_array();
 
+    $user_model = new Model;
+    $user_model->fetch("users", array("name"), "WHERE id={$infos[0]["user_id"]}");
+    $users = $user_model->to_array();
+
     echo <<<EOT
+
+    {$users[0]["name"]} 님이 편집한 내용입니다.
     <ul>
       <li>교수명 : {$infos[0]["name"]}</li>
+      <li>학교 : {$universities[0]["name"]}</li>
+      <li>학과 : {$majors[0]["name"]}</li>
       <li>소개 : {$infos[0]["content"]}</li>
-
     </ul>
 EOT;
 

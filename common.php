@@ -64,12 +64,12 @@ function page_selection_range($page_number, $total_page, $number_for_each_page){
     }
     
   }
-
-
-  
-
   
   return array("start_index" => $start_index, "last_index" => $last_index, "prev_number" => $prev_number, "next_number" => $next_number);
+}
+
+function redirect_to($url){
+    echo "<script type='text/javascript'>window.location='{$url}';</script>";
 }
 
 ?>
