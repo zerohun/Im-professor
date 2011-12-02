@@ -19,8 +19,12 @@ require_once ('config.php');
 		if (isset($_POST['password'])) $password = escape_str($_POST['password']);
 		if (isset($_POST['name'])) $name = escape_str($_POST['name']);
 		if (isset($_POST['age'])) $age = escape_str($_POST['age']);
-		if (isset($_POST['option_university_value'])) $option_univ = escape_str($_POST['option_university_value']);
-		if (isset($_POST['option_major_value'])) $option_major = escape_str($_POST['option_major_value']);
+		if (isset($_POST['school'])) $option_univ = escape_str($_POST['school']);
+		if (isset($_POST['major'])) $option_major = escape_str($_POST['major']);
+		
+		?>
+			<script type = "text/javascript"> alert ( "<?php echo $option_major; ?>" ); </script>
+		<?php
 		
 		if ($email == "")
 			$msg = "이메일을 입력하여 주세요.";
@@ -106,6 +110,7 @@ require_once ('config.php');
 </script>
 
 	<div id="form_wrapper">
+	<script src="embedded_select_box.js" type="text/javascript"></script>
 		<form action="join.php" method="post" name = "join_form">
 			<table id="join" width="50%" border = "none" >
 			<tr>
@@ -134,7 +139,7 @@ require_once ('config.php');
 				</tr>
 				<tr>
 					<th>University & Major</th>
-					<td><?php require_once ('major_select_box.php'); ?></td>						
+					<td><?php require_once ('major_select_box.php'); ?></td>		
 				</tr>
 				<tr>
 					<td colspan="3" align="right">

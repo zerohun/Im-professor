@@ -32,7 +32,7 @@ class Professors{
     $this->professors[0]["photo"] = $infos[0]["photo"]; 
     $this->professors[0]["content"] = $infos[0]["content"]; 
     $this->professors[0]["major_id"] = $infos[0]["major_id"]; 
-
+	
   }
 
   function find_professor_by_major_id($id){
