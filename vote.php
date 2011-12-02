@@ -72,16 +72,16 @@ $msg = "";
 <div id="form_wrapper">
 		<form action="vote.php" method="post" name = "vote_form" id = "vote" width = "50%">
 			<input type = "hidden" id = "professor_id" name = "professor_id" value = "<?php echo escape_str($_GET['professor_id']); ?>" >
-			현재 평가중인 교수님 : 
+			<h2>현재 평가중인 교수님 : 
 			<?php
 				$pro_id = escape_str($_GET['professor_id']);
 				$query_email = "SELECT name FROM professor_infos WHERE professor_id='$pro_id'";
 				$result_email = mysql_query($query_email);
 				$pro_id_result = mysql_fetch_array($result_email);
 				echo $pro_id_result[0] . "교수님";
-			?>
-			<br>
-			( 1 : 정말 별로 , 2 : 별로 , 3 : 보통 , 4 : 좋다 , 5 : 정말 좋다 ) <br><br><br>
+			?></h2>
+			<br/><br/>
+			<h4>( 1 : 정말 별로 , 2 : 별로 , 3 : 보통 , 4 : 좋다 , 5 : 정말 좋다 ) </h4><br/>
 			<div class = "not_comment_text">
 				<ul class = "vote_title">
 					<li> 흥미도 </li>
@@ -89,7 +89,6 @@ $msg = "";
 					<li> 이해도 </li>
 					<li> 유익도 </li>
 					<li> 수업준비도 </li>
-					<li> 수업 성적 </li>
 				</ul>
 				
 				<ul class = "vote_content">
@@ -127,9 +126,6 @@ $msg = "";
 						3<input type = "radio" id = "prepare" name = "prepare" value = "3"/>
 						4<input type = "radio" id = "prepare" name = "prepare" value = "4"/>
 						5<input type = "radio" id = "prepare" name = "prepare" value = "5"/>
-					</li>
-					<li>
-						<input type = "text" id = "grade" name = "grade" size = "1"/>
 					</li>
 				</ul>
 			</div>
