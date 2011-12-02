@@ -1,8 +1,8 @@
-/* ÃÊ±âÈ­ */	
+/* ì´ˆê¸°í™” */	
 html{color:#000;
 	background:#fff; 
 	padding:20px 0;
-	font: 12px/18px "¸¼Àº °íµñ", "Malgun Gothic", "±¼¸²", "Gulim", Verdana, Arial, Tahoma;
+	font: 12px/18px "ë§‘ì€ ê³ ë”•", "Malgun Gothic", "êµ´ë¦¼", "Gulim", Verdana, Arial, Tahoma;
 	}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:2;padding:0;}
 table{border-collapse:collapse;border-spacing:0;}
@@ -95,7 +95,7 @@ input,button,textarea,select{font-size:100%;}
 	margin : 0px 0px 0px 23%;
 	text-align : center;
 		}
-#join h2,h3 { color:#000; font-family:"¸¼Àº °íµñ","Malgun Gothic"; } 
+#join h2,h3 { color:#000; font-family:"ë§‘ì€ ê³ ë”•","Malgun Gothic"; } 
 #join th,td{ padding : 6px; }
 #join  th{
 		background-color:#000;

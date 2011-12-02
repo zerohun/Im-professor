@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 header ( "Content-Type : application/rss+xml ; charset=utf-8" );
 
 function get_rss ( $url ) {
