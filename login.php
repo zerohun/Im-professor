@@ -92,17 +92,17 @@ require_once ('config.php');
 		<br />
 		<br />
 		<br />
-    <div id="login-box-name" style="margin-top:20px;">Email:</div>
-      <div id="login-box-field" style="margin-top:20px;">
+    <div class="login-box-name" style="margin-top:20px;">Email:</div>
+      <div class="login-box-field" style="margin-top:20px;">
         <input name="email" class="form-login" title="Username" value="" size="30" maxlength="2048" />
       </div>
-		  <div id="login-box-name">Password:</div>
-        <div id="login-box-field">
+		  <div class="login-box-name">Password:</div>
+        <div class="login-box-field">
           <input name="password" type="password" class="form-login" title="Password" value="" size="30" maxlength="2048" />
       </div>
 		<br />
 		<br />
-		<input type="image" src="image/enter.png" width="103" height="42" style="margin-left:90px;" alt="submit button"/></input>
+		<input type="image" src="image/enter.png" style="margin-left:90px;" alt="submit button"/>
 		</div>
 	</div>
 </form>
