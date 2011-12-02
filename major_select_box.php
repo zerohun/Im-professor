@@ -18,7 +18,7 @@
 
 <li>
   학과:
-  <select name="major" class="major">
+  <select name="major" class="embedded_major">
     <option value="0">학교를 먼저 선택해 주세요.</option>
   </select>
 </li>
