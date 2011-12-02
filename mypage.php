@@ -32,51 +32,54 @@ else{
 }
 
 ?>
-	<h2>개인정보</h2>
-	<table id="my_info" width="60%" border = "none">
+	<div class="list_title">개인정보</div>
+	<table id="my_info" width="40%">
 		<tr>
-			<th>이름 : </th><td><?php echo $users[0]["name"] ?></td>
+			<th>이름 </th><td><?php echo $users[0]["name"] ?></td>
 		</tr>
 		<tr>
-			<th>학과 : </th><td><?php echo $majors[0]["name"] ?></td>
+			<th>학과 </th><td><?php echo $majors[0]["name"] ?></td>
 		</tr>
 		<tr>
-			<th>학교 : </th><td><?php echo $universities[0]["name"] ?></td>
+			<th>학교 </th><td><?php echo $universities[0]["name"] ?></td>
 		</tr>
 	</table>
-
+	
 <div class="major_professors">
 <div class="list_title">
   <?php echo $majors[0]["name"]?> 교수 순위 
 </div>
-<ul>
+<table id="professor_rank" width="40%" border = "none">
 <?php
   foreach($major_professors as $professor){
     $vote_number = count($professor["vote"]);
     echo <<<EOT
-      <li><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote_average"]["total_average"]}</li>
+      <tr>
+	  <th><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a></th>
+	  <td>평점 : {$professor["vote_average"]["total_average"]}</td></tr>
       
 EOT;
   }
 ?>
-</ol>
+</table>
 </div>
+
 <div class="university_professors">
 <div class="list_title">
   <?php echo $universities[0]["name"]?> 교수 순위
 </div>
-<ol>
+<table id="professor_rank" width="40%" border = "none">
 <?php
   foreach($university_professors as $professor){
     $vote_number = count($professor["vote"]);
     echo <<<EOT
-      <li>
-        <a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a> 평점 : {$professor["vote_average"]["total_average"]}
-      </li>
+      <tr>
+	  <th><a href='professor.php?id={$professor["id"]}'>{$professor["name"]}</a></th> 
+	  <td>평점 : {$professor["vote_average"]["total_average"]}</td></tr>
 EOT;
   }
 ?>
-</ol>
+</table>
 </div>
 
 <?php
