@@ -1,6 +1,6 @@
-﻿<?php
-  require_once "upper.php";
-  require_once('model.php');
+<?php
+require_once "upper.php";
+require_once('model.php');
 ?>
 <div id="form_wraaper">
 <?php

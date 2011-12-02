@@ -1,9 +1,9 @@
-﻿<?php
+<?php
 require_once ('upper.php');
 ?>
 <div id = "form_wrapper">
 	<p>교수 정보를 입력하세요!</p>
-	<?php
+<?php
 	if (isset($_POST)){
 		$name = $content = $msg = ""; // 초기화
 		//FORM 값 읽기
@@ -31,17 +31,17 @@ require_once ('upper.php');
 			}
 		}
 	}
-	?>
+?>
 
-	<?php
+<?php
 	// 메시지가 있을 경우 메시지 출력
 	if ($msg != "") 
 		echo"<div class='message'>{$msg}</div>";
-	?>
+?>
 	<form action="prof_create.php" method="post">
 		<table id = "prof_form" width="100%">
 			<tr>
-        <?php require_once ('major_select_box.php');?>
+			<?php require_once ('major_select_box.php');?>
 			</tr>
 			<tr>
 				<th>이름</th>

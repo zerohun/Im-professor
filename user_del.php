@@ -1,4 +1,4 @@
-﻿<?php
+<?php
   require_once "upper.php";
 ?>
 <div id="form_wraaper">

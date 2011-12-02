@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once ('upper.php');
 require_once ('config.php');
 	
