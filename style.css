@@ -1,34 +1,28 @@
-/* Ï¥àÍ∏∞Ìôî */	
+/* √ ±‚»≠ */	
 html{color:#000;
 	background:#fff; 
 	padding:20px 0;
-	font: 12px/18px "ÎßëÏùÄ Í≥†Îîï", "Malgun Gothic", "Íµ¥Î¶º", "Gulim", Verdana, Arial, Tahoma;
+	font: 12px/18px "∏º¿∫ ∞ÌµÒ", "Malgun Gothic", "±º∏≤", "Gulim", Verdana, Arial, Tahoma;
 	}
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:2;padding:0;}
+body,div,dl,dt,dd,pre,code,form,fieldset,legend,textarea,p,blockquote{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,th,td,ul,ol,li{margin:2;padding:0;}
+input,button{margin:3; padding:5;}
 table{border-collapse:collapse;border-spacing:0;}
 fieldset,img{border:0;}
 address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
-del,ins{text-decoration:none;}
 li{list-style:none;}
-caption,th{text-align:left;}
-q:before,q:after{content:'';}
-abbr,acronym{border:0;font-variant:normal;}
-legend{color:#000;}
 input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
 input,button,textarea,select{font-size:100%;}
 
 /* layout */
 #container {width:860px; margin:0 auto; background-color:#ddd}
 
-#header {width:100%; height:135px; background-color:#000; 
+#header {width:100%; height:100px; background-color:#000; 
 		border-bottom: 1px solid #000;
-		-moz-border-radius-topleft: 15px;
-		-moz-border-radius-topright: 15px;
-		border-radius: 15px 15px 0 0; height:100px;
 		}
 #header_logo {
 			width:300px; 
-			padding: 5px;
+			padding: 12px;
 			}
 			
 #header_right { text-align: right; }			
@@ -90,12 +84,12 @@ input,button,textarea,select{font-size:100%;}
 
 
 /* join */
-#form_wrapper { background-color:#fff; }
+#form_wrapper {width:840px; background-color:#fff; }
 #join {
 	margin : 0px 0px 0px 23%;
 	text-align : center;
 		}
-#join h2,h3 { color:#000; font-family:"ÎßëÏùÄ Í≥†Îîï","Malgun Gothic"; } 
+#join h2,h3 { color:#000; font-family:"∏º¿∫ ∞ÌµÒ","Malgun Gothic"; } 
 #join th,td{ padding : 6px; }
 #join  th{
 		background-color:#000;
@@ -113,6 +107,8 @@ input,button,textarea,select{font-size:100%;}
 .vote_title {
 	float : left;
 	display : block;
+	font-weight : bold;
+	margin : 30000px;
 	}				
 li { height : 40px; }	
 .vote_content {
@@ -125,8 +121,11 @@ li { height : 40px; }
 	margin : 0px 0px 500px 30%;
 	display : block;
 	}
-.not_comment {overflow : auto;}
+
 .major_professors a {color:#333; text-decoration:none;}
+h4 {color:#24a;}
+
+
 
 
 /* mypage */
@@ -144,14 +143,14 @@ li { height : 40px; }
 		text-align:center;
 		font-size: 12px;
 		}
-#professor_rank th,td{ padding : 10px; }
-#professor_rank th{
+.professor_rank th,td{ padding : 10px; }
+.professor_rank th{
 		background-color:#fff;
 		color:#000;
 		text-align:center;
 		font-size: 12px;
 		}
-#professor_rank td {
+.professor_rank td {
 		background-color:#000;
 		color:#fff;
 		text-align:center;
@@ -178,4 +177,4 @@ li { height : 40px; }
 		}
 		
 /* -- footer -- */
-#footer {width:820px; background-color:#000; color:#888; text-align:center; padding: 20px;}
+#footer {background-color:#000; color:#888; text-align:center; padding: 30px;}
