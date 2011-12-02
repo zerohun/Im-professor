@@ -1,8 +1,8 @@
 <?php
- session_start();
- require_once('config.php'); 
- require_once('common.php');
- require_once('model.php');
+session_start();
+require_once('config.php'); 
+require_once('common.php');
+require_once('model.php');
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
@@ -31,8 +31,7 @@
 			?>
 					<a href = "login.php">로그인</a>
 					<a href = "join.php">회원가입</a>
-					<a href = "admin.php">Admin</a>
-					
+					<a href = "admin.php">Admin</a>	
 			<?php
 				}
 			?>

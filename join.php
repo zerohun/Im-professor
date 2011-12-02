@@ -20,10 +20,6 @@ require_once ('config.php');
 		if (isset($_POST['school'])) $option_univ = escape_str($_POST['school']);
 		if (isset($_POST['major'])) $option_major = escape_str($_POST['major']);
 		
-		?>
-			<script type = "text/javascript"> alert ( "<?php echo $option_major; ?>" ); </script>
-		<?php
-		
 		if ($email == "")
 			$msg = "이메일을 입력하여 주세요.";
 		else if ( strlen ( $email ) > 30 )
@@ -58,8 +54,8 @@ require_once ('config.php');
 				// INSERT 성공
 				?>
 					<script type = "text/javascript"> alert ( "회원가입 완료~" ); </script>
+					<script type = "text/javascript"> window.location = "login.php?email=<?php echo $email;?>&password=<?php echo $password;?>"; </script>
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = login.php?email='.$email.'&password='.$password.'">';
 			}
 		}
 	}

@@ -7,11 +7,9 @@ require_once ('config.php');
         echo "location.replace('login.php');</script>";
     }
 //	echo $current_user . "<br>";
-		
 // POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
-		
 		$professor_id = $interest = $hot = $understanding = $prepare = $benefit = $grade = $comment_text = $msg = ""; // 초기화
 
 		//FORM 값을 읽는다.
@@ -55,6 +53,10 @@ require_once ('config.php');
 				<?php
 				    echo "<script type = 'text/javascript'> location.replace('index.php');</script>";
 			}
+		} else {
+			?>
+				<script type = "text/javascript"> window.location = "vote.php?professor_id=<?php echo $professor_id;?>"; </script>
+			<?php
 		}
 	}
 ?>
