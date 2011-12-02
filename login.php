@@ -43,6 +43,10 @@ require_once ('config.php');
 		if (isset($_POST['email'])) $email = escape_str($_POST['email']);
 		if (isset($_POST['password'])) $password = escape_str($_POST['password']);
 		
+		if ( $email == $db_admin ) {
+			echo "<script type = 'text/javascript'> alert ( '어서오십시오 관리자님.' ); ";
+			echo "location.replace('admin.php');</script>";
+		}
 		
 		if ($email == "") {
 			?>
