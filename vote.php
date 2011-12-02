@@ -89,7 +89,6 @@ $msg = "";
 					<li> 이해도 </li>
 					<li> 유익도 </li>
 					<li> 수업준비도 </li>
-					<li> 수업 성적 </li>
 				</ul>
 				
 				<ul class = "vote_content">
@@ -127,9 +126,6 @@ $msg = "";
 						3<input type = "radio" id = "prepare" name = "prepare" value = "3"/>
 						4<input type = "radio" id = "prepare" name = "prepare" value = "4"/>
 						5<input type = "radio" id = "prepare" name = "prepare" value = "5"/>
-					</li>
-					<li>
-						<input type = "text" id = "grade" name = "grade" size = "1"/>
 					</li>
 				</ul>
 			</div>
