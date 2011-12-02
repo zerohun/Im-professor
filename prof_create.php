@@ -9,8 +9,8 @@ require_once ('upper.php');
 		//FORM 값 읽기
 		if (isset($_POST['major_id'])) $major_id = escape_str($_POST['major_id']);
 		if (isset($_POST['name'])) $name = escape_str($_POST['name']);
-		if (isset($_POST['content'])) $content = escape_str($_POST['content']);
-		
+		if (isset($_POST['content'])) $content = escape_str($_POST['content']);		
+
 		if($major_id == ""){
 			$msg = "학과를 입력해 주세요.";
 		}
@@ -32,6 +32,7 @@ require_once ('upper.php');
 		}
 	}
 	?>
+
 	<?php
 	// 메시지가 있을 경우 메시지 출력
 	if ($msg != "") 

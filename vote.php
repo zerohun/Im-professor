@@ -7,6 +7,7 @@ require_once ('config.php');
         echo "location.replace('login.php');</script>";
     }
 //	echo $current_user . "<br>";
+$msg = "";
 // POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
