@@ -23,16 +23,17 @@ class Professors{
 
   function find_by_id($id){
     $professors_model = new Model;
-    $professors_model->fetch("professors", array("id"), "WHERE major_id='{$id}'");
+    $professors_model->fetch("professors", array("id"), "WHERE id='{$id}'");
     $this->professors = $professors_model->to_array();
     $infos_model = new Model;
-    $infos_model->fetch("professor_infos", array("id", "major_id","name", "photo", "content"), "WHERE professor_id='{$this->professors[0]["id"]}' ORDER BY created_at DESC LIMIT 1");
+    $infos_model->fetch("professor_infos", array("id", "university_id", "major_id","name", "photo", "content"), "WHERE professor_id='{$this->professors[0]["id"]}' ORDER BY created_at DESC LIMIT 1");
     $infos = $infos_model->to_array();
     $this->professors[0]["name"] = $infos[0]["name"]; 
     $this->professors[0]["photo"] = $infos[0]["photo"]; 
     $this->professors[0]["content"] = $infos[0]["content"]; 
-    $this->professors[0]["major_id"] = $infos[0]["major_id"]; 
-	
+    $this->professors[0]["major_id"] = $infos[0]["major_id"];   
+	$this->professors[0]["university_id"] = $infos[0]["university_id"]; 
+
   }
 
   function find_by_id_with_every_infos($id){

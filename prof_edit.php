@@ -57,7 +57,11 @@ require_once ('professors.php');
 			<tr>
 				<th>학교</th>
 				<td><select name="school"/>
-						<option id="first_option" value="<?php echo $professors[0]["major_id"]; ?>" selected="selected"><?php echo $whole_data[0]["name"]; ?></option>
+					<?php
+						$adsf = $professors[0]["university_id"];
+						echo $adsf;
+					?>
+						<option id="first_option" value="<?php echo $professors[0]["university_id"]; ?>" selected="selected"><?php echo $whole_data[$adsf]["name"]; ?></option>
 					<?php
 						$model = new Model;
 						$model->fetch("universities", array("id", "name"));
@@ -65,9 +69,12 @@ require_once ('professors.php');
 						foreach($whole_data as $each_data){
 							echo "<option value='{$each_data["id"]}'>{$each_data["name"]}</option>";
 						}
-						$pro_university_id = $professors[0]["major_id"];
+						$pro_university_id = $professors[0]["university_id"];
 					?>
 					</select>
+					<?php
+					echo "university = " . $adsf;
+					?>
 				</td>
 			</tr>
 			<tr>
