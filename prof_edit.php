@@ -61,7 +61,7 @@ require_once ('professors.php');
 						$adsf = $professors[0]["university_id"];
 						echo $adsf;
 					?>
-						<option id="first_option" value="<?php echo $professors[0]["university_id"]; ?>" selected="selected"><?php echo $whole_data[$adsf]["name"]; ?></option>
+						<option id="first_option" value="<?php echo $professors[0]["university_id"]; ?>" selected="selected"><?php echo $whole_data[$adsf - 1]["name"]; ?></option>
 					<?php
 						$model = new Model;
 						$model->fetch("universities", array("id", "name"));
