@@ -18,14 +18,14 @@
   <div id="container">
 		<div id="header">
 			<div id="header_logo">
-				<img src="image/logo.png" alt="나는교수다">
+				<a href = "index.php"><img src="image/logo.png" alt="나는교수다"></a>
 			</div>
 			<div id="header_right">
 			<?php
 				if ($loggedin) {
 			?>
 					<a href = "logout.php">로그아웃</a>
-					<a href = "vote.php">투표하기</a>
+					<a href = "mypage.php">My Page</a>
 			<?php
 				} else {
 			?>

@@ -2,12 +2,10 @@
 require_once ('upper.php');
 require_once ('config.php');
 	
-	if ($loggedin) 
-	{
-		header("Location: index.php?message=".
-			urlencode("Error: 이미 로그인되어 있는 상태입니다."));		
-		die();
-	}
+	if(isset($_SESSION['user_id'])){
+        echo "	<script type = 'text/javascript'> alert ( '이미 로긴 했어...' ); </script>";
+        echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
+    }
 	
 	// POST 메소드인 경우 Form을 통하여 Submit된 Data처리
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')

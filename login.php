@@ -2,13 +2,10 @@
 require_once ('upper.php');
 require_once ('config.php');
 
-
-	if ($loggedin) 
-	{
-		  header("Location: index.php?message=".
-			urlencode("Error: 이미 로그인되어 있는 상태입니다."));	
-		die();
-	}
+	if(isset($_SESSION['user_id'])){
+        echo "<script type = 'text/javascript'> alert ( '이미 로긴 했어...' ); ";
+        echo "location.replace('index.php');</script>";
+    }
 
 	// GET 메소드인 경우 Submit된 Data처리	
 	if ($_SERVER['REQUEST_METHOD'] == 'GET')
@@ -17,25 +14,21 @@ require_once ('config.php');
 
 		if (isset($_GET['email'])) $email = escape_str($_GET['email']);
 		if (isset($_GET['password'])) $password = escape_str($_GET['password']);
-
-    echo $email;
-    echo $password;
-		
+	
 		if ($email != "" && $password != "") {
 			// SELECT문 실행
 			$query = "SELECT id FROM users WHERE email='$email' and password='$password'";
 			$result = mysql_query($query);
-      while ($row = mysql_fetch_array($result)) {
-        $_SESSION['user_id'] = $row['id'];
+			while ($row = mysql_fetch_array($result)) {
+				$_SESSION['user_id'] = $row['id'];
 			} 
 				// SELECT 성공
-      if(isset($_SESSION['user_id'])){
-        echo "	<script type = 'text/javascript'> alert ( '로그인 되었습니다.' ); </script>";
-        echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
-      }
-      else{
-        echo "	<script type = 'text/javascript'> alert ( 'ID 혹은 비밀번호가 올바르지 않습니다.' ); </script>";
-      }
+		if(isset($_SESSION['user_id'])){
+			echo "<script type = 'text/javascript'> alert ( '로그인 되었습니다.' ); ";
+			echo "location.replace('mypage.php');</script>";
+		}else{
+			echo "<script type = 'text/javascript'> alert ( 'ID 혹은 비밀번호가 올바르지 않습니다.' ); </script>";
+		}
 
 
 		}
@@ -68,22 +61,17 @@ require_once ('config.php');
 		if ($msg == "") {
 			// SELECT문 실행
 			$query = "SELECT id FROM users WHERE email='$email' and password='$password'";
-      $result = mysql_query($query);
-      while ($row = mysql_fetch_array($result)) {
-        $_SESSION['user_id'] = $row['id'];
+			$result = mysql_query($query);
+			while ($row = mysql_fetch_array($result)) {
+				$_SESSION['user_id'] = $row['id'];
 			} 
 				// SELECT 성공
-      if(isset($_SESSION['user_id'])){
-        echo "	<script type = 'text/javascript'> alert ( '로그인 되었습니다.' ); </script>";
-        echo '<meta http-equiv = "Refresh" content = "0 ; url = mypage.php">';
-      }
-      else{
-        echo "	<script type = 'text/javascript'> alert ( 'ID 혹은 비밀번호가 올바르지 않습니다.' ); </script>";
-      }
-
-      
-
-
+			if(isset($_SESSION['user_id'])){
+				echo "	<script type = 'text/javascript'> alert ( '로그인 되었습니다.' ); ";
+				echo "location.replace('mypage.php');</script>";
+			}else{
+				echo "	<script type = 'text/javascript'> alert ( 'ID 혹은 비밀번호가 올바르지 않습니다.' ); </script>";
+			}
 		}
 	}
 	// post된 것이 없으면 Form을 출력함.
