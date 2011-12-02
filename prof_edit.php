@@ -78,7 +78,7 @@ require_once ('professors.php');
 			</tr>
 			<tr>
 				<th>학과</th>
-				<td><select name="major_id" class="major">
+				<td><select name="major_id" class="embedded_major">
 					<?php
 						$pro_maj_id = $professors[0]['major_id'];
 						$option = "WHERE university_id=$pro_unv_id";
