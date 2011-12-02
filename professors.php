@@ -1,15 +1,14 @@
 <?php
 
 require_once "model.php";
-
 function compare_by_average($p1, $p2){
     $p1_score = $p1["vote_average"]["total_average"];
     $p2_score = $p2["vote_average"]["total_average"];
     if($p1_score > $p2_score){
-      return 1;
+      return -1;
     }
     if($p1_score < $p2_score){
-      return -1;
+      return 1;
     }
     if($p1_score == $p2_score){
       return 0;
@@ -71,14 +70,12 @@ class Professors{
         }
         */
          
-         
 
       }
     }
     else{
       die();
     }
- 
     
   }
 
@@ -123,14 +120,18 @@ class Professors{
   }
 
   function fetch_vote_list(){
-    $votes_model = new Model;
+    $votes_model = array();
     foreach($this->professors as $key => $professsor){
-      $votes_model->fetch("votes", array("id", "created_at", "user_id", 
+      $votes_model[$key] = new Model;
+
+      //echo $professsor["id"];
+      $votes_model[$key]->fetch("votes", array("id", "created_at", "user_id","professor_id", 
                           "prepare", "understanding", "interest", "benefit", "hot", "comment_text"), 
                           "WHERE professor_id={$professsor["id"]} ORDER BY created_at DESC");
 
-      $this->professors[$key]["vote"] = $votes_model->to_array();
-      $votes =  $votes_model->to_array();
+      $this->professors[$key]["vote"] = $votes_model[$key]->to_array();
+      $votes =  $votes_model[$key]->to_array();
+//      echo $votes[0]["professor_id"];
 
       $total = 0;
       $prepare_total = 0;
@@ -139,27 +140,46 @@ class Professors{
       $benefit_total = 0;
       $hot_total = 0;
 
-      foreach($votes as $vote){ 
-        $total += $vote["prepare"];
-        $prepare_total += $vote["prepare"];
-        $total += $vote["understanding"];
-        $understanding_total += $vote["understanding"];
-        $total += $vote["interest"];
-        $interest_total +=  $vote["interest"];
-        $total += $vote["benefit"];
-        $benefit_total += $vote["benefit"];
-        $total += $vote["hot"];
-        $hot_total += $vote["hot"];
 
+      if(count($votes) > 0){
+
+        foreach($votes as $vote){ 
+
+          $total += $vote["prepare"];
+          $prepare_total += $vote["prepare"];
+          $total += $vote["understanding"];
+          $understanding_total += $vote["understanding"];
+          $total += $vote["interest"];
+          $interest_total +=  $vote["interest"];
+          $total += $vote["benefit"];
+          $benefit_total += $vote["benefit"];
+          $total += $vote["hot"];
+          $hot_total += $vote["hot"];
+
+        }
       }
+  //    echo $this->professors[$key]["name"];
+
       $num_to_devide = count($votes) * 5;
+      $num_of_vote = count($votes);
+
+    //  echo $num_of_vote;
+
+      //echo "|";
+      if($num_of_vote == 0){
+        $num_of_vote = 1;
+      }
+      if($num_to_devide == 0){
+        $num_to_devide = 1;
+      }
+
       $this->professors[$key]["vote_average"] = array();
       $this->professors[$key]["vote_average"]["total_average"] = $total/$num_to_devide;
-      $this->professors[$key]["vote_average"]["prepare_average"] = $prepare_total/ count($votes);
-      $this->professors[$key]["vote_average"]["understanding_average"] = $understanding_total/ count($votes);
-      $this->professors[$key]["vote_average"]["interest_average"] = $interest_total/ count($votes);
-      $this->professors[$key]["vote_average"]["benefit_average"] = $benefit_total/ count($votes);
-      $this->professors[$key]["vote_average"]["hot_average"] = $hot_total/ count($votes);
+      $this->professors[$key]["vote_average"]["prepare_average"] = $prepare_total/ $num_of_vote;
+      $this->professors[$key]["vote_average"]["understanding_average"] = $understanding_total/ $num_of_vote;
+      $this->professors[$key]["vote_average"]["interest_average"] = $interest_total/ $num_of_vote;
+      $this->professors[$key]["vote_average"]["benefit_average"] = $benefit_total/ $num_of_vote;
+      $this->professors[$key]["vote_average"]["hot_average"] = $hot_total/ $num_of_vote;
     }
     usort($this->professors, "compare_by_average");
   }
