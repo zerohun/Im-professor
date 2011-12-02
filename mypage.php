@@ -81,7 +81,7 @@ EOT;
 ?>
 </table>
 </div>
-
+<a href = "prof_create.php">교수생성</a>
 <?php
 require_once "beneath.php";
 ?>

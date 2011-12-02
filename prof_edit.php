@@ -13,6 +13,8 @@ require_once ('professors.php');
 	  $professors = $professor_model->to_array();
 	}
 	
+
+	
 /*
 	if (isset($_POST)){
 		$name = $content = $msg = ""; // 초기화
@@ -85,13 +87,12 @@ require_once ('professors.php');
 						foreach($whole_data as $each_data){
 							echo "<option value='{$each_data["id"]}'>{$each_data["name"]}</option>";
 						}
-						$query = "SELECT name FROM majors WHERE id = $pro_maj_id and university_id=$pro_unv_id";
+						$query = "SELECT name FROM majors WHERE id = $pro_maj_id and university_id = $pro_unv_id";
 						$query_result = mysql_query($query);
 						$pro_major_id_result = mysql_fetch_array($query_result);
 					?>
 						<option id="second_option" value="<?php echo $professors[0]["major_id"]; ?>" selected="selected"><?php echo $pro_major_id_result[0]; ?></option>
 					</select>
-						<?php echo $pro_majorid[0]; ?>
 				</td>
 			</tr>
 <!--			<tr>
