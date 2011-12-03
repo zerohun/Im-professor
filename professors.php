@@ -42,16 +42,15 @@ class Professors{
 //    $infos_model = new Model;
 //    $infos_model->fetch("professor_infos, users", array("professor_infos.id", "professor_infos.major_id","professor_infos.name", "professor_infos.photo", "professor_infos.content", "professor_infos.created_at",  "users.name"), "WHERE professor_infos.professor_id='{$this->professors[0]["id"]}' ORDER BY created_at DESC");
 
-    $query = "SELECT * FROM professor_infos, users WHERE professor_infos.professor_id='{$id}' ORDER BY professor_infos.created_at DESC;";
-    echo $query;
+    $query = "SELECT * FROM professor_infos, users WHERE professor_infos.professor_id='{$id}' and professor_infos.user_id = users.id  ORDER BY professor_infos.created_at DESC;";
+//    echo $query;
     $this->professors[0]["infos"] = array();
 
     $result = mysql_query($query);
     $count = 0;
     if($result){
-      echo "this is result!";
+//      echo "this is result!";
       while($row = mysql_fetch_array($result)){
-        echo $count;
         $this->professors[0]["infos"][$count] = array();
         $this->professors[0]["infos"][$count]["user_id"] = $row[3];
         $this->professors[0]["infos"][$count]["professor_name"] = $row[5];
@@ -62,7 +61,7 @@ class Professors{
         $this->professors[0]["infos"][$count]["created_at"] = $row[1];
 
         $count++;
-        echo $count;
+//        echo $count;
 
        /* 
         foreach($row as $key=>$val){
