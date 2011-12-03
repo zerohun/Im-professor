@@ -1,4 +1,5 @@
 <?php
+require_once "common.php";
 require_once "config.php";
 require_once "upper.php";
 require_once "model.php";
@@ -53,6 +54,8 @@ else{
 </div>
 <table class="professor_rank" width="40%" border = "none">
 <?php
+if(count($major_professors) > 0){
+
   foreach($major_professors as $professor){
     $vote_number = count($professor["vote"]);
     echo <<<EOT
@@ -62,6 +65,7 @@ else{
       
 EOT;
   }
+}
 ?>
 </table>
 </div>

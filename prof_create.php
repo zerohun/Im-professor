@@ -44,6 +44,13 @@ require_once ('upper.php');
 
 <?php
 	// 메시지가 있을 경우 메시지 출력
+  if(isset($_GET["msg"])){
+    $msg = $_GET["msg"];
+  }
+  else{
+    $msg = "";
+
+  }
 	if ($msg != "") 
 		echo"<div class='message'>{$msg}</div>";
 ?>

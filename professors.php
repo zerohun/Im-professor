@@ -122,6 +122,9 @@ class Professors{
   }
 
   function fetch_vote_list(){
+    if(count($this->professors) == 0){
+      return null;
+    }
     $votes_model = array();
     foreach($this->professors as $key => $professsor){
       $votes_model[$key] = new Model;
