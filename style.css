@@ -44,7 +44,7 @@ input,button,textarea,select{font-size:100%;}
 				padding:1px;vertical-align: middle;
 				}
 #content{
-	width:860px;
+	width:840px;
 	height:800px;
 	padding:10px;
 }		
@@ -90,8 +90,8 @@ input,button,textarea,select{font-size:100%;}
 
 
 /* join */
-#form_wrapper { background-color:#fff; }
 #join {
+	background-color:#fff;
 	margin : 0px 0px 0px 23%;
 	text-align : center;
 		}
@@ -121,8 +121,7 @@ li { height : 40px; }
 	display : block;
 	}	
 #form_wrapper #vote {
-	font-size : 15px;
-	margin : 0px 0px 500px 30%;
+	font-size : 13px;
 	display : block;
 	}
 .comment_text  {
@@ -163,7 +162,7 @@ li { height : 40px; }
 		}	
 .major_professors a {color:#333; text-decoration:none;}
 .university_professors a {color:#333; text-decoration:none;}
-a#pro_create {color:#333; text-decoration:none;}
+a#pro_create {color:#333; text-decoration:none;font-weight:bold;}
 
 
 

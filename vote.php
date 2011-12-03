@@ -70,7 +70,7 @@ $msg = "";
 ?>
 
 <div id="form_wrapper">
-		<form action="vote.php" method="post" name = "vote_form" id = "vote" width = "50%">
+		<form action="vote.php" method="post" name = "vote_form" id = "vote">
 			<input type = "hidden" id = "professor_id" name = "professor_id" value = "<?php echo escape_str($_GET['professor_id']); ?>" >
 			현재 평가중인 교수님 : 
 			<?php
@@ -136,7 +136,6 @@ $msg = "";
 			<input type="submit" id="submitbutton" value="투표하기" style="padding:5px 10px ; text-align:center ;" >
 		</form>
 	</div>
-</div>
 	<?php
 		require_once ('beneath.php');
 	?>

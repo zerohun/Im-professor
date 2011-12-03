@@ -106,7 +106,7 @@ require_once ('config.php');
 	<div id="form_wrapper">
 	<script src="embedded_select_box.js" type="text/javascript"></script>
 		<form action="join.php" method="post" name = "join_form">
-			<table id="join" width="50%" border = "none" >
+			<table id="join" width="450px" border = "none" >
 			<tr>
 				<td colspan=3>
 				<h1> 회원가입 </h1>
