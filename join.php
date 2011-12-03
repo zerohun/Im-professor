@@ -106,39 +106,40 @@ require_once ('config.php');
 	<div id="form_wrapper">
 	<script src="embedded_select_box.js" type="text/javascript"></script>
 		<form action="join.php" method="post" name = "join_form">
-			<table id="join" width="50%" border = "none" >
-			<tr>
-				<td colspan=3>
-				<h1> 회원가입 </h1>
-				<h3> "나는 교수다"의 원활한 이용을 위해서는 회원등록이 필요합니다.<br>
-					이하의 항목에 빠짐없이 입력해주세요.<br><br>
-				<hr color="ff0033">
-				</td>
+			<table id="join" width="450px" border = "none" >
+				<caption>
+					<h1> 회원가입 </h1>
+					<h3> "나는 교수다"의 원활한 이용을 위해서는 회원등록이 필요합니다.<br/>
+						이하의 항목에 빠짐없이 입력해주세요.</h3>
+					<hr color="ff0033"/>
+				</caption>
 				<tr>
 					<th>E-mail(ID)</th>
-					<td><input type="text" id = "email" name="email" size="20"/></td>
-					<td><input type = "button" name = "email_check" value = "중복체크" onclick="email_form_check ()"/></td>
+					<td><input type="text" id = "email" name="email" size="20"/>
+						<input type = "button" name = "email_check" value = "중복체크" onclick="email_form_check ()"/>
+					</td>
 				</tr>
 				<tr>
 					<th>Password</th>
-					<td><input type="password" name="password" size="20"></td>	
+					<td><input type="password" name="password" size="20"/></td>	
 				</tr>
 				<tr>		
 					<th>Name</th>
-					<td><input type="text" name="name" size="20"></td>	
+					<td><input type="text" name="name" size="20"/></td>	
 				</tr>
 				<tr>	
 					<th>Age</th>
-					<td><input type="text" name="age" size="20"></td>						
+					<td><input type="text" name="age" size="20"/></td>						
 				</tr>
 				<tr>
-					<th>University & Major</th>
+					<th>University &amp; Major</th>
 					<td><?php require_once ('major_select_box.php'); ?></td>		
 				</tr>
 				<tr>
-					<td colspan="3" align="right">
-					<hr color="ff0033"><br>
-					<input type="button" id="submitbutton" value="회원가입" style="text-align:center;" onclick = "alert ( '야 중복체크해' )" >
+					<td colspan="2">
+						<hr color="ff0033"/>
+						<p align="right"><input type="button" id="submitbutton" value="회원가입" style="text-align:center;" onclick = "alert ( '야 중복체크해' )" />
+						</p>
 					</td>
 				</tr>
 			</table>

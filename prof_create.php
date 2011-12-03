@@ -53,10 +53,10 @@ require_once ('upper.php');
 		<table id = "create">
 			<tr>
 				<th>교수 성함</th>
-				<td><input type="text" name="name" size="20"></td>
+				<td><input type="text" name="name" size="20"/></td>
 			</tr>
 			<tr>
-				<th>선택 학교 & 학과</th>
+				<th>선택 학교 &amp; 학과</th>
 				<td><?php require_once ('major_select_box.php');?></td>
 			</tr>
 			<tr>
@@ -64,7 +64,7 @@ require_once ('upper.php');
 				<td><textarea style = "overflow : auto ; resize : none ;" cols = "50" rows = "5" name = "content" maxlength = "400byte"></textarea></td>
 			</tr>
 		</table>
-		<input type="submit" value="교수 등록">
+		<input type="submit" value="교수 등록"/>
 	</form>
 </div>
 

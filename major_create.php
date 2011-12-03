@@ -70,10 +70,10 @@ require_once ('model.php');
 			</tr>
 			<tr>
 				<th>생성 학과 명</th>
-				<td><input type="text" name="major" size="20"></td>
+				<td><input type="text" name="major" size="20"/></td>
 			</tr>
 		</table>
-		<input type="submit" value="학과 생성">
+		<input type="submit" value="학과 생성"/>
 	</form>
 </div>
 <?php

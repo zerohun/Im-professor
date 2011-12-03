@@ -41,7 +41,7 @@ require_once "upper.php";
 					?>
 			</select>
 		</table>
-		<input type="submit" value="회원 삭제"/></p>
+		<p><input type="submit" value="회원 삭제"/></p>
 	</form>
 </div>
 <?php

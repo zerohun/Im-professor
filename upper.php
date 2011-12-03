@@ -11,11 +11,12 @@ require_once('model.php');
 	$result = mysql_query($query);
 	$row = mysql_fetch_array($result);
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+	<title>나는 교수다</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link href="style.css" rel="stylesheet" type="text/css" /> 
     <script src="http://code.jquery.com/jquery-1.7.min.js" type="text/javascript"> </script>
     <script src="select_box.js" type="text/javascript"></script>
@@ -24,7 +25,7 @@ require_once('model.php');
   <div id="container">
 		<div id="header">
 			<div id="header_logo">
-				<a href = "index.php"><img src="image/logo.png" alt="나는교수다"></a>
+				<a href = "index.php"><img src="image/logo.png" alt="나는교수다"/></a>
 			</div>
 			<div id="header_right">
 			<?php
@@ -59,7 +60,7 @@ require_once('model.php');
         <li>학교선택:
 
           <select name="choose_school">
-          <option id="first_option" value="-1" selected="selected">학교선택</option>
+          <option class="first_option" value="-1" selected="selected">학교선택</option>
 
 <?php
   $model = new Model;
