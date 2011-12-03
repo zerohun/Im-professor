@@ -125,17 +125,6 @@ li { height : 40px; }
 	font-size : 13px;
 	display : block;
 	}
-<<<<<<< HEAD
-.major_professors a {color:#333; text-decoration:none;}
-=======
-.comment_text  {
-	display : block;
-}
-.not_comment_text {overflow : auto;}
-
-
->>>>>>> c62030e524336224ec29e857eb50da2ca3157ff9
-
 
 /* mypage */
 .list_title {font-size:13px; font-weight:bold; }
