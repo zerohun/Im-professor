@@ -39,7 +39,7 @@ input,button,textarea,select{font-size:100%;}
 				padding:1px;vertical-align: middle;
 				}
 #content{
-	width:860px;
+	width:840px;
 	height:800px;
 	padding:10px;
 }		
@@ -59,7 +59,7 @@ input,button,textarea,select{font-size:100%;}
 	background: url(image/login_box.png) no-repeat center top;
 	}
 #login-box img {border:none;}
-#login-box-name {
+.login-box-name {
 	float: left;
 	display:inline;
 	width:80px;
@@ -67,7 +67,7 @@ input,button,textarea,select{font-size:100%;}
 	padding: 14px 10px 0 0;
 	margin:0 0 7px 0;
 	}
-#login-box-field {
+.login-box-field {
 	float: left;
 	display:inline;
 	width:230px;
@@ -85,12 +85,19 @@ input,button,textarea,select{font-size:100%;}
 
 
 /* join */
-#form_wrapper { background-color:#fff; }
+#form_wrapper{padding:10px;}
 #join {
+	background-color:#fff;
 	margin : 0px 0px 0px 23%;
 	text-align : center;
 		}
-#join h2,h3 { color:#000; font-family:"맑은 고딕","Malgun Gothic"; } 
+#join h1,h3 { color:#000; 
+			font-family:"맑은 고딕","Malgun Gothic";
+			} 
+
+#join caption{padding:5px;
+			background-color:#fff;
+			color:#000;}
 #join th,td{ padding : 6px; }
 #join  th{
 		background-color:#000;
@@ -100,9 +107,8 @@ input,button,textarea,select{font-size:100%;}
 #join  td{
 		background-color:#fff;
 		color:#000;
-		text-align:center;
+		text-align:left;
 		}
-
 
 /* vote */
 .vote_title {
@@ -116,11 +122,19 @@ li { height : 40px; }
 	display : block;
 	}	
 #form_wrapper #vote {
-	font-size : 15px;
-	margin : 0px 0px 500px 30%;
+	font-size : 13px;
 	display : block;
 	}
+<<<<<<< HEAD
 .major_professors a {color:#333; text-decoration:none;}
+=======
+.comment_text  {
+	display : block;
+}
+.not_comment_text {overflow : auto;}
+
+
+>>>>>>> c62030e524336224ec29e857eb50da2ca3157ff9
 
 
 /* mypage */
@@ -150,7 +164,13 @@ li { height : 40px; }
 		color:#fff;
 		text-align:center;
 		font-size: 12px;
-		}
+		}	
+.major_professors a {color:#333; text-decoration:none;}
+.university_professors a {color:#333; text-decoration:none;}
+a#pro_create {color:#333; text-decoration:none;font-weight:bold;}
+
+
+
 
 
 /*main*/

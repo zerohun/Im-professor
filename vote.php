@@ -3,7 +3,7 @@ require_once ('upper.php');
 require_once ('config.php');
 	
 	if(!isset($_SESSION['user_id'])){
-        echo "<script type = 'text/javascript'> alert ( '로그인하고왘ㅋㅋㅋㅋ' ); ";
+        echo "<script type = 'text/javascript'> alert ( ' 로그인을 하여야 이페이지에 접근할 수 있습니다.' ); ";
         echo "location.replace('login.php');</script>";
     }
 //	echo $current_user . "<br>";
@@ -52,7 +52,8 @@ $msg = "";
 				?>
 					<script type = "text/javascript"> alert ( "소중한 투표 감사합니다~" ); </script>
 				<?php
-				    echo "<script type = 'text/javascript'> location.replace('index.php');</script>";
+			//	    echo "<script type = 'text/javascript'> location.replace('index.php');</script>";
+            redirect_to("professor.php?id={$professor_id}");
 			}
 		} else {
 			?>
@@ -70,7 +71,7 @@ $msg = "";
 ?>
 
 <div id="form_wrapper">
-		<form action="vote.php" method="post" name = "vote_form" id = "vote" width = "50%">
+		<form action="vote.php" method="post" name = "vote_form" id = "vote">
 			<input type = "hidden" id = "professor_id" name = "professor_id" value = "<?php echo escape_str($_GET['professor_id']); ?>" >
 			<h2>현재 평가중인 교수님 : 
 			<?php
@@ -137,7 +138,6 @@ $msg = "";
 			<input type="submit" id="submitbutton" value="투표하기" style="padding:5px 10px ; text-align:center ;" >
 		</form>
 	</div>
-</div>
 	<?php
 		require_once ('beneath.php');
 	?>

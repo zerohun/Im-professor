@@ -42,12 +42,7 @@ require_once ('config.php');
 		//FORM 값을 읽는다.
 		if (isset($_POST['email'])) $email = escape_str($_POST['email']);
 		if (isset($_POST['password'])) $password = escape_str($_POST['password']);
-		
-		if ( $email == $db_admin ) {
-			echo "<script type = 'text/javascript'> alert ( '어서오십시오 관리자님.' ); ";
-			echo "location.replace('admin.php');</script>";
-		}
-		
+	
 		if ($email == "") {
 			?>
 				<script type = "text/javascript"> alert ( "Email을 입력하세요." ); </script>
@@ -69,8 +64,14 @@ require_once ('config.php');
 			while ($row = mysql_fetch_array($result)) {
 				$_SESSION['user_id'] = $row['id'];
 			} 
+			
 				// SELECT 성공
 			if(isset($_SESSION['user_id'])){
+				if ( $email == $db_admin ) {
+					echo "<script type = 'text/javascript'> alert ( '어서오십시오 관리자님.' ); ";
+					echo "location.replace('admin.php');</script>";
+				}
+				
 				echo "	<script type = 'text/javascript'> alert ( '로그인 되었습니다.' ); ";
 				echo "location.replace('mypage.php');</script>";
 			}else{
@@ -91,17 +92,17 @@ require_once ('config.php');
 		<br />
 		<br />
 		<br />
-    <div id="login-box-name" style="margin-top:20px;">Email:</div>
-      <div id="login-box-field" style="margin-top:20px;">
+    <div class="login-box-name" style="margin-top:20px;">Email:</div>
+      <div class="login-box-field" style="margin-top:20px;">
         <input name="email" class="form-login" title="Username" value="" size="30" maxlength="2048" />
       </div>
-		  <div id="login-box-name">Password:</div>
-        <div id="login-box-field">
+		  <div class="login-box-name">Password:</div>
+        <div class="login-box-field">
           <input name="password" type="password" class="form-login" title="Password" value="" size="30" maxlength="2048" />
       </div>
 		<br />
 		<br />
-		<input type="image" src="image/enter.png" width="103" height="42" style="margin-left:90px;" alt="submit button"/></input>
+		<input type="image" src="image/enter.png" style="margin-left:90px;" alt="submit button"/>
 		</div>
 	</div>
 </form>

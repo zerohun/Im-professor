@@ -26,9 +26,8 @@ if(isset($_GET["professor_id"])){
   $prev_number = $p_range["prev_number"];
   $next_number = $p_range["next_number"];
 
+  $selected ="";
 
-
-  
   foreach($infos as $info){
     echo <<<EOT
       <div class="history">

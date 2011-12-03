@@ -15,7 +15,7 @@ INSERT INTO professors(major_id, university_id) values(1,2);
 INSERT INTO professors(major_id, university_id) values(1,1);
 INSERT INTO professors(major_id, university_id) values(3,1);
 INSERT INTO professors(major_id, university_id) values(2,2);
-INSERT INTO professors(major_id, university_id) values(8,1);
+INSERT INTO professors(major_id, university_id) values(1,1);
 INSERT INTO professor_infos(professor_id, user_id, major_id, university_id, name, photo, content) values(1, 1, 1, 1,"권동섭", "photo.jpg", "정말 정말 좋은 교수님");
 INSERT INTO professor_infos(professor_id, user_id, major_id, university_id, name, photo, content) values(2, 1, 1, 2,"이강선", "photo.jpg", "정말 정말 좋은 교수님");
 INSERT INTO professor_infos(professor_id, user_id, major_id, university_id, name, photo, content) values(3, 1, 1, 2,"장혁수", "photo.jpg", "정말 정말 좋은 교수님");

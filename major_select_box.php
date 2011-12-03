@@ -2,8 +2,8 @@
 <ul>
 <li>
 학교:
-<select name="school"/>
-<option id="first_option" value="-1" selected="selected">학교 선택</option>
+<select name="school">
+<option class="first_option" value="-1" selected="selected">학교 선택</option>
 
 <?php
 	$model = new Model;
@@ -18,7 +18,7 @@
 
 <li>
   학과:
-  <select name="major" class="major">
+  <select name="major" class="embedded_major">
     <option value="0">학교를 먼저 선택해 주세요.</option>
   </select>
 </li>

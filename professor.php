@@ -156,7 +156,7 @@ EOT;
 EOT;
   }
     echo <<<EOT
-       <li class="{$selected}"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$next_number}" > >> </a></li>
+       <li class="next"><a class="page_link" href="professor.php?id={$professors[0]["id"]}&page={$next_number}" > >> </a></li>
 EOT;
 ?>
 </ul>

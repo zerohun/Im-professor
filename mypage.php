@@ -10,6 +10,8 @@ if ($current_user){
   $majors = new Model;
   $prof_infos = new Model;
   $professors = new Professors;
+  $univ_professors_model = new Professors;
+
 
 
   $users->fetch("users", array("name", "major_id"), "WHERE id='{$current_user}'");
@@ -22,9 +24,9 @@ if ($current_user){
   $professors->fetch_vote_list();
   $major_professors = $professors->to_array();
 
-  $professors->find_professor_by_university_id($universities[0]["id"]);
-  $professors->fetch_vote_list();
-  $university_professors = $professors->to_array();
+  $univ_professors_model->find_professor_by_university_id($universities[0]["id"]);
+  $univ_professors_model->fetch_vote_list();
+  $university_professors = $univ_professors_model->to_array();
 }
 
 else{
@@ -81,7 +83,7 @@ EOT;
 ?>
 </table>
 </div>
-<a href = "prof_create.php">교수생성</a>
+<a id = "pro_create" href = "prof_create.php">교수등록</a>
 <?php
 require_once "beneath.php";
 ?>
