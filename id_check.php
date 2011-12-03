@@ -15,7 +15,7 @@ require_once ('common.php');
 	$result_email = mysql_query($query_email);
 	if (!mysql_fetch_array($result_email)) {
 		echo '<script type = "text/javascript">';
-		echo 'alert ( "ì‚¬ìš©í•´ë„ ì¢‹ì•„ìš”~" );';
+		echo 'alert ( "»ç¿ëÇØµµ ÁÁ¾Æ¿ä~" );';
 		echo 'opener.document.getElementById("email").readOnly = "true";';
 		echo 'opener.document.getElementById("submitbutton").type = "submit";';
 		echo 'opener.document.getElementById("submitbutton").onclick = "";';
@@ -23,7 +23,7 @@ require_once ('common.php');
 		echo '</script>';
 	} else {
 		echo '<script type = "text/javascript">';
-		echo 'alert ( "ì´ë¯¸ ê°€ì…ëœ ì´ë©”ì¼ ì£¼ì†Œì…ë‹ˆë‹¤." );';
+		echo 'alert ( "ÀÌ¹Ì °¡ÀÔµÈ ÀÌ¸ŞÀÏ ÁÖ¼ÒÀÔ´Ï´Ù." );';
 		echo 'opener.document.getElementById("email").value="";';	
 		echo 'opener.document.getElementById("submitbutton").type = "button";';
 		echo 'window.close ();';

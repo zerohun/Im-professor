@@ -1,52 +1,47 @@
 <?php
-  require_once "upper.php";
+require_once "upper.php";
 ?>
-<div id="form_wraaper">
 <?php
 	//FORM 값 읽기
-	if(isset($_POST['search'])){
-		$search = escape_str($_POST['search']);
-	}
+	if ($_SERVER['REQUEST_METHOD'] == 'POST')
+	{		
+		if (isset($_POST['choose_user'])) $user = escape_str($_POST['choose_user']);
 	
-	if($search == ""){
-		$msg = "삭제하려는 유저의 이메일을 입력하세요";
-	}
-	if($msg == ""){
-		$query_user = "SELECT email FROM users WHERE email='$search'";
-		$result_user = mysql_query($query_user);
-		if (!mysql_fetch_array($result_user)){
-			$query="DELETE FROM users where email='$search'";
-			if(mysql_query($query)){
+		if($user == ""){
+			$msg = "삭제하려는 유저를 선택하세요";
+		}
+		
+		if($msg == ""){
+			$query="DELETE FROM users where email='$user'";
+			if(!mysql_query($query)){
 				echo  "<div class='error'>DELETE failed: ".mysql_error()."</div>";
 			}else{
-			?>
-				<script type = "text/javascript"> alert ("삭제 성공!"); </script>
+				?>
+					<script type = "text/javascript"> alert ("삭제 완료");
+										location.replace('admin.php');</script>;
 				<?php
-				echo '<meta http-equiv = "Refresh" content = "0 ; url = admin.php">';
 			}
-		}else{
-			echo  "<div class='error'>이미 등록된 학교입니다</div>";
-		}		
+		}
 	}
 ?>
-	<p>회원 삭제하기</p>
+<div id="form_wraaper">
+	<h1>회원 삭제 페이지 입니다.</h1>
+	<h3>삭제시 되돌릴 수 없으니 주의 바랍니다.</h3>
 	<form action="user_del.php" method="post">
 		<table id="userList">
-			<?php
-	$model = new Model;
-	$model->fetch("users", array("id", "name", "email"));
-	$whole_data = $model->to_array();
-	foreach($whole_data as $each_data){
-		echo "<tr value='{$each_data["id"]}'> .
-			<td>{$each_data["name"]}</td> .
-			<td>{$each_data["email"]}</td>
-			</tr>";
-		}
-?>
+			<select name="choose_user">
+				<option id="option" value="-1" selected="selected">회원 선택</option>
+					<?php
+						$model = new Model;
+						$model->fetch("users", array("id", "name", "email"));
+						$whole_data = $model->to_array();
+						foreach($whole_data as $each_data){
+						echo "<option value='{$each_data["email"]}'>{$each_data["name"]}  {$each_data["email"]}</option>";
+						}
+					?>
+			</select>
 		</table>
-		<p>삭제하려는 유저의 이메일을 입력하세요</p>
-		<p><input type="text" name="search"/>
-		<input type="submit" value="DELETE"/></p>
+		<input type="submit" value="회원 삭제"/></p>
 	</form>
 </div>
 <?php
