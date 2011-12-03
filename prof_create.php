@@ -34,7 +34,7 @@ require_once ('upper.php');
 				} else {
 					?>
 						<script type = "text/javascript"> alert ( "교수가 등록되었습니다." ); 
-												location.replace('admin.php');</script>;
+												location.replace('mymage.php');</script>;
 					<?php
 				}
 			}
