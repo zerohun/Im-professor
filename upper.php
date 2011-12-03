@@ -1,8 +1,4 @@
 <?php
-
-session_start();
-
-ob_start("ob_gzhandler");
 require_once('config.php'); 
 require_once('common.php');
 require_once('model.php');

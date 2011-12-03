@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset ( $_SESSION['user_id'])) {
  $current_user = $_SESSION['user_id'];
  $loggedin = TRUE;
