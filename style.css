@@ -128,11 +128,9 @@ li { height : 40px; }
 .comment_text  {
 	display : block;
 }
-	
-	
-	
-.not_comment {overflow : auto;}
-.major_professors a {color:#333; text-decoration:none;}
+.not_comment_text {overflow : auto;}
+
+
 
 
 /* mypage */
@@ -162,7 +160,13 @@ li { height : 40px; }
 		color:#fff;
 		text-align:center;
 		font-size: 12px;
-		}
+		}	
+.major_professors a {color:#333; text-decoration:none;}
+.university_professors a {color:#333; text-decoration:none;}
+a#pro_create {color:#333; text-decoration:none;}
+
+
+
 
 
 /*main*/

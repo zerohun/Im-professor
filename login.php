@@ -42,12 +42,7 @@ require_once ('config.php');
 		//FORM 값을 읽는다.
 		if (isset($_POST['email'])) $email = escape_str($_POST['email']);
 		if (isset($_POST['password'])) $password = escape_str($_POST['password']);
-		
-		if ( $email == $db_admin ) {
-			echo "<script type = 'text/javascript'> alert ( '어서오십시오 관리자님.' ); ";
-			echo "location.replace('admin.php');</script>";
-		}
-		
+	
 		if ($email == "") {
 			?>
 				<script type = "text/javascript"> alert ( "Email을 입력하세요." ); </script>
@@ -69,8 +64,14 @@ require_once ('config.php');
 			while ($row = mysql_fetch_array($result)) {
 				$_SESSION['user_id'] = $row['id'];
 			} 
+			
 				// SELECT 성공
 			if(isset($_SESSION['user_id'])){
+				if ( $email == $db_admin ) {
+					echo "<script type = 'text/javascript'> alert ( '어서오십시오 관리자님.' ); ";
+					echo "location.replace('admin.php');</script>";
+				}
+				
 				echo "	<script type = 'text/javascript'> alert ( '로그인 되었습니다.' ); ";
 				echo "location.replace('mypage.php');</script>";
 			}else{
