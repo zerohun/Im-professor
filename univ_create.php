@@ -13,6 +13,12 @@ require_once ('model.php');
 			$msg = "학교를 입력해 주세요.";
 		}
 		
+		echo strstr ( $univ );
+		
+		if ( strstr ( $univ ) == "대학교" ) {
+			$msg = "형식을 지켜주세요.";
+		}
+		
 		if($msg == ""){
 			$query_univ = "SELECT name FROM universities WHERE name='$univ'";
 			$result_univ = mysql_query($query_univ);
