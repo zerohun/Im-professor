@@ -28,12 +28,25 @@ if(isset($_GET["professor_id"])){
 
   $selected ="";
 
-  foreach($infos as $info){
+  foreach($infos as $key => $info){
+
     echo <<<EOT
       <div class="history">
         <a href="professor_info.php?id={$info["id"]}">{$info["created_at"]} by {$info["user_name"]}</a>
-      </div> 
+
 EOT;
+
+    if($key == 0 && count($infos) > 1){
+      echo <<<EOT
+        <form method="post" action="delete_info.php">
+          <input type="hidden" name="id" value="{$info["id"]}">
+          <input type="submit" value="Undo">
+        </form>
+      </div> 
+
+EOT;
+
+    }
   }
     echo <<<EOT
         <li class="prev"><a class="page_link" href="professor_infos.php?professor_id={$professor_id}&page={$prev_number}" > << </a></li>
@@ -48,7 +61,7 @@ EOT;
 EOT;
     }
       echo <<<EOT
-         <li class="{$selected}"><a class="page_link" href="professor_infos.php?professor_id={$professor_id}&page={$next_number}" > >> </a></li>
+         <li class="next"><a class="page_link" href="professor_infos.php?professor_id={$professor_id}&page={$next_number}" > >> </a></li>
 EOT;
 }
 
