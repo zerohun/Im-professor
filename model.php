@@ -33,7 +33,7 @@ class Model{
       }
     }
     else{
-      echo "no result";
+      //echo "no result";
     }
   }
 
