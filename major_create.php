@@ -8,10 +8,22 @@ require_once ('model.php');
 		$major = $msg = "";	//초기화
 		//form 값 읽기
 		if(isset($_POST['major'])) $major = escape_str($_POST['major']);
-		if(isset($_POST['choose_school'])) $univ = escape_str($_POST['choose_school']);
+		if(isset($_POST['select_school'])) $univ = escape_str($_POST['select_school']);
 			
-		if($major == ""){
+		if ( $univ == -1 ) {
+			$msg = "학교를 선택해 주세요.";
+		}
+		
+		if ($major == ""){
 			$msg = "학과를 입력해 주세요.";
+		}
+		
+		if ( ( ( substr ( $major, -6 ) ) != "학과" ) && ( ( substr ( $major, -6 ) ) != "학부" ) ) {
+			$msg = "형식을 지켜주세요.";
+		}
+		
+		if ( ( ( substr ( $major, 0 ) ) == "학과" ) || ( ( substr ( $major, 0 ) ) == "학부" ) ) {
+			$msg = "장난하지 마시구요..";
 		}
 		
 		if($msg == ""){
@@ -55,7 +67,7 @@ require_once ('model.php');
 			<tr>
 				<th>선택 학교 명</th>
 				<td>
-					<select name="choose_school">
+					<select name="select_school">
 						<option id="first_option" value="-1" selected="selected">학교선택</option>
 							<?php
 							  $model = new Model;

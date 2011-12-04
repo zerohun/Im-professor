@@ -2,7 +2,7 @@
 require_once ('upper.php');
 require_once ('model.php');
 ?>
-<?php
+<?php		
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		$univ = $msg = "";	//초기화
@@ -12,11 +12,13 @@ require_once ('model.php');
 		if($univ == ""){
 			$msg = "학교를 입력해 주세요.";
 		}
-		
-		echo strstr ( $univ );
-		
-		if ( strstr ( $univ ) == "대학교" ) {
+
+		if ( ( substr ( $univ, -9 ) ) != "대학교" ) {
 			$msg = "형식을 지켜주세요.";
+		}
+		
+		if ( ( substr ( $univ, 0 ) ) == "대학교" ) {
+			$msg = "장난하지 마시구요..";
 		}
 		
 		if($msg == ""){
