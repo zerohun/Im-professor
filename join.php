@@ -3,7 +3,7 @@ require_once ('upper.php');
 require_once ('config.php');
 	
 	if(isset($_SESSION['user_id'])){
-        echo "	<script type = 'text/javascript'> alert ( '이미 로긴 했어...' ); </script>";
+        echo "	<script type = 'text/javascript'> alert ( '이미 로그인 한 상태입니다.' ); </script>";
         echo '<meta http-equiv = "Refresh" content = "0 ; url = index.php">';
     }
 	
@@ -138,7 +138,7 @@ require_once ('config.php');
 				<tr>
 					<td colspan="2">
 						<hr color="ff0033"/>
-						<p align="right"><input type="button" id="submitbutton" value="회원가입" style="text-align:center;" onclick = "alert ( '야 중복체크해' )" />
+						<p id="for_submit" align="right"><input type="button" id="submitbutton" value="회원가입" style="text-align:center;" onclick = "alert ( '아이디 중복체크를 하셔야 합니다.' )" />
 						</p>
 					</td>
 				</tr>
