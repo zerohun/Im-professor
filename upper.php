@@ -1,11 +1,14 @@
 <?php
+error_reporting(0);
 require_once('config.php'); 
 require_once('common.php');
 require_once('model.php');
 
+if($loggedin){
 	$query = "SELECT email FROM users WHERE id='$current_user'";
 	$result = mysql_query($query);
-	$row = mysql_fetch_array($result);
+  $row = mysql_fetch_array($result);
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

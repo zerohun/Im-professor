@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', false); 
+//error_reporting(0);
 session_start();
 if (isset ( $_SESSION['user_id'])) {
  $current_user = $_SESSION['user_id'];
