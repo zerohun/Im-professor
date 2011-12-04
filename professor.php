@@ -51,8 +51,8 @@ else{
       <th colspan="2"><?php echo $professors[0]["content"] ?></th>
     </tr>
     <tr>
-      <td><a href="prof_edit.php?id=<?php echo $professor_id ?>">교수정보 수정</a></td>
-      <td><a href="professor_infos.php?professor_id=<?php echo $professor_id ?>">Show history</a></td> 
+      <td><a class ="link_button"  href="prof_edit.php?id=<?php echo $professor_id ?>">교수정보 수정</a></td>
+      <td><a class ="link_button"  href="professor_infos.php?professor_id=<?php echo $professor_id ?>">Show history</a></td> 
     </tr>
 
 		<tr>
@@ -88,7 +88,7 @@ else{
   
 
 	</table>
-  <a href="vote.php?professor_id=<?php echo  $professors[0]["id"] ?>">투표하기</a>
+  <a  class ="link_button"  href="vote.php?professor_id=<?php echo  $professors[0]["id"] ?>">투표하기</a>
 </div>
 <div class="vote_list">
 <?php

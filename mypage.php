@@ -87,7 +87,7 @@ EOT;
 ?>
 </table>
 </div>
-<a id = "pro_create" href = "prof_create.php">교수등록</a>
+<a id = "pro_create" class ="link_button" href = "prof_create.php">교수등록</a>
 <?php
 require_once "beneath.php";
 ?>

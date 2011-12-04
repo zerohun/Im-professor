@@ -156,7 +156,7 @@ li { height : 40px; }
 		}	
 .major_professors a {color:#333; text-decoration:none;}
 .university_professors a {color:#333; text-decoration:none;}
-a#pro_create {color:#333; text-decoration:none; font-weight:bold;}
+a#pro_create {color: white; text-decoration:none; font-weight:bold;}
 
 
 /* professor */
@@ -223,12 +223,26 @@ a#pro_create {color:#333; text-decoration:none; font-weight:bold;}
 .total_score{
   background-color: gray;
   color: white;
-  width: 100px;
   text-align: center;
   border-type: solid;
   border-width: 1px;
   border-color: white;
 
+}
+a.link_button{
+  text-decoration: none;
+  background-color:#7E354D	;
+  color:white;
+  padding: 10px;
+  margin: 10px;
+  border-width: 1px;
+  border-style: solid;
+  height: 20px;
+  text-style: bold;
+  border-color: red;
+  font-weight: bold;
+
+  
 }
 		
 		
