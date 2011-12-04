@@ -1,7 +1,13 @@
 <?php
 ob_start();
 require_once ('upper.php');
-
+?>	
+<SCRIPT LANGUAGE = "Javascript"> function keypressed () {
+	alert ( "야 키보드 누르지마" );
+}
+document.onkeydown = keypressed;
+</script>
+<?php
 if ($loggedin) {
 	?>
 		<script type = "text/javascript"> alert ( "로그아웃 되었습니다." ); </script>

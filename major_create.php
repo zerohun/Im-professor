@@ -3,6 +3,11 @@ require_once ('upper.php');
 require_once ('model.php');
 ?>
 <?php
+	if(!isset($_SESSION['user_id'])){
+        echo "	<script type = 'text/javascript'> alert ( '로그인이 필요한 페이지 입니다...' );";
+        echo "location.replace('login.php');</script>";
+    }
+	
 	if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		$major = $msg = "";	//초기화

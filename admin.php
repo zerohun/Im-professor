@@ -1,6 +1,11 @@
 <?php
 require_once ('upper.php');
 ?>
+	<SCRIPT LANGUAGE = "Javascript"> function keypressed () {
+		alert ( "야 키보드 누르지마" );
+	}
+	document.onkeydown = keypressed;
+	</script>
 <?php  
   	if(!isset($_SESSION['user_id'])){
         echo "<script type = 'text/javascript'> alert ( '관리자만 이용 가능한 페이지 입니다.' ); ";
@@ -22,7 +27,7 @@ require_once ('upper.php');
 		<p><a href="univ_create.php">학교 생성</a></p>
 		<p><a href="major_create.php">학과 생성</a></p>
 		<p><a href="prof_create.php">교수 생성</a></p>
-		<p><a href="user_del.php">회원 삭제</a></p>
+		<p><a href="user_del.php">데이터 삭제</a></p>
 	</div>
 </div>
 <?php

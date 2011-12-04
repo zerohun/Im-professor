@@ -1,6 +1,7 @@
 <?php
 require_once ('upper.php');
 require_once ('config.php');
+require_once ('common.php');
 
 	if(isset($_SESSION['user_id'])){
         echo "<script type = 'text/javascript'> alert ( '이미 로긴 했어...' ); ";

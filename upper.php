@@ -15,9 +15,9 @@ require_once('model.php');
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link href="style.css" rel="stylesheet" type="text/css" /> 
     <script src="http://code.jquery.com/jquery-1.7.min.js" type="text/javascript"> </script>
-    <script src="select_box.js" type="text/javascript"></script>
+    <script src="select_box.js" type="text/javascript"></script>	
   </head>
-  <body>
+  <body bgproperties="fixed" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
   <div id="container">
 		<div id="header">
 			<div id="header_logo">

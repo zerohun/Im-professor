@@ -2,9 +2,13 @@
 require_once ('upper.php');
 require_once ('professors.php');
 ?>
-
 <div id = "form_wrapper">
 <?php
+	if(!isset($_SESSION['user_id'])){
+        echo "	<script type = 'text/javascript'> alert ( '로그인이 필요한 페이지 입니다...' );";
+        echo "location.replace('login.php');</script>";
+    }
+	
   $msg = "";
 	if(isset($_GET) && $_GET["id"]){
 	  $professor_id = $_GET["id"];
@@ -70,7 +74,7 @@ require_once ('professors.php');
 				</tr> -->
 			<tr>
 				<th>Comment</th>
-				<td><textarea name="content" cols="50" rows="10"><?php echo $professors[0]["content"]; ?></textarea></td>
+				<td><textarea style = "overflow : auto ; resize : none ;"  name="content" cols="50" rows="10"><?php echo $professors[0]["content"]; ?></textarea></td>
 			</tr>
     </table>
     <input type="hidden" name="professor_id" value="<?php echo $professors[0]["id"] ?>">

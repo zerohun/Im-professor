@@ -35,6 +35,11 @@ else{
 }
 
 ?>
+	<SCRIPT LANGUAGE = "Javascript"> function keypressed () {
+		alert ( "야 키보드 누르지마" );
+	}
+	document.onkeydown = keypressed;
+	</script>
 	<div class="list_title">개인정보</div>
 	<table id="my_info" width="40%">
 		<tr>
