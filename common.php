@@ -12,7 +12,8 @@ else {
 
 function escape_str($str) 
 {
- return mysql_real_escape_string($str);
+  $new_str = strip_tags($str);
+  return mysql_real_escape_string($new_str);
 }
 
 function paginate_array($array_data, $page_number, $number_for_page){
