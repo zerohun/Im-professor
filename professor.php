@@ -57,33 +57,33 @@ else{
 
 		<tr>
 			<th>흥미도</th>
-			<td><?php echo $professors[0]["vote_average"]["interest_average"];?></td>
+			<td class="total_score"><?php echo $professors[0]["vote_average"]["interest_average"];?></td>
 		</tr>
 
 
 		<tr>
 			<th>호감도</th>
-			<td><?php echo $professors[0]["vote_average"]["hot_average"];?></td>
+			<td class="total_score"><?php echo $professors[0]["vote_average"]["hot_average"];?></td>
 		</tr>
 
 		<tr>
 			<th>이해도</th>
-			<td><?php echo $professors[0]["vote_average"]["understanding_average"];?></td>
+			<td class="total_score"><?php echo $professors[0]["vote_average"]["understanding_average"];?></td>
 		</tr>
 
 		<tr>
 			<th>얼마나 유익했는가?</th>
-			<td><?php echo $professors[0]["vote_average"]["benefit_average"];?></td>
+			<td class="total_score"><?php echo $professors[0]["vote_average"]["benefit_average"];?></td>
 		</tr>
 
 		<tr>
 			<th>수업준비</th>
-			<td><?php echo $professors[0]["vote_average"]["prepare_average"];?></td>
+			<td class="total_score"><?php echo $professors[0]["vote_average"]["prepare_average"];?></td>
 		</tr>
     
 		<tr>
 			<th>평점</th>
-			<td><?php echo $professors[0]["vote_average"]["total_average"];?></td>
+			<td class="total_score"><?php echo $professors[0]["vote_average"]["total_average"];?></td>
 		</tr>
   
 
@@ -105,7 +105,7 @@ else{
 
     echo <<<EOT
     <div id="{$vote["id"]}" class="vote_element">
-      <div class="user_name">{$user_name}</div>
+      <div class="user_name">투표자: {$user_name}</div>
       <ul class="scores_list">
         <li class="score_element">
           흥미도: {$vote["interest"]}
@@ -122,6 +122,9 @@ else{
         </li>
         <li class="score_element">
           수업준비: {$vote["prepare"]}
+        </li>
+        <li class="vote_comment">
+          comment: {$vote["comment_text"]}
         </li>
       </ul>
       

@@ -195,6 +195,41 @@ a#pro_create {color:#333; text-decoration:none; font-weight:bold;}
 	color:#333; text-decoration:none;
 }
 		
+.vote_element{
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+  border-width: 2px;
+  border-color: black;
+  border-type: solid;
+}
+
+
+.score_element{
+   border-color: gray;
+   border-width: 1px;
+   border-style: solid;
+   margin : 10px;
+   padding: 10px;
+   width: 300px;
+   text-align: center;
+   font-size: 20px;
+   background-color: gray;
+   color: white;
+}
+.vote_comment{
+}
+
+.total_score{
+  background-color: gray;
+  color: white;
+  width: 100px;
+  text-align: center;
+  border-type: solid;
+  border-width: 1px;
+  border-color: white;
+
+}
 		
 		
 /* -- footer -- */
