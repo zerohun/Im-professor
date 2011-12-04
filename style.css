@@ -156,8 +156,18 @@ li { height : 40px; }
 		}	
 .major_professors a {color:#333; text-decoration:none;}
 .university_professors a {color:#333; text-decoration:none;}
-a#pro_create {color:#333; text-decoration:none;font-weight:bold;}
+a#pro_create {color:#333; text-decoration:none; font-weight:bold;}
 
+
+/* professor */
+#professor th {font-weight:bold; color:#44a;}
+#professor td {color:#333; font-weight:bold;}
+#professor th,td {padding : 10px;}
+#professor a{color:#f60a7e; text-decoration:none; font-weight:bold;}
+#professor a:hover {color:#c25;}
+
+/*professor_infos*/
+.history a{color:#f60a7e; text-decoration:none; font-weight:bold;}
 
 /*main*/
 #content div.section {
