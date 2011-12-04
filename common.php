@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset ( $_SESSION['user_id'])) {
  $current_user = $_SESSION['user_id'];
  $loggedin = TRUE;
@@ -23,7 +24,7 @@ function paginate_array($array_data, $page_number, $number_for_page){
   for($i=$current_index; $i < $last_index; $i++){
     $new_array_data[] = $array_data[$i];
   }
-  $total_page = $array_length / $number_for_page;
+  $total_page = floor($array_length / $number_for_page);
   return array("data" => $new_array_data, "total_page" => $total_page);
 }
 
@@ -52,8 +53,12 @@ function page_selection_range($page_number, $total_page, $number_for_each_page){
 
 
   if($last_index == $total_page ){
-
-    $next_number = $last_index - 1;
+    if($total_page == 0){
+      $next_number = 0;
+    }
+    else{
+      $next_number = $last_index - 1;
+    }
   }
   else{
     if($page_number + $number_for_each_page > $total_page){

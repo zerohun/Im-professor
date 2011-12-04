@@ -28,7 +28,6 @@ if(isset($_GET["professor_id"])){
 
   $selected ="";
 
-  
   foreach($infos as $info){
     echo <<<EOT
       <div class="history">

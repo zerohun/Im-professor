@@ -54,10 +54,10 @@ require_once ('model.php');
 		<table id="create">
 			<tr>
 				<th>생성 학교 명</th>
-				<td><input type="text" name="univ" size="20"></td>
+				<td><input type="text" name="univ" size="20"/></td>
 			</tr>
 		</table>
-		<input type="submit" value="학교 생성">
+		<input type="submit" value="학교 생성"/>
 	</form>
 </div>
 <?php

@@ -3,7 +3,7 @@ require_once ('upper.php');
 require_once ('config.php');
 	
 	if(!isset($_SESSION['user_id'])){
-        echo "<script type = 'text/javascript'> alert ( '로그인하고왘ㅋㅋㅋㅋ' ); ";
+        echo "<script type = 'text/javascript'> alert ( ' 로그인을 하여야 이페이지에 접근할 수 있습니다.' ); ";
         echo "location.replace('login.php');</script>";
     }
 //	echo $current_user . "<br>";
@@ -52,7 +52,8 @@ $msg = "";
 				?>
 					<script type = "text/javascript"> alert ( "소중한 투표 감사합니다~" ); </script>
 				<?php
-				    echo "<script type = 'text/javascript'> location.replace('index.php');</script>";
+			//	    echo "<script type = 'text/javascript'> location.replace('index.php');</script>";
+            redirect_to("professor.php?id={$professor_id}");
 			}
 		} else {
 			?>
