@@ -51,7 +51,7 @@ else{
 <div class="list_title">
   <?php echo $majors[0]["name"]?> 교수 순위 
 </div>
-<table id="professor_rank" width="40%" border = "none">
+<table class="professor_rank" width="40%" border = "none">
 <?php
   foreach($major_professors as $professor){
     $vote_number = count($professor["vote"]);
@@ -70,7 +70,7 @@ EOT;
 <div class="list_title">
   <?php echo $universities[0]["name"]?> 교수 순위
 </div>
-<table id="professor_rank" width="40%" border = "none">
+<table class="professor_rank" width="40%" border = "none">
 <?php
   foreach($university_professors as $professor){
     $vote_number = count($professor["vote"]);
