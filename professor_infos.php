@@ -49,7 +49,8 @@ EOT;
     }
   }
     echo <<<EOT
-        <li class="prev"><a class="page_link" href="professor_infos.php?professor_id={$professor_id}&page={$prev_number}" > << </a></li>
+        <ul class="page_list">
+        <li class="prev"><a class="page_list" href="professor_infos.php?professor_id={$professor_id}&page={$prev_number}" > << </a></li>
 EOT;
     for($i=$start_index; $i < $last_index; $i++){
       $selected="not_selected";
@@ -57,11 +58,12 @@ EOT;
         $selected="selected";
       }
       echo <<<EOT
-         <li class="{$selected}"><a class="page_link" href="professor_infos.php?professor_id={$professor_id}&page={$i}" >[{$i}]</a></li>
+         <li class="{$selected}"><a class="page_list" href="professor_infos.php?professor_id={$professor_id}&page={$i}" >[{$i}]</a></li>
 EOT;
     }
       echo <<<EOT
-         <li class="next"><a class="page_link" href="professor_infos.php?professor_id={$professor_id}&page={$next_number}" > >> </a></li>
+         <li class="next"><a class="page_list" href="professor_infos.php?professor_id={$professor_id}&page={$next_number}" > >> </a></li>
+      </ul>
 EOT;
 }
 
