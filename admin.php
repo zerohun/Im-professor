@@ -18,7 +18,7 @@ require_once ('upper.php');
 ?>
 <div id="form_wraaper">
 	<h1>관리자 페이지 입니다.</h1>
-	<div id="select">
+	<div id="admin">
 		<p><a href="univ_create.php">학교 생성</a></p>
 		<p><a href="major_create.php">학과 생성</a></p>
 		<p><a href="prof_create.php">교수 생성</a></p>

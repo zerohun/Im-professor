@@ -40,7 +40,7 @@ input,button,textarea,select{font-size:100%;}
 				}
 #content{
 	width:840px;
-	height:800px;
+	height:auto;
 	padding:10px;
 }		
 				
@@ -159,9 +159,6 @@ li { height : 40px; }
 a#pro_create {color:#333; text-decoration:none;font-weight:bold;}
 
 
-
-
-
 /*main*/
 #content div.section {
 		width:830px;
@@ -179,6 +176,13 @@ a#pro_create {color:#333; text-decoration:none;font-weight:bold;}
 #content #rank h1 { 
 		background: ccc url("/images/best5.png") no-repeat center; 
 		}
+		
+/*admin*/
+#admin a{
+	color:#333; text-decoration:none;
+}
+		
+		
 		
 /* -- footer -- */
 #footer {width:820px; background-color:#000; color:#888; text-align:center; padding: 20px;}

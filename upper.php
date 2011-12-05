@@ -82,5 +82,5 @@ require_once('model.php');
       </ul>
     </div>
 	
-	<div id="content">
+	<div id="content" style = "overflow : auto ;">
 		 	
