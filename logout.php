@@ -2,11 +2,6 @@
 ob_start();
 require_once ('upper.php');
 ?>	
-<SCRIPT LANGUAGE = "Javascript"> function keypressed () {
-	alert ( "야 키보드 누르지마" );
-}
-document.onkeydown = keypressed;
-</script>
 <?php
 if ($loggedin) {
 	?>

@@ -1,11 +1,6 @@
 <?php
 require_once ('upper.php');
 ?>
-	<SCRIPT LANGUAGE = "Javascript"> function keypressed () {
-		alert ( "야 키보드 누르지마" );
-	}
-	document.onkeydown = keypressed;
-	</script>
 <?php  
   	if(!isset($_SESSION['user_id'])){
         echo "<script type = 'text/javascript'> alert ( '관리자만 이용 가능한 페이지 입니다.' ); ";

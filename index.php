@@ -1,11 +1,6 @@
 <?php
   require_once "upper.php";
 ?>
-	<SCRIPT LANGUAGE = "Javascript"> function keypressed () {
-		alert ( "야 키보드 누르지마" );
-	}
-	document.onkeydown = keypressed;
-	</script>
 		<div class="section" id="about">
 			<img src="image/content1.png" alt="사이트소개"/>
       </div>
